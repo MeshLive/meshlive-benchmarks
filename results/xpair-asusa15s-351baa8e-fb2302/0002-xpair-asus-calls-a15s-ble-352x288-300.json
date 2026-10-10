@@ -1,0 +1,1082 @@
+{
+ "schema": "meshlive-benchmark-result-v1",
+ "execution": {
+  "suite": "xpair-asusa15s-351baa8e-fb2302",
+  "sequence": "0002",
+  "run_id": "physical-dd516e48c7ef458a865da2456a8d7a0d",
+  "manifest_sha256": "600eda84ae71ce4fa394c276b1d00e214330c18fd5deb2509115b2e279890fa2",
+  "date_utc": "2026-10-09T17:34:58Z",
+  "duration_wall_s": 93.3,
+  "concurrency": "concurrent",
+  "actual_media_overlap": {
+   "status": "UNMEASURED",
+   "reason": "Job overlap is not actual media overlap"
+  }
+ },
+ "case": {
+  "baseline_key": "47230ced11ec322ae7f3",
+  "private_case_id": "xpair-asus-calls-a15s-ble-352x288-300",
+  "mode": "private_call",
+  "family": "call",
+  "request": {
+   "caller": "ASUS",
+   "callee": "A15s",
+   "profiles": {
+    "ASUS": {
+     "codec": "c2.android.vp9.encoder",
+     "width": 352,
+     "height": 288,
+     "fps": 15,
+     "bitrate_kbps": 300,
+     "rate_control": "automatic",
+     "playback": "balanced",
+     "thermal_reduction": false
+    },
+    "A15s": {
+     "codec": "libaom-native",
+     "width": 352,
+     "height": 288,
+     "fps": 15,
+     "bitrate_kbps": 300,
+     "rate_control": "automatic",
+     "playback": "balanced",
+     "thermal_reduction": false
+    }
+   },
+   "transport": "ble",
+   "duration_s": 45,
+   "connection_timeout_s": 20,
+   "media_trace": true,
+   "call_pipeline_timing": false,
+   "actions": [],
+   "tunables": {},
+   "inputs": {
+    "A15s": {
+     "video_sha256": "96704fd274796a739d3c220ace74cc98da178758945688e147551db6c927cdab",
+     "audio_sha256": "bf8d4ae39a571c3b3278aa1f38fcb1181cf69d1f605a8229df4b0714475464fd"
+    },
+    "ASUS": {
+     "video_sha256": "96704fd274796a739d3c220ace74cc98da178758945688e147551db6c927cdab",
+     "audio_sha256": "bf8d4ae39a571c3b3278aa1f38fcb1181cf69d1f605a8229df4b0714475464fd"
+    }
+   }
+  },
+  "description": "Bound file hashes/declarations verified; live readiness, sustained load and quality unmeasured"
+ },
+ "build": {
+  "build_id": "351baa8e",
+  "apk_sha256": "351baa8e14ffff0b912f3b9771c040d330dc76751ad8ba28e029da6cf107082c",
+  "apk_sha256_per_phone": null,
+  "version_name": {
+   "version_name": "1.0",
+   "source": "read from the retained APK (aapt2 dump badging)",
+   "note": "Pre-release debug build; the app was renamed and versioned 0.1.0-beta later"
+  }
+ },
+ "phones": [
+  {
+   "alias": "A15s",
+   "manufacturer": "OPPO",
+   "model": "CPH2179",
+   "android": "10",
+   "sdk": "29",
+   "soc": "mt6765",
+   "firmware_build": "QP1A.190711.020/2024022110",
+   "apk_sha256": "351baa8e14ffff0b912f3b9771c040d330dc76751ad8ba28e029da6cf107082c"
+  },
+  {
+   "alias": "ASUS",
+   "manufacturer": "asus",
+   "model": "ASUS_I01WD",
+   "android": "11",
+   "sdk": "30",
+   "soc": "msmnile",
+   "firmware_build": "RKQ1.200710.002/18.0610.2106.156-0",
+   "apk_sha256": "351baa8e14ffff0b912f3b9771c040d330dc76751ad8ba28e029da6cf107082c"
+  }
+ ],
+ "inputs": {
+  "ASUS": {
+   "video": {
+    "input_id": "vsg/coverage-352x288-15/352x288-15fps",
+    "sha256": "96704fd274796a739d3c220ace74cc98da178758945688e147551db6c927cdab"
+   },
+   "audio": {
+    "input_id": "vsg/coverage-352x288-15/352x288-15fps",
+    "sha256": "bf8d4ae39a571c3b3278aa1f38fcb1181cf69d1f605a8229df4b0714475464fd"
+   }
+  },
+  "A15s": {
+   "video": {
+    "input_id": "vsg/coverage-352x288-15/352x288-15fps",
+    "sha256": "96704fd274796a739d3c220ace74cc98da178758945688e147551db6c927cdab"
+   },
+   "audio": {
+    "input_id": "vsg/coverage-352x288-15/352x288-15fps",
+    "sha256": "bf8d4ae39a571c3b3278aa1f38fcb1181cf69d1f605a8229df4b0714475464fd"
+   }
+  }
+ },
+ "result": {
+  "status": "FAIL",
+  "reason": null,
+  "scored_in_suite": "xpair-asusa15s-351baa8e-fb2302",
+  "scored_at": "2026-10-09T17:37:10Z",
+  "thresholds_version": "device-run-v3",
+  "acceptance_profile": null,
+  "pipeline_status": "FAIL",
+  "full_experience_status": "FAIL",
+  "required_families": [
+   "picture",
+   "smoothness",
+   "connection",
+   "transport",
+   "lifecycle",
+   "topology",
+   "camera",
+   "acoustic",
+   "physical_latency",
+   "endurance"
+  ],
+  "measurement_errors": [],
+  "family_status": {
+   "picture": "FAIL",
+   "smoothness": "FAIL",
+   "connection": "FAIL",
+   "transport": "FAIL",
+   "lifecycle": "PASS",
+   "topology": "PASS",
+   "camera": "UNMEASURED",
+   "acoustic": "UNMEASURED",
+   "physical_latency": "UNMEASURED",
+   "endurance": "UNMEASURED"
+  }
+ },
+ "families": {
+  "picture": {
+   "status": "FAIL",
+   "measurements": [
+    {
+     "device": "A15s",
+     "source": "ASUS",
+     "name": "reference_validity",
+     "status": "PASS",
+     "reason": "Requires every verified finalized active raw-input phase"
+    },
+    {
+     "device": "A15s",
+     "source": "ASUS",
+     "name": "vmaf",
+     "status": "FAIL",
+     "value": 47.7409,
+     "limit": 90,
+     "comparison": "min"
+    },
+    {
+     "device": "A15s",
+     "source": "ASUS",
+     "name": "ssim",
+     "status": "FAIL",
+     "value": 0.7225,
+     "limit": 0.98,
+     "comparison": "min"
+    },
+    {
+     "device": "A15s",
+     "source": "ASUS",
+     "name": "psnr_db",
+     "status": "FAIL",
+     "value": 17.4976,
+     "limit": 35,
+     "comparison": "min"
+    },
+    {
+     "device": "ASUS",
+     "source": "A15s",
+     "name": "reference_validity",
+     "status": "PASS",
+     "reason": "Requires every verified finalized active raw-input phase"
+    },
+    {
+     "device": "ASUS",
+     "source": "A15s",
+     "name": "vmaf",
+     "status": "FAIL",
+     "value": 41.9209,
+     "limit": 90,
+     "comparison": "min"
+    },
+    {
+     "device": "ASUS",
+     "source": "A15s",
+     "name": "ssim",
+     "status": "FAIL",
+     "value": 0.6976,
+     "limit": 0.98,
+     "comparison": "min"
+    },
+    {
+     "device": "ASUS",
+     "source": "A15s",
+     "name": "psnr_db",
+     "status": "FAIL",
+     "value": 16.9548,
+     "limit": 35,
+     "comparison": "min"
+    }
+   ],
+   "content_regions": [
+    {
+     "device": "A15s",
+     "source": "ASUS",
+     "measurement_status": "MEASURED",
+     "acceptance_status": "UNMEASURED"
+    },
+    {
+     "device": "ASUS",
+     "source": "A15s",
+     "measurement_status": "MEASURED",
+     "acceptance_status": "UNMEASURED"
+    }
+   ]
+  },
+  "smoothness": {
+   "status": "FAIL",
+   "measurements": [
+    {
+     "device": "A15s",
+     "direction": "outgoing",
+     "name": "encoder_fps",
+     "status": "FAIL",
+     "value": 9.0,
+     "limit": 14.25,
+     "comparison": "min"
+    },
+    {
+     "device": "A15s",
+     "direction": "incoming",
+     "name": "surface_p95_ms",
+     "status": "FAIL",
+     "value": 169.0,
+     "limit": 83.3333,
+     "comparison": "max"
+    },
+    {
+     "device": "A15s",
+     "direction": "incoming",
+     "name": "surface_p99_ms",
+     "status": "FAIL",
+     "value": 251.2,
+     "limit": 133.3333,
+     "comparison": "max"
+    },
+    {
+     "device": "A15s",
+     "direction": "incoming",
+     "name": "visible_fps",
+     "status": "FAIL",
+     "value": 8.4579,
+     "limit": 14.25,
+     "comparison": "min"
+    },
+    {
+     "device": "A15s",
+     "direction": "incoming",
+     "name": "unexpected_freeze_events",
+     "status": "FAIL",
+     "value": 2,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "ASUS",
+     "direction": "outgoing",
+     "name": "encoder_fps",
+     "status": "FAIL",
+     "value": 9.0,
+     "limit": 14.25,
+     "comparison": "min"
+    },
+    {
+     "device": "ASUS",
+     "direction": "incoming",
+     "name": "surface_p95_ms",
+     "status": "FAIL",
+     "value": 166.6,
+     "limit": 83.3333,
+     "comparison": "max"
+    },
+    {
+     "device": "ASUS",
+     "direction": "incoming",
+     "name": "surface_p99_ms",
+     "status": "FAIL",
+     "value": 216.5,
+     "limit": 133.3333,
+     "comparison": "max"
+    },
+    {
+     "device": "ASUS",
+     "direction": "incoming",
+     "name": "visible_fps",
+     "status": "FAIL",
+     "value": 8.9109,
+     "limit": 14.25,
+     "comparison": "min"
+    },
+    {
+     "device": "ASUS",
+     "direction": "incoming",
+     "name": "unexpected_freeze_events",
+     "status": "FAIL",
+     "value": 2,
+     "limit": 0,
+     "comparison": "max"
+    }
+   ],
+   "motion_detail": {
+    "status": "UNMEASURED",
+    "reason": "Detailed callback scorer supports broadcasts; independent call gates remain measured"
+   }
+  },
+  "connection": {
+   "status": "FAIL",
+   "measurements": [
+    {
+     "device": "A15s",
+     "direction": "endpoint",
+     "name": "discovery_ms",
+     "status": "DIAGNOSTIC",
+     "value": 2467.0,
+     "limit": 1500,
+     "comparison": "max"
+    },
+    {
+     "device": "A15s",
+     "direction": "endpoint",
+     "name": "setup_to_first_surface_ms",
+     "status": "FAIL",
+     "value": 3333.0001,
+     "limit": 3000,
+     "comparison": "max"
+    },
+    {
+     "device": "ASUS",
+     "direction": "endpoint",
+     "name": "discovery_ms",
+     "status": "PASS",
+     "value": 99.0,
+     "limit": 1500,
+     "comparison": "max"
+    },
+    {
+     "device": "ASUS",
+     "direction": "endpoint",
+     "name": "setup_to_first_surface_ms",
+     "status": "FAIL",
+     "value": 3199.0,
+     "limit": 3000,
+     "comparison": "max"
+    }
+   ]
+  },
+  "transport": {
+   "status": "FAIL",
+   "measurements": [
+    {
+     "device": "A15s",
+     "direction": "endpoint",
+     "name": "selected_transport",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "A15s",
+     "direction": "endpoint",
+     "name": "selected_profile_mismatches",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "A15s",
+     "direction": "endpoint",
+     "name": "negotiated_remote_header_mismatches",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "A15s",
+     "direction": "endpoint",
+     "name": "actual_allocation_mismatches",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "A15s",
+     "direction": "outgoing",
+     "name": "unexpected_events",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "A15s",
+     "direction": "outgoing",
+     "name": "sender_drops",
+     "status": "FAIL",
+     "value": 68,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "A15s",
+     "direction": "outgoing",
+     "name": "raw_input_drops",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "A15s",
+     "direction": "outgoing",
+     "name": "profile_resolution_mismatches",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "A15s",
+     "direction": "outgoing",
+     "name": "profile_fps_mismatches",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "A15s",
+     "direction": "outgoing",
+     "name": "profile_bitrate_mismatches",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "A15s",
+     "direction": "outgoing",
+     "name": "call_tx_counter_regressions",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "A15s",
+     "direction": "outgoing",
+     "name": "actual_offered_load",
+     "status": "UNMEASURED",
+     "reason": "Measured encoder payload, not the selected target; insufficient or absent load does not prove requested transport capacity"
+    },
+    {
+     "device": "A15s",
+     "direction": "incoming",
+     "name": "unexpected_events",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "A15s",
+     "direction": "incoming",
+     "name": "decoder_drops",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "A15s",
+     "direction": "incoming",
+     "name": "audio_drops",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "A15s",
+     "direction": "incoming",
+     "name": "profile_fps_mismatches",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "ASUS",
+     "direction": "endpoint",
+     "name": "selected_transport",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "ASUS",
+     "direction": "endpoint",
+     "name": "selected_profile_mismatches",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "ASUS",
+     "direction": "endpoint",
+     "name": "negotiated_remote_header_mismatches",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "ASUS",
+     "direction": "endpoint",
+     "name": "actual_allocation_mismatches",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "ASUS",
+     "direction": "outgoing",
+     "name": "unexpected_events",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "ASUS",
+     "direction": "outgoing",
+     "name": "sender_drops",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "ASUS",
+     "direction": "outgoing",
+     "name": "raw_input_drops",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "ASUS",
+     "direction": "outgoing",
+     "name": "profile_resolution_mismatches",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "ASUS",
+     "direction": "outgoing",
+     "name": "profile_fps_mismatches",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "ASUS",
+     "direction": "outgoing",
+     "name": "profile_bitrate_mismatches",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "ASUS",
+     "direction": "outgoing",
+     "name": "call_tx_counter_regressions",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "ASUS",
+     "direction": "outgoing",
+     "name": "actual_offered_load",
+     "status": "UNMEASURED",
+     "reason": "Measured encoder payload, not the selected target; insufficient or absent load does not prove requested transport capacity"
+    },
+    {
+     "device": "ASUS",
+     "direction": "incoming",
+     "name": "unexpected_events",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "ASUS",
+     "direction": "incoming",
+     "name": "decoder_drops",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "ASUS",
+     "direction": "incoming",
+     "name": "audio_drops",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "ASUS",
+     "direction": "incoming",
+     "name": "profile_fps_mismatches",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    }
+   ]
+  },
+  "lifecycle": {
+   "status": "PASS",
+   "measurements": [
+    {
+     "device": "ASUS",
+     "action": "call:<node:A15s>",
+     "status": "PASS",
+     "acknowledged": true,
+     "gate": {
+      "status": "PASS"
+     }
+    },
+    {
+     "device": "A15s",
+     "action": "accept",
+     "status": "PASS",
+     "acknowledged": true,
+     "gate": {
+      "status": "PASS"
+     }
+    },
+    {
+     "device": "ASUS",
+     "action": "end",
+     "status": "PASS",
+     "acknowledged": true,
+     "gate": {
+      "status": "PASS"
+     }
+    }
+   ]
+  },
+  "topology": {
+   "status": "PASS",
+   "measurements": [
+    {
+     "device": "A15s",
+     "direction": "endpoint",
+     "name": "authenticated_peer",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "A15s",
+     "direction": "endpoint",
+     "name": "call_id_mismatches",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "ASUS",
+     "direction": "endpoint",
+     "name": "authenticated_peer",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "ASUS",
+     "direction": "endpoint",
+     "name": "call_id_mismatches",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    }
+   ]
+  },
+  "camera": {
+   "status": "UNMEASURED",
+   "reason": "No connected measurement adapter",
+   "measurements": []
+  },
+  "acoustic": {
+   "status": "UNMEASURED",
+   "reason": "No connected measurement adapter",
+   "measurements": []
+  },
+  "physical_latency": {
+   "status": "UNMEASURED",
+   "reason": "No connected measurement adapter",
+   "measurements": []
+  },
+  "endurance": {
+   "status": "UNMEASURED",
+   "reason": "No connected measurement adapter",
+   "measurements": []
+  }
+ },
+ "stream_metrics": {
+  "thresholds_version": "device-run-v3",
+  "overall_status": "FAIL",
+  "log_status": "FAIL",
+  "quality_status": "UNMEASURED",
+  "streams": [
+   {
+    "device": "A15s",
+    "setup_role": "callee",
+    "peer": "ASUS",
+    "requested_profile": {
+     "codec": "libaom-native",
+     "width": 352,
+     "height": 288,
+     "fps": 15,
+     "bitrate_kbps": 300,
+     "rate_control": "automatic",
+     "playback": "balanced",
+     "thermal_reduction": false
+    },
+    "effective_profile": {
+     "encoder": "libaom-native",
+     "codec": "3",
+     "width": "352",
+     "height": "288",
+     "fps": "15",
+     "bitrateKbps": "110",
+     "audioKbps": "16",
+     "playbackMs": "500",
+     "rateControl": "AUTOMATIC"
+    },
+    "negotiated_changes": {
+     "bitrate_kbps": {
+      "requested": 300,
+      "negotiated": "110"
+     },
+     "playback": {
+      "requested": "balanced",
+      "negotiated_ms": 500
+     },
+     "audio_kbps": {
+      "requested_default": 32,
+      "negotiated": 16
+     }
+    },
+    "outgoing": {
+     "role": "sender",
+     "log_status": "FAIL",
+     "quality_status": "UNMEASURED",
+     "lifecycle_status": "UNMEASURED",
+     "overall_status": "FAIL",
+     "expected": {
+      "fps": 15,
+      "width": 352,
+      "height": 288,
+      "bitrate_kbps": 110
+     },
+     "startup_ms": [
+      {
+       "kind": "media-to-first-surface",
+       "ms": 1237.9
+      }
+     ],
+     "freezes": 2,
+     "freeze_duration_ms": 520.6,
+     "drops": {
+      "decoder_drops": 0,
+      "audio_drops": 0,
+      "sender_drops": null,
+      "forwarding_drops": null,
+      "camera_input_drops": 0,
+      "raw_input_drops": 0
+     },
+     "encoder_fps": {
+      "n": 9,
+      "min": 9.0,
+      "median": 14.1,
+      "max": 15.1
+     },
+     "encoder_kbps": {
+      "n": 9,
+      "min": 37.0,
+      "median": 77.0,
+      "max": 143.0
+     },
+     "offered_load": {
+      "status": "UNMEASURED",
+      "median_kbps": 77.0,
+      "requested_kbps": 110,
+      "target_fraction": 0.7
+     },
+     "visible_fps": {
+      "n": 9,
+      "min": 8.458,
+      "median": 9.505,
+      "max": 10.562
+     },
+     "queue_depth_max": {
+      "decoder": 6
+     }
+    },
+    "incoming": {
+     "role": "receiver",
+     "log_status": "FAIL",
+     "quality_status": "UNMEASURED",
+     "lifecycle_status": "UNMEASURED",
+     "overall_status": "FAIL",
+     "expected": {
+      "fps": 15,
+      "width": null,
+      "height": null,
+      "bitrate_kbps": null
+     },
+     "startup_ms": [
+      {
+       "kind": "media-to-first-surface",
+       "ms": 1237.9
+      }
+     ],
+     "freezes": 2,
+     "freeze_duration_ms": 520.6,
+     "drops": {
+      "decoder_drops": 0,
+      "audio_drops": 0,
+      "sender_drops": null,
+      "forwarding_drops": null,
+      "camera_input_drops": 0,
+      "raw_input_drops": 0
+     },
+     "encoder_fps": {
+      "n": 9,
+      "min": 9.0,
+      "median": 14.1,
+      "max": 15.1
+     },
+     "encoder_kbps": {
+      "n": 9,
+      "min": 37.0,
+      "median": 77.0,
+      "max": 143.0
+     },
+     "offered_load": {
+      "status": "UNMEASURED",
+      "median_kbps": 77.0,
+      "requested_kbps": null,
+      "target_fraction": null
+     },
+     "visible_fps": {
+      "n": 9,
+      "min": 8.458,
+      "median": 9.505,
+      "max": 10.562
+     },
+     "queue_depth_max": {
+      "decoder": 6
+     }
+    }
+   },
+   {
+    "device": "ASUS",
+    "setup_role": "caller",
+    "peer": "A15s",
+    "requested_profile": {
+     "codec": "c2.android.vp9.encoder",
+     "width": 352,
+     "height": 288,
+     "fps": 15,
+     "bitrate_kbps": 300,
+     "rate_control": "automatic",
+     "playback": "balanced",
+     "thermal_reduction": false
+    },
+    "effective_profile": {
+     "encoder": "c2.android.vp9.encoder",
+     "codec": "2",
+     "width": "352",
+     "height": "288",
+     "fps": "15",
+     "bitrateKbps": "300",
+     "audioKbps": "16",
+     "playbackMs": "500",
+     "rateControl": "AUTOMATIC"
+    },
+    "negotiated_changes": {
+     "playback": {
+      "requested": "balanced",
+      "negotiated_ms": 500
+     },
+     "audio_kbps": {
+      "requested_default": 32,
+      "negotiated": 16
+     }
+    },
+    "outgoing": {
+     "role": "sender",
+     "log_status": "FAIL",
+     "quality_status": "UNMEASURED",
+     "lifecycle_status": "UNMEASURED",
+     "overall_status": "FAIL",
+     "expected": {
+      "fps": 15,
+      "width": 352,
+      "height": 288,
+      "bitrate_kbps": 300
+     },
+     "startup_ms": [
+      {
+       "kind": "media-to-first-surface",
+       "ms": 1157.5
+      }
+     ],
+     "freezes": 2,
+     "freeze_duration_ms": 1316.0,
+     "drops": {
+      "decoder_drops": 0,
+      "audio_drops": 0,
+      "sender_drops": null,
+      "forwarding_drops": null,
+      "camera_input_drops": 0,
+      "raw_input_drops": 0
+     },
+     "encoder_fps": {
+      "n": 9,
+      "min": 9.0,
+      "median": 9.0,
+      "max": 11.3
+     },
+     "encoder_kbps": {
+      "n": 9,
+      "min": 68.0,
+      "median": 90.0,
+      "max": 126.0
+     },
+     "offered_load": {
+      "status": "UNMEASURED",
+      "median_kbps": 90.0,
+      "requested_kbps": 300,
+      "target_fraction": 0.3
+     },
+     "visible_fps": {
+      "n": 9,
+      "min": 8.911,
+      "median": 10.533,
+      "max": 15.193
+     },
+     "queue_depth_max": {
+      "decoder": 14
+     }
+    },
+    "incoming": {
+     "role": "receiver",
+     "log_status": "FAIL",
+     "quality_status": "UNMEASURED",
+     "lifecycle_status": "UNMEASURED",
+     "overall_status": "FAIL",
+     "expected": {
+      "fps": 15,
+      "width": null,
+      "height": null,
+      "bitrate_kbps": null
+     },
+     "startup_ms": [
+      {
+       "kind": "media-to-first-surface",
+       "ms": 1157.5
+      }
+     ],
+     "freezes": 2,
+     "freeze_duration_ms": 1316.0,
+     "drops": {
+      "decoder_drops": 0,
+      "audio_drops": 0,
+      "sender_drops": null,
+      "forwarding_drops": null,
+      "camera_input_drops": 0,
+      "raw_input_drops": 0
+     },
+     "encoder_fps": {
+      "n": 9,
+      "min": 9.0,
+      "median": 9.0,
+      "max": 11.3
+     },
+     "encoder_kbps": {
+      "n": 9,
+      "min": 68.0,
+      "median": 90.0,
+      "max": 126.0
+     },
+     "offered_load": {
+      "status": "UNMEASURED",
+      "median_kbps": 90.0,
+      "requested_kbps": null,
+      "target_fraction": null
+     },
+     "visible_fps": {
+      "n": 9,
+      "min": 8.911,
+      "median": 10.533,
+      "max": 15.193
+     },
+     "queue_depth_max": {
+      "decoder": 14
+     }
+    }
+   }
+  ]
+ },
+ "analyses": [
+  {
+   "suite": "xpair-asusa15s-351baa8e-fb2302",
+   "generated_at": "2026-10-09T17:37:10Z",
+   "status": "FAIL",
+   "thresholds_version": "device-run-v3"
+  }
+ ]
+}

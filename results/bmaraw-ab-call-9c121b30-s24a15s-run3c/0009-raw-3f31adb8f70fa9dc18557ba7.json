@@ -1,0 +1,189 @@
+{
+ "schema": "meshlive-benchmark-result-v1",
+ "execution": {
+  "suite": "bmaraw-ab-call-9c121b30-s24a15s-run3c",
+  "sequence": "0009",
+  "run_id": "physical-2e92f49a458e418fb0aa8b4f9413af1c",
+  "manifest_sha256": "981120451d17e137ea560e902f4e47b1f6d1788ab3971964deb0cd14a6f46377",
+  "date_utc": "2026-10-09T05:50:50Z",
+  "duration_wall_s": 6.2,
+  "concurrency": "concurrent",
+  "actual_media_overlap": null
+ },
+ "case": {
+  "baseline_key": "7312e7be2e3135da3f06",
+  "private_case_id": "raw-3f31adb8f70fa9dc18557ba7",
+  "mode": "private_call",
+  "family": "call",
+  "request": {
+   "caller": "A15s",
+   "callee": "S24",
+   "profiles": {
+    "A15s": {
+     "codec": "libaom-native",
+     "width": 640,
+     "height": 480,
+     "fps": 15,
+     "bitrate_kbps": 600,
+     "rate_control": "automatic",
+     "playback": "balanced",
+     "thermal_reduction": false
+    },
+    "S24": {
+     "codec": "c2.exynos.vp9.encoder",
+     "width": 640,
+     "height": 480,
+     "fps": 15,
+     "bitrate_kbps": 600,
+     "rate_control": "automatic",
+     "playback": "balanced",
+     "thermal_reduction": false
+    }
+   },
+   "transport": "gatt",
+   "duration_s": 45,
+   "connection_timeout_s": 20,
+   "media_trace": true,
+   "call_pipeline_timing": true,
+   "actions": [],
+   "tunables": {
+    "bounded_media_age": true
+   },
+   "inputs": {
+    "A15s": {
+     "video_sha256": "f3cf2b049764a977453320b75f0b0c330ea98d0f18c44efde8d7dfd700179519",
+     "audio_sha256": "bf8d4ae39a571c3b3278aa1f38fcb1181cf69d1f605a8229df4b0714475464fd"
+    },
+    "S24": {
+     "video_sha256": "f3cf2b049764a977453320b75f0b0c330ea98d0f18c44efde8d7dfd700179519",
+     "audio_sha256": "bf8d4ae39a571c3b3278aa1f38fcb1181cf69d1f605a8229df4b0714475464fd"
+    }
+   }
+  },
+  "description": "Bound file hashes/declarations verified; live readiness, sustained load and quality unmeasured"
+ },
+ "build": {
+  "build_id": null,
+  "apk_sha256": null,
+  "apk_sha256_per_phone": {},
+  "version_name": {
+   "version_name": "1.0",
+   "source": "inferred: APK not retained (or phones ran different APKs); the versionName literal was 1.0 until 0.1.0-beta",
+   "note": "Pre-release debug build"
+  }
+ },
+ "phones": [],
+ "inputs": {
+  "A15s": {
+   "video": {
+    "input_id": "vsg/coverage-640x480-15/640x480-15fps",
+    "sha256": "f3cf2b049764a977453320b75f0b0c330ea98d0f18c44efde8d7dfd700179519"
+   },
+   "audio": {
+    "input_id": "vsg/coverage-640x480-15/640x480-15fps",
+    "sha256": "bf8d4ae39a571c3b3278aa1f38fcb1181cf69d1f605a8229df4b0714475464fd"
+   }
+  },
+  "S24": {
+   "video": {
+    "input_id": "vsg/coverage-640x480-15/640x480-15fps",
+    "sha256": "f3cf2b049764a977453320b75f0b0c330ea98d0f18c44efde8d7dfd700179519"
+   },
+   "audio": {
+    "input_id": "vsg/coverage-640x480-15/640x480-15fps",
+    "sha256": "bf8d4ae39a571c3b3278aa1f38fcb1181cf69d1f605a8229df4b0714475464fd"
+   }
+  }
+ },
+ "result": {
+  "status": "FAIL",
+  "reason": "Phone cleanup is unconfirmed; quarantined phones cannot be reassigned",
+  "scored_in_suite": "bmaraw-ab-call-9c121b30-s24a15s-run3c",
+  "scored_at": "2026-10-09T05:51:00Z",
+  "thresholds_version": "device-run-v3",
+  "acceptance_profile": null,
+  "pipeline_status": null,
+  "full_experience_status": null,
+  "required_families": null,
+  "measurement_errors": null,
+  "family_status": {
+   "picture": "UNMEASURED",
+   "smoothness": "UNMEASURED",
+   "connection": "UNMEASURED",
+   "transport": "UNMEASURED",
+   "lifecycle": "UNMEASURED",
+   "topology": "UNMEASURED",
+   "camera": "UNMEASURED",
+   "acoustic": "UNMEASURED",
+   "physical_latency": "UNMEASURED",
+   "endurance": "UNMEASURED"
+  }
+ },
+ "families": {
+  "picture": {
+   "status": "UNMEASURED",
+   "reason": "No connected measurement adapter",
+   "measurements": []
+  },
+  "smoothness": {
+   "status": "UNMEASURED",
+   "reason": "No connected measurement adapter",
+   "measurements": []
+  },
+  "connection": {
+   "status": "UNMEASURED",
+   "reason": "No connected measurement adapter",
+   "measurements": []
+  },
+  "transport": {
+   "status": "UNMEASURED",
+   "reason": "No connected measurement adapter",
+   "measurements": []
+  },
+  "lifecycle": {
+   "status": "UNMEASURED",
+   "reason": "No connected measurement adapter",
+   "measurements": []
+  },
+  "topology": {
+   "status": "UNMEASURED",
+   "reason": "No connected measurement adapter",
+   "measurements": []
+  },
+  "camera": {
+   "status": "UNMEASURED",
+   "reason": "No connected measurement adapter",
+   "measurements": []
+  },
+  "acoustic": {
+   "status": "UNMEASURED",
+   "reason": "No connected measurement adapter",
+   "measurements": []
+  },
+  "physical_latency": {
+   "status": "UNMEASURED",
+   "reason": "No connected measurement adapter",
+   "measurements": []
+  },
+  "endurance": {
+   "status": "UNMEASURED",
+   "reason": "No connected measurement adapter",
+   "measurements": []
+  }
+ },
+ "stream_metrics": {
+  "thresholds_version": "device-run-v3",
+  "overall_status": "FAIL",
+  "log_status": "FAIL",
+  "quality_status": "UNMEASURED",
+  "streams": []
+ },
+ "analyses": [
+  {
+   "suite": "bmaraw-ab-call-9c121b30-s24a15s-run3c",
+   "generated_at": "2026-10-09T05:51:00Z",
+   "status": "FAIL",
+   "thresholds_version": "device-run-v3"
+  }
+ ]
+}

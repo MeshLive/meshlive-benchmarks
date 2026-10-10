@@ -1,0 +1,851 @@
+{
+ "schema": "meshlive-benchmark-result-v1",
+ "execution": {
+  "suite": "relaycall-9adf9874",
+  "sequence": "0003",
+  "run_id": "physical-c49910159a854fedb50035a19dd8582d",
+  "manifest_sha256": "aa53dbf4c95567b9b0dd0aec524af31387202bccfc249d73b05b5d147f683ab1",
+  "date_utc": "2026-10-09T18:37:03Z",
+  "duration_wall_s": 100.0,
+  "concurrency": "concurrent",
+  "actual_media_overlap": {
+   "status": "UNMEASURED",
+   "reason": "Job overlap is not actual media overlap"
+  }
+ },
+ "case": {
+  "baseline_key": "e5a2f1d5a0ca3dfbf998",
+  "private_case_id": "relay-voice-m31-via-asus-to-a15s-ble-speech",
+  "mode": "private_call",
+  "family": "call",
+  "request": {
+   "caller": "M31",
+   "relay": "ASUS",
+   "callee": "A15s",
+   "profiles": {
+    "M31": {
+     "codec": "OMX.Exynos.VP9.Encoder",
+     "width": 352,
+     "height": 288,
+     "fps": 15,
+     "bitrate_kbps": 1000,
+     "rate_control": "automatic",
+     "playback": "balanced",
+     "thermal_reduction": false
+    },
+    "A15s": {
+     "codec": "libaom-native",
+     "width": 352,
+     "height": 288,
+     "fps": 15,
+     "bitrate_kbps": 1000,
+     "rate_control": "automatic",
+     "playback": "balanced",
+     "thermal_reduction": false
+    }
+   },
+   "call_type": "voice",
+   "transport": "ble",
+   "duration_s": 45,
+   "connection_timeout_s": 30,
+   "media_trace": true,
+   "tunables": {
+    "voice_calls": true
+   },
+   "actions": [
+    {
+     "phone": "M31",
+     "action": "mute",
+     "at_s": 15
+    },
+    {
+     "phone": "M31",
+     "action": "unmute",
+     "at_s": 21
+    }
+   ],
+   "inputs": {
+    "A15s": {
+     "video_sha256": "96704fd274796a739d3c220ace74cc98da178758945688e147551db6c927cdab",
+     "audio_sha256": "0e633eaf5e6768089afa3aa228ef0f38bbf5e080f5d33012c91608ffd7702dc9"
+    },
+    "M31": {
+     "video_sha256": "96704fd274796a739d3c220ace74cc98da178758945688e147551db6c927cdab",
+     "audio_sha256": "0e633eaf5e6768089afa3aa228ef0f38bbf5e080f5d33012c91608ffd7702dc9"
+    }
+   }
+  },
+  "description": "Endpoint inputs copied from bound direct cases (hashes unchanged); relayed execution unmeasured"
+ },
+ "build": {
+  "build_id": "9adf9874",
+  "apk_sha256": "9adf987423d97ae0c1d678f0fd488be2c8f849ee4bc90e5f2ed1149dfceffe15",
+  "apk_sha256_per_phone": null,
+  "version_name": {
+   "version_name": "1.0",
+   "source": "read from the retained APK (aapt2 dump badging)",
+   "note": "Pre-release debug build; the app was renamed and versioned 0.1.0-beta later"
+  }
+ },
+ "phones": [
+  {
+   "alias": "A15s",
+   "manufacturer": "OPPO",
+   "model": "CPH2179",
+   "android": "10",
+   "sdk": "29",
+   "soc": "mt6765",
+   "firmware_build": "QP1A.190711.020/2024022110",
+   "apk_sha256": "9adf987423d97ae0c1d678f0fd488be2c8f849ee4bc90e5f2ed1149dfceffe15"
+  },
+  {
+   "alias": "ASUS",
+   "manufacturer": "asus",
+   "model": "ASUS_I01WD",
+   "android": "11",
+   "sdk": "30",
+   "soc": "msmnile",
+   "firmware_build": "RKQ1.200710.002/18.0610.2106.156-0",
+   "apk_sha256": "9adf987423d97ae0c1d678f0fd488be2c8f849ee4bc90e5f2ed1149dfceffe15"
+  },
+  {
+   "alias": "M31",
+   "manufacturer": "samsung",
+   "model": "SM-M315F",
+   "android": "12",
+   "sdk": "31",
+   "soc": "Exynos 9611",
+   "firmware_build": "SP1A.210812.016/M315FXXS4CXB1",
+   "apk_sha256": "9adf987423d97ae0c1d678f0fd488be2c8f849ee4bc90e5f2ed1149dfceffe15"
+  }
+ ],
+ "inputs": {
+  "M31": {
+   "video": {
+    "input_id": "vsg/coverage-352x288-15/352x288-15fps",
+    "sha256": "96704fd274796a739d3c220ace74cc98da178758945688e147551db6c927cdab"
+   },
+   "audio": {
+    "input_id": "speech-v1/speech-v1-20s.wav",
+    "sha256": "0e633eaf5e6768089afa3aa228ef0f38bbf5e080f5d33012c91608ffd7702dc9"
+   }
+  },
+  "A15s": {
+   "video": {
+    "input_id": "vsg/coverage-352x288-15/352x288-15fps",
+    "sha256": "96704fd274796a739d3c220ace74cc98da178758945688e147551db6c927cdab"
+   },
+   "audio": {
+    "input_id": "speech-v1/speech-v1-20s.wav",
+    "sha256": "0e633eaf5e6768089afa3aa228ef0f38bbf5e080f5d33012c91608ffd7702dc9"
+   }
+  }
+ },
+ "result": {
+  "status": "FAIL",
+  "reason": null,
+  "scored_in_suite": "relaycall-9adf9874",
+  "scored_at": "2026-10-09T18:47:44Z",
+  "thresholds_version": "device-run-v3",
+  "acceptance_profile": null,
+  "pipeline_status": "FAIL",
+  "full_experience_status": "FAIL",
+  "required_families": [
+   "connection",
+   "transport",
+   "lifecycle",
+   "topology",
+   "camera",
+   "acoustic",
+   "physical_latency",
+   "endurance"
+  ],
+  "measurement_errors": [],
+  "family_status": {
+   "picture": "UNMEASURED",
+   "smoothness": "UNMEASURED",
+   "connection": "PASS",
+   "transport": "FAIL",
+   "lifecycle": "FAIL",
+   "topology": "FAIL",
+   "camera": "UNMEASURED",
+   "acoustic": "UNMEASURED",
+   "physical_latency": "UNMEASURED",
+   "endurance": "UNMEASURED"
+  }
+ },
+ "families": {
+  "picture": {
+   "status": "UNMEASURED",
+   "reason": "Not applicable: a voice call carries no video (voice scoring measures no video gate)",
+   "measurements": []
+  },
+  "smoothness": {
+   "status": "UNMEASURED",
+   "reason": "Not applicable: a voice call carries no video (voice scoring measures no video gate)",
+   "measurements": []
+  },
+  "connection": {
+   "status": "PASS",
+   "measurements": [
+    {
+     "device": "A15s",
+     "direction": "endpoint",
+     "name": "discovery_ms",
+     "status": "DIAGNOSTIC",
+     "value": 6298.0,
+     "limit": 1500,
+     "comparison": "max"
+    },
+    {
+     "device": "A15s",
+     "direction": "endpoint",
+     "name": "setup_to_active_ms",
+     "status": "DIAGNOSTIC",
+     "value": 5204.0
+    },
+    {
+     "device": "M31",
+     "direction": "endpoint",
+     "name": "discovery_ms",
+     "status": "PASS",
+     "value": 90.0,
+     "limit": 1500,
+     "comparison": "max"
+    },
+    {
+     "device": "M31",
+     "direction": "endpoint",
+     "name": "setup_to_active_ms",
+     "status": "DIAGNOSTIC",
+     "value": 5326.0
+    }
+   ]
+  },
+  "transport": {
+   "status": "FAIL",
+   "measurements": [
+    {
+     "device": "A15s",
+     "direction": "endpoint",
+     "name": "selected_transport",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "A15s",
+     "direction": "endpoint",
+     "name": "voice_call_type",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "A15s",
+     "direction": "endpoint",
+     "name": "voice_layout",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "A15s",
+     "direction": "endpoint",
+     "name": "voice_no_video_pipeline",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "A15s",
+     "direction": "outgoing",
+     "name": "unexpected_events",
+     "status": "FAIL",
+     "value": 1,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "A15s",
+     "direction": "outgoing",
+     "name": "sender_drops",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "A15s",
+     "direction": "outgoing",
+     "name": "call_tx_counter_regressions",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "A15s",
+     "direction": "outgoing",
+     "name": "voice_video_packets_sent",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "A15s",
+     "direction": "outgoing",
+     "name": "audio_packets_sent",
+     "status": "PASS",
+     "value": 103,
+     "limit": 1,
+     "comparison": "min"
+    },
+    {
+     "device": "A15s",
+     "direction": "incoming",
+     "name": "unexpected_events",
+     "status": "FAIL",
+     "value": 1,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "A15s",
+     "direction": "incoming",
+     "name": "audio_drops",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "A15s",
+     "direction": "incoming",
+     "name": "voice_video_packets_received",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "A15s",
+     "direction": "incoming",
+     "name": "audio_packets_received",
+     "status": "PASS",
+     "value": 1574,
+     "limit": 1,
+     "comparison": "min"
+    },
+    {
+     "device": "A15s",
+     "direction": "incoming",
+     "name": "audio_receive_stall_windows",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "M31",
+     "direction": "endpoint",
+     "name": "selected_transport",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "M31",
+     "direction": "endpoint",
+     "name": "voice_call_type",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "M31",
+     "direction": "endpoint",
+     "name": "voice_layout",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "M31",
+     "direction": "endpoint",
+     "name": "voice_no_video_pipeline",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "M31",
+     "direction": "outgoing",
+     "name": "unexpected_events",
+     "status": "FAIL",
+     "value": 2,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "M31",
+     "direction": "outgoing",
+     "name": "sender_drops",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "M31",
+     "direction": "outgoing",
+     "name": "call_tx_counter_regressions",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "M31",
+     "direction": "outgoing",
+     "name": "voice_video_packets_sent",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "M31",
+     "direction": "outgoing",
+     "name": "audio_packets_sent",
+     "status": "PASS",
+     "value": 94,
+     "limit": 1,
+     "comparison": "min"
+    },
+    {
+     "device": "M31",
+     "direction": "incoming",
+     "name": "unexpected_events",
+     "status": "FAIL",
+     "value": 2,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "M31",
+     "direction": "incoming",
+     "name": "audio_drops",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "M31",
+     "direction": "incoming",
+     "name": "voice_video_packets_received",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "M31",
+     "direction": "incoming",
+     "name": "audio_packets_received",
+     "status": "PASS",
+     "value": 1900,
+     "limit": 1,
+     "comparison": "min"
+    },
+    {
+     "device": "M31",
+     "direction": "incoming",
+     "name": "audio_receive_stall_windows",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "ASUS",
+     "direction": "relay",
+     "name": "relay_forwarded_records",
+     "status": "UNMEASURED",
+     "limit": 0,
+     "reason": "BluetoothPrivateCallRelay logs no forwarded-record counters, queue depth or per-direction liveness; relay forwarding and queues remain UNMEASURED"
+    },
+    {
+     "device": "ASUS",
+     "direction": "relay",
+     "name": "relay_queue_depth",
+     "status": "UNMEASURED",
+     "limit": 0,
+     "reason": "BluetoothPrivateCallRelay logs no forwarded-record counters, queue depth or per-direction liveness; relay forwarding and queues remain UNMEASURED"
+    }
+   ]
+  },
+  "lifecycle": {
+   "status": "FAIL",
+   "measurements": [
+    {
+     "device": "M31",
+     "action": "voice_call:<node:A15s>",
+     "status": "PASS",
+     "acknowledged": true,
+     "gate": {
+      "status": "PASS"
+     }
+    },
+    {
+     "device": "A15s",
+     "action": "accept",
+     "status": "PASS",
+     "acknowledged": true,
+     "gate": {
+      "status": "PASS"
+     }
+    },
+    {
+     "device": "M31",
+     "action": "mute",
+     "status": "PASS",
+     "acknowledged": true,
+     "gate": {
+      "status": "PASS"
+     }
+    },
+    {
+     "device": "M31",
+     "action": "unmute",
+     "status": "PASS",
+     "acknowledged": true,
+     "gate": {
+      "status": "PASS"
+     }
+    },
+    {
+     "action": "runner",
+     "status": "FAIL",
+     "reason": "asus: call relay closed before the planned end: 10-10 00:08:08.703 22106 22151 I BluetoothVideo: Private-call caller path closed: EOFException",
+     "gate": {
+      "status": "FAIL"
+     }
+    }
+   ]
+  },
+  "topology": {
+   "status": "FAIL",
+   "measurements": [
+    {
+     "device": "A15s",
+     "direction": "endpoint",
+     "name": "authenticated_peer",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "A15s",
+     "direction": "endpoint",
+     "name": "call_id_mismatches",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "M31",
+     "direction": "endpoint",
+     "name": "authenticated_peer",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "M31",
+     "direction": "endpoint",
+     "name": "call_id_mismatches",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "ASUS",
+     "direction": "relay",
+     "name": "relay_adjacent_child_identity",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "ASUS",
+     "direction": "relay",
+     "name": "relay_adjacent_parent_identity",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "ASUS",
+     "direction": "relay",
+     "name": "relay_unplanned_closures",
+     "status": "FAIL",
+     "value": 1,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "ASUS",
+     "direction": "relay",
+     "name": "requested_relay_route",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    }
+   ]
+  },
+  "camera": {
+   "status": "UNMEASURED",
+   "reason": "No connected measurement adapter",
+   "measurements": []
+  },
+  "acoustic": {
+   "status": "UNMEASURED",
+   "reason": "No connected measurement adapter",
+   "measurements": []
+  },
+  "physical_latency": {
+   "status": "UNMEASURED",
+   "reason": "No connected measurement adapter",
+   "measurements": []
+  },
+  "endurance": {
+   "status": "UNMEASURED",
+   "reason": "No connected measurement adapter",
+   "measurements": []
+  }
+ },
+ "stream_metrics": {
+  "thresholds_version": "device-run-v3",
+  "overall_status": "FAIL",
+  "log_status": "FAIL",
+  "quality_status": "UNMEASURED",
+  "streams": [
+   {
+    "device": "A15s",
+    "setup_role": "callee",
+    "peer": "M31",
+    "requested_profile": {
+     "codec": "libaom-native",
+     "width": 352,
+     "height": 288,
+     "fps": 15,
+     "bitrate_kbps": 1000,
+     "rate_control": "automatic",
+     "playback": "balanced",
+     "thermal_reduction": false
+    },
+    "effective_profile": {
+     "encoder": "libaom-native",
+     "codec": "3",
+     "width": "352",
+     "height": "288",
+     "fps": "15",
+     "bitrateKbps": "110",
+     "audioKbps": "32",
+     "playbackMs": "250",
+     "rateControl": "AUTOMATIC"
+    },
+    "negotiated_changes": {},
+    "outgoing": {
+     "role": "sender",
+     "log_status": "FAIL",
+     "quality_status": "UNMEASURED",
+     "lifecycle_status": "UNMEASURED",
+     "overall_status": "FAIL",
+     "expected": {
+      "fps": null,
+      "width": null,
+      "height": null,
+      "bitrate_kbps": null
+     },
+     "startup_ms": [],
+     "freezes": 0,
+     "freeze_duration_ms": 0.0,
+     "drops": {
+      "decoder_drops": null,
+      "audio_drops": 0,
+      "sender_drops": null,
+      "forwarding_drops": null,
+      "camera_input_drops": null,
+      "raw_input_drops": null
+     },
+     "encoder_fps": null,
+     "encoder_kbps": null,
+     "offered_load": {
+      "status": "UNMEASURED",
+      "median_kbps": null,
+      "requested_kbps": null,
+      "target_fraction": null
+     },
+     "visible_fps": null,
+     "queue_depth_max": {}
+    },
+    "incoming": {
+     "role": "receiver",
+     "log_status": "FAIL",
+     "quality_status": "UNMEASURED",
+     "lifecycle_status": "UNMEASURED",
+     "overall_status": "FAIL",
+     "expected": {
+      "fps": null,
+      "width": null,
+      "height": null,
+      "bitrate_kbps": null
+     },
+     "startup_ms": [],
+     "freezes": 0,
+     "freeze_duration_ms": 0.0,
+     "drops": {
+      "decoder_drops": null,
+      "audio_drops": 0,
+      "sender_drops": null,
+      "forwarding_drops": null,
+      "camera_input_drops": null,
+      "raw_input_drops": null
+     },
+     "encoder_fps": null,
+     "encoder_kbps": null,
+     "offered_load": {
+      "status": "UNMEASURED",
+      "median_kbps": null,
+      "requested_kbps": null,
+      "target_fraction": null
+     },
+     "visible_fps": null,
+     "queue_depth_max": {}
+    }
+   },
+   {
+    "device": "M31",
+    "setup_role": "caller",
+    "peer": "A15s",
+    "requested_profile": {
+     "codec": "OMX.Exynos.VP9.Encoder",
+     "width": 352,
+     "height": 288,
+     "fps": 15,
+     "bitrate_kbps": 1000,
+     "rate_control": "automatic",
+     "playback": "balanced",
+     "thermal_reduction": false
+    },
+    "effective_profile": {
+     "encoder": "OMX.Exynos.VP9.Encoder",
+     "codec": "2",
+     "width": "352",
+     "height": "288",
+     "fps": "15",
+     "bitrateKbps": "110",
+     "audioKbps": "32",
+     "playbackMs": "250",
+     "rateControl": "AUTOMATIC"
+    },
+    "negotiated_changes": {},
+    "outgoing": {
+     "role": "sender",
+     "log_status": "FAIL",
+     "quality_status": "UNMEASURED",
+     "lifecycle_status": "UNMEASURED",
+     "overall_status": "FAIL",
+     "expected": {
+      "fps": null,
+      "width": null,
+      "height": null,
+      "bitrate_kbps": null
+     },
+     "startup_ms": [],
+     "freezes": 0,
+     "freeze_duration_ms": 0.0,
+     "drops": {
+      "decoder_drops": null,
+      "audio_drops": 0,
+      "sender_drops": null,
+      "forwarding_drops": null,
+      "camera_input_drops": null,
+      "raw_input_drops": null
+     },
+     "encoder_fps": null,
+     "encoder_kbps": null,
+     "offered_load": {
+      "status": "UNMEASURED",
+      "median_kbps": null,
+      "requested_kbps": null,
+      "target_fraction": null
+     },
+     "visible_fps": null,
+     "queue_depth_max": {}
+    },
+    "incoming": {
+     "role": "receiver",
+     "log_status": "FAIL",
+     "quality_status": "UNMEASURED",
+     "lifecycle_status": "UNMEASURED",
+     "overall_status": "FAIL",
+     "expected": {
+      "fps": null,
+      "width": null,
+      "height": null,
+      "bitrate_kbps": null
+     },
+     "startup_ms": [],
+     "freezes": 0,
+     "freeze_duration_ms": 0.0,
+     "drops": {
+      "decoder_drops": null,
+      "audio_drops": 0,
+      "sender_drops": null,
+      "forwarding_drops": null,
+      "camera_input_drops": null,
+      "raw_input_drops": null
+     },
+     "encoder_fps": null,
+     "encoder_kbps": null,
+     "offered_load": {
+      "status": "UNMEASURED",
+      "median_kbps": null,
+      "requested_kbps": null,
+      "target_fraction": null
+     },
+     "visible_fps": null,
+     "queue_depth_max": {}
+    }
+   }
+  ]
+ },
+ "analyses": [
+  {
+   "suite": "relaycall-9adf9874",
+   "generated_at": "2026-10-09T18:47:44Z",
+   "status": "FAIL",
+   "thresholds_version": "device-run-v3"
+  }
+ ]
+}

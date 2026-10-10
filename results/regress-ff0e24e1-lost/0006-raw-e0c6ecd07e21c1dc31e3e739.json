@@ -1,0 +1,600 @@
+{
+ "schema": "meshlive-benchmark-result-v1",
+ "execution": {
+  "suite": "regress-ff0e24e1-lost",
+  "sequence": "0006",
+  "run_id": "physical-72d91994a43d472dbcaa05194fe4721b",
+  "manifest_sha256": "ce15d1db6c444c14fda9286a76afa864c9a56d7a00ee38a5f15e89b740d2d0aa",
+  "date_utc": "2026-10-08T20:41:58Z",
+  "duration_wall_s": 50.7,
+  "concurrency": "concurrent",
+  "actual_media_overlap": {
+   "status": "UNMEASURED",
+   "reason": "Job overlap is not actual media overlap"
+  }
+ },
+ "case": {
+  "baseline_key": "c43716b6e1bdfadbead8",
+  "private_case_id": "raw-e0c6ecd07e21c1dc31e3e739",
+  "mode": "broadcast",
+  "family": "broadcast",
+  "request": {
+   "source": "A15s",
+   "transport": "ble",
+   "profile": {
+    "codec": "libaom-native",
+    "rate_control": "automatic",
+    "playback": "auto",
+    "thermal_reduction": false,
+    "width": 640,
+    "height": 480,
+    "fps": 15,
+    "bitrate_kbps": 600
+   },
+   "receivers": [
+    {
+     "phone": "M31",
+     "parent": "A15s"
+    }
+   ],
+   "media_trace": true,
+   "duration_s": 30,
+   "actions": [
+    {
+     "at_s": 27,
+     "phone": "A15s",
+     "action": "end"
+    }
+   ],
+   "family": "broadcast",
+   "inputs": {
+    "A15s": {
+     "video_sha256": "f3cf2b049764a977453320b75f0b0c330ea98d0f18c44efde8d7dfd700179519",
+     "audio_sha256": null
+    }
+   }
+  },
+  "description": "Bound file hashes/declarations verified; live readiness, sustained load and quality unmeasured"
+ },
+ "build": {
+  "build_id": "ff0e24e1",
+  "apk_sha256": "ff0e24e15172413c265251339510ccb39b56356ec37103de7bfd62cbe5bb3e90",
+  "apk_sha256_per_phone": null,
+  "version_name": {
+   "version_name": "1.0",
+   "source": "read from the retained APK (aapt2 dump badging)",
+   "note": "Pre-release debug build; the app was renamed and versioned 0.1.0-beta later"
+  }
+ },
+ "phones": [
+  {
+   "alias": "A15s",
+   "manufacturer": "OPPO",
+   "model": "CPH2179",
+   "android": "10",
+   "sdk": "29",
+   "soc": "mt6765",
+   "firmware_build": "QP1A.190711.020/2024022110",
+   "apk_sha256": "ff0e24e15172413c265251339510ccb39b56356ec37103de7bfd62cbe5bb3e90"
+  },
+  {
+   "alias": "M31",
+   "manufacturer": "samsung",
+   "model": "SM-M315F",
+   "android": "12",
+   "sdk": "31",
+   "soc": "Exynos 9611",
+   "firmware_build": "SP1A.210812.016/M315FXXS4CXB1",
+   "apk_sha256": "ff0e24e15172413c265251339510ccb39b56356ec37103de7bfd62cbe5bb3e90"
+  }
+ ],
+ "inputs": {
+  "A15s": {
+   "video": {
+    "input_id": "vsg/coverage-640x480-15/640x480-15fps",
+    "sha256": "f3cf2b049764a977453320b75f0b0c330ea98d0f18c44efde8d7dfd700179519"
+   },
+   "audio": {
+    "input_id": null,
+    "note": "No reference audio bound: live microphone (not reproducible, not recorded here)"
+   }
+  }
+ },
+ "result": {
+  "status": "FAIL",
+  "reason": null,
+  "scored_in_suite": "regress-ff0e24e1-lost",
+  "scored_at": "2026-10-08T20:43:33Z",
+  "thresholds_version": "device-run-v3",
+  "acceptance_profile": null,
+  "pipeline_status": "FAIL",
+  "full_experience_status": "FAIL",
+  "required_families": [
+   "picture",
+   "smoothness",
+   "connection",
+   "transport",
+   "lifecycle",
+   "topology"
+  ],
+  "measurement_errors": [],
+  "family_status": {
+   "picture": "FAIL",
+   "smoothness": "FAIL",
+   "connection": "FAIL",
+   "transport": "UNMEASURED",
+   "lifecycle": "UNMEASURED",
+   "topology": "PASS",
+   "camera": "UNMEASURED",
+   "acoustic": "UNMEASURED",
+   "physical_latency": "UNMEASURED",
+   "endurance": "UNMEASURED"
+  }
+ },
+ "families": {
+  "picture": {
+   "status": "FAIL",
+   "measurements": [
+    {
+     "device": "M31",
+     "source": "A15s",
+     "name": "reference_validity",
+     "status": "PASS",
+     "reason": "Requires every verified finalized active raw-input phase"
+    },
+    {
+     "device": "M31",
+     "source": "A15s",
+     "name": "vmaf",
+     "status": "FAIL",
+     "value": 81.0477,
+     "limit": 90,
+     "comparison": "min"
+    },
+    {
+     "device": "M31",
+     "source": "A15s",
+     "name": "ssim",
+     "status": "FAIL",
+     "value": 0.8845,
+     "limit": 0.98,
+     "comparison": "min"
+    },
+    {
+     "device": "M31",
+     "source": "A15s",
+     "name": "psnr_db",
+     "status": "FAIL",
+     "value": 23.839,
+     "limit": 35,
+     "comparison": "min"
+    }
+   ],
+   "content_regions": [
+    {
+     "device": "M31",
+     "source": "A15s",
+     "measurement_status": "MEASURED",
+     "acceptance_status": "UNMEASURED"
+    }
+   ]
+  },
+  "smoothness": {
+   "status": "FAIL",
+   "measurements": [
+    {
+     "device": "A15s",
+     "direction": "broadcast",
+     "name": "encoder_fps",
+     "status": "PASS",
+     "value": 15.0,
+     "limit": 14.25,
+     "comparison": "min"
+    },
+    {
+     "device": "M31",
+     "direction": "broadcast",
+     "name": "surface_p95_ms",
+     "status": "FAIL",
+     "value": 83.5,
+     "limit": 83.3333,
+     "comparison": "max"
+    },
+    {
+     "device": "M31",
+     "direction": "broadcast",
+     "name": "surface_p99_ms",
+     "status": "FAIL",
+     "value": 183.0,
+     "limit": 133.3333,
+     "comparison": "max"
+    },
+    {
+     "device": "M31",
+     "direction": "broadcast",
+     "name": "visible_fps",
+     "status": "PASS",
+     "value": 14.6917,
+     "limit": 14.25,
+     "comparison": "min"
+    },
+    {
+     "device": "M31",
+     "direction": "broadcast",
+     "name": "unexpected_freeze_events",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "M31",
+     "direction": "broadcast",
+     "name": "full_lifecycle_cadence_coverage",
+     "status": "UNMEASURED",
+     "reason": "Rolling cadence omits samples after a planned gap; a prefix cannot approve the full lifecycle"
+    }
+   ],
+   "motion_detail": {
+    "status": "UNMEASURED",
+    "capture_state": "COMPLETE"
+   }
+  },
+  "connection": {
+   "status": "FAIL",
+   "measurements": [
+    {
+     "device": "M31",
+     "direction": "broadcast",
+     "name": "discovery_ms",
+     "status": "PASS",
+     "value": 158.9,
+     "limit": 1500,
+     "comparison": "max"
+    },
+    {
+     "device": "M31",
+     "direction": "broadcast",
+     "name": "selection_to_first_surface_ms",
+     "status": "PASS",
+     "value": 2693.4,
+     "limit": 3000,
+     "comparison": "max"
+    },
+    {
+     "device": "M31",
+     "name": "first_surface_ms",
+     "action": "launch",
+     "status": "FAIL",
+     "value": 4175.0,
+     "limit": 3000,
+     "comparison": "max"
+    }
+   ]
+  },
+  "transport": {
+   "status": "UNMEASURED",
+   "measurements": [
+    {
+     "device": "A15s",
+     "direction": "broadcast",
+     "name": "unexpected_events",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "A15s",
+     "direction": "broadcast",
+     "name": "sender_drops",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "A15s",
+     "direction": "broadcast",
+     "name": "raw_input_drops",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "A15s",
+     "direction": "broadcast",
+     "name": "profile_resolution_mismatches",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "A15s",
+     "direction": "broadcast",
+     "name": "profile_fps_mismatches",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "A15s",
+     "direction": "broadcast",
+     "name": "profile_encoder_mismatches",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "A15s",
+     "direction": "broadcast",
+     "name": "profile_allocation_mismatches",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "A15s",
+     "direction": "broadcast",
+     "name": "profile_bitrate_mismatches",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "A15s",
+     "direction": "broadcast",
+     "name": "actual_offered_load",
+     "status": "PASS",
+     "reason": "Measured encoder payload, not the selected target; insufficient or absent load does not prove requested transport capacity"
+    },
+    {
+     "device": "M31",
+     "direction": "broadcast",
+     "name": "unexpected_events",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "M31",
+     "direction": "broadcast",
+     "name": "decoder_drops",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "M31",
+     "direction": "broadcast",
+     "name": "audio_drops",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "M31",
+     "direction": "broadcast",
+     "name": "profile_resolution_mismatches",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "M31",
+     "direction": "broadcast",
+     "name": "profile_fps_mismatches",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "M31",
+     "direction": "broadcast",
+     "name": "profile_bitrate_mismatches",
+     "status": "UNMEASURED",
+     "limit": 0,
+     "reason": "Receiver logs lack configured source bitrate; join sender evidence"
+    },
+    {
+     "name": "runner_error",
+     "status": "PASS"
+    },
+    {
+     "name": "connection_timeouts",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "name": "captured_logs",
+     "status": "PASS",
+     "value": 2,
+     "limit": 1,
+     "comparison": "min"
+    },
+    {
+     "name": "media_traces",
+     "status": "PASS",
+     "value": 2,
+     "limit": 2,
+     "reason": "Requested finalized trace evidence must be hash-verified for every participant and every captured phase"
+    }
+   ]
+  },
+  "lifecycle": {
+   "status": "UNMEASURED",
+   "reason": "No connected measurement adapter",
+   "measurements": []
+  },
+  "topology": {
+   "status": "PASS",
+   "measurements": [
+    {
+     "device": "M31",
+     "direction": "broadcast",
+     "name": "requested_parent_identity",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "M31",
+     "direction": "broadcast",
+     "name": "requested_original_source_identity",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    }
+   ]
+  },
+  "camera": {
+   "status": "UNMEASURED",
+   "reason": "No connected measurement adapter",
+   "measurements": []
+  },
+  "acoustic": {
+   "status": "UNMEASURED",
+   "reason": "No connected measurement adapter",
+   "measurements": []
+  },
+  "physical_latency": {
+   "status": "UNMEASURED",
+   "reason": "No connected measurement adapter",
+   "measurements": []
+  },
+  "endurance": {
+   "status": "UNMEASURED",
+   "reason": "No connected measurement adapter",
+   "measurements": []
+  }
+ },
+ "stream_metrics": {
+  "thresholds_version": null,
+  "overall_status": "FAIL",
+  "log_status": null,
+  "quality_status": null,
+  "streams": [
+   {
+    "device": "A15s",
+    "role": "sender",
+    "log_status": "PASS",
+    "quality_status": "UNMEASURED",
+    "lifecycle_status": "UNMEASURED",
+    "overall_status": "UNMEASURED",
+    "expected": {
+     "fps": 15,
+     "width": 640,
+     "height": 480,
+     "bitrate_kbps": 600
+    },
+    "startup_ms": [],
+    "freezes": null,
+    "freeze_duration_ms": null,
+    "drops": {
+     "decoder_drops": null,
+     "audio_drops": null,
+     "sender_drops": 0,
+     "forwarding_drops": null,
+     "camera_input_drops": 0,
+     "raw_input_drops": 0
+    },
+    "encoder_fps": {
+     "n": 5,
+     "min": 15.0,
+     "median": 15.1,
+     "max": 15.2
+    },
+    "encoder_kbps": {
+     "n": 5,
+     "min": 570.0,
+     "median": 600.0,
+     "max": 642.0
+    },
+    "offered_load": {
+     "status": "PASS",
+     "median_kbps": 600.0,
+     "requested_kbps": 600,
+     "target_fraction": 1.0
+    },
+    "visible_fps": null,
+    "queue_depth_max": {
+     "sender": 1
+    }
+   },
+   {
+    "device": "M31",
+    "role": "receiver",
+    "log_status": "FAIL",
+    "quality_status": "UNMEASURED",
+    "lifecycle_status": "FAIL",
+    "overall_status": "FAIL",
+    "expected": {
+     "fps": 15,
+     "width": 640,
+     "height": 480,
+     "bitrate_kbps": 600
+    },
+    "startup_ms": [
+     {
+      "kind": "browser-to-first-offer",
+      "ms": 158.9
+     },
+     {
+      "kind": "selection-to-first-surface",
+      "ms": 2693.4
+     }
+    ],
+    "freezes": 0,
+    "freeze_duration_ms": 0.0,
+    "drops": {
+     "decoder_drops": 0,
+     "audio_drops": 0,
+     "sender_drops": null,
+     "forwarding_drops": null,
+     "camera_input_drops": null,
+     "raw_input_drops": null
+    },
+    "encoder_fps": null,
+    "encoder_kbps": null,
+    "offered_load": {
+     "status": "UNMEASURED",
+     "median_kbps": null,
+     "requested_kbps": 600,
+     "target_fraction": null
+    },
+    "visible_fps": {
+     "n": 5,
+     "min": 14.692,
+     "median": 14.964,
+     "max": 15.02
+    },
+    "queue_depth_max": {
+     "decoder": 6
+    }
+   }
+  ]
+ },
+ "analyses": [
+  {
+   "suite": "regress-ff0e24e1-lost",
+   "generated_at": "2026-10-08T20:43:33Z",
+   "status": "FAIL",
+   "thresholds_version": "device-run-v3"
+  }
+ ]
+}

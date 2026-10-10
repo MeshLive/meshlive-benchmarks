@@ -1,0 +1,564 @@
+{
+ "schema": "meshlive-benchmark-result-v1",
+ "execution": {
+  "suite": "regress-ff0e24e1-r2",
+  "sequence": "0013",
+  "run_id": "physical-b89e48f7ffcf4d2ebe5bc83d1c1978b6",
+  "manifest_sha256": "b9d58288cf6d15235b9b9b4908efd73b24fb960d894ba9eb93897f23710d8ce2",
+  "date_utc": "2026-10-08T20:13:31Z",
+  "duration_wall_s": 43.0,
+  "concurrency": "concurrent",
+  "actual_media_overlap": {
+   "status": "UNMEASURED",
+   "reason": "Job overlap is not actual media overlap"
+  }
+ },
+ "case": {
+  "baseline_key": "b4340f64375e9bfa2a56",
+  "private_case_id": "raw-54513dbb9efb329a54a3a2d4",
+  "mode": "broadcast",
+  "family": "broadcast",
+  "request": {
+   "source": "S24",
+   "transport": "ble",
+   "profile": {
+    "codec": "c2.exynos.vp9.encoder",
+    "rate_control": "automatic",
+    "playback": "auto",
+    "thermal_reduction": false,
+    "width": 640,
+    "height": 480,
+    "fps": 15,
+    "bitrate_kbps": 600
+   },
+   "receivers": [
+    {
+     "phone": "A15s",
+     "parent": "S24"
+    }
+   ],
+   "media_trace": true,
+   "duration_s": 32,
+   "actions": [
+    {
+     "at_s": 29,
+     "phone": "S24",
+     "action": "end"
+    }
+   ],
+   "family": "broadcast",
+   "inputs": {
+    "S24": {
+     "video_sha256": "f3cf2b049764a977453320b75f0b0c330ea98d0f18c44efde8d7dfd700179519",
+     "audio_sha256": null
+    }
+   }
+  },
+  "description": "Bound file hashes/declarations verified; live readiness, sustained load and quality unmeasured"
+ },
+ "build": {
+  "build_id": "ff0e24e1",
+  "apk_sha256": "ff0e24e15172413c265251339510ccb39b56356ec37103de7bfd62cbe5bb3e90",
+  "apk_sha256_per_phone": null,
+  "version_name": {
+   "version_name": "1.0",
+   "source": "read from the retained APK (aapt2 dump badging)",
+   "note": "Pre-release debug build; the app was renamed and versioned 0.1.0-beta later"
+  }
+ },
+ "phones": [
+  {
+   "alias": "A15s",
+   "manufacturer": "OPPO",
+   "model": "CPH2179",
+   "android": "10",
+   "sdk": "29",
+   "soc": "mt6765",
+   "firmware_build": "QP1A.190711.020/2024022110",
+   "apk_sha256": "ff0e24e15172413c265251339510ccb39b56356ec37103de7bfd62cbe5bb3e90"
+  },
+  {
+   "alias": "S24",
+   "manufacturer": "samsung",
+   "model": "SM-S921B",
+   "android": "16",
+   "sdk": "36",
+   "soc": "s5e9945",
+   "firmware_build": "BP2A.250605.031.A3/S921BXXSACYJ7",
+   "apk_sha256": "ff0e24e15172413c265251339510ccb39b56356ec37103de7bfd62cbe5bb3e90"
+  }
+ ],
+ "inputs": {
+  "S24": {
+   "video": {
+    "input_id": "vsg/coverage-640x480-15/640x480-15fps",
+    "sha256": "f3cf2b049764a977453320b75f0b0c330ea98d0f18c44efde8d7dfd700179519"
+   },
+   "audio": {
+    "input_id": null,
+    "note": "No reference audio bound: live microphone (not reproducible, not recorded here)"
+   }
+  }
+ },
+ "result": {
+  "status": "FAIL",
+  "reason": null,
+  "scored_in_suite": "regress-ff0e24e1-r2",
+  "scored_at": "2026-10-08T20:34:32Z",
+  "thresholds_version": "device-run-v3",
+  "acceptance_profile": null,
+  "pipeline_status": "FAIL",
+  "full_experience_status": "FAIL",
+  "required_families": [
+   "picture",
+   "smoothness",
+   "connection",
+   "transport",
+   "lifecycle",
+   "topology"
+  ],
+  "measurement_errors": [],
+  "family_status": {
+   "picture": "UNMEASURED",
+   "smoothness": "UNMEASURED",
+   "connection": "FAIL",
+   "transport": "FAIL",
+   "lifecycle": "UNMEASURED",
+   "topology": "UNMEASURED",
+   "camera": "UNMEASURED",
+   "acoustic": "UNMEASURED",
+   "physical_latency": "UNMEASURED",
+   "endurance": "UNMEASURED"
+  }
+ },
+ "families": {
+  "picture": {
+   "status": "UNMEASURED",
+   "measurements": [
+    {
+     "device": "A15s",
+     "source": "S24",
+     "name": "reference_validity",
+     "status": "UNMEASURED",
+     "reason": "receiver: phase is not verified and finalized; sender: phase is not verified and finalized"
+    },
+    {
+     "device": "A15s",
+     "source": "S24",
+     "name": "vmaf",
+     "status": "UNMEASURED",
+     "limit": 90,
+     "reason": "Required measurement absent"
+    },
+    {
+     "device": "A15s",
+     "source": "S24",
+     "name": "ssim",
+     "status": "UNMEASURED",
+     "limit": 0.98,
+     "reason": "Required measurement absent"
+    },
+    {
+     "device": "A15s",
+     "source": "S24",
+     "name": "psnr_db",
+     "status": "UNMEASURED",
+     "limit": 35,
+     "reason": "Required measurement absent"
+    }
+   ]
+  },
+  "smoothness": {
+   "status": "UNMEASURED",
+   "measurements": [
+    {
+     "device": "S24",
+     "direction": "broadcast",
+     "name": "encoder_fps",
+     "status": "UNMEASURED",
+     "limit": 14.25,
+     "reason": "Required measurement absent"
+    },
+    {
+     "device": "A15s",
+     "direction": "broadcast",
+     "name": "surface_p95_ms",
+     "status": "UNMEASURED",
+     "limit": 83.3333,
+     "reason": "Required measurement absent"
+    },
+    {
+     "device": "A15s",
+     "direction": "broadcast",
+     "name": "surface_p99_ms",
+     "status": "UNMEASURED",
+     "limit": 133.3333,
+     "reason": "Required measurement absent"
+    },
+    {
+     "device": "A15s",
+     "direction": "broadcast",
+     "name": "visible_fps",
+     "status": "UNMEASURED",
+     "limit": 14.25,
+     "reason": "Required measurement absent"
+    },
+    {
+     "device": "A15s",
+     "direction": "broadcast",
+     "name": "unexpected_freeze_events",
+     "status": "UNMEASURED",
+     "limit": 0,
+     "reason": "Required measurement absent"
+    }
+   ],
+   "motion_detail": {
+    "status": "UNMEASURED",
+    "capture_state": "PARTIAL"
+   }
+  },
+  "connection": {
+   "status": "FAIL",
+   "measurements": [
+    {
+     "device": "A15s",
+     "direction": "broadcast",
+     "name": "discovery_ms",
+     "status": "PASS",
+     "value": 573.4,
+     "limit": 1500,
+     "comparison": "max"
+    },
+    {
+     "device": "A15s",
+     "direction": "broadcast",
+     "name": "selection_to_first_surface_ms",
+     "status": "UNMEASURED",
+     "limit": 3000,
+     "reason": "Required measurement absent"
+    },
+    {
+     "device": "A15s",
+     "name": "first_surface_ms",
+     "action": "launch",
+     "status": "UNMEASURED",
+     "limit": 3000,
+     "reason": "Required measurement absent"
+    },
+    {
+     "device": "A15s",
+     "name": "first_surface_ms",
+     "action": "connection_timeout",
+     "status": "FAIL",
+     "limit": 3000,
+     "reason": "Runner recorded a connection timeout; later frames do not erase the failure"
+    }
+   ]
+  },
+  "transport": {
+   "status": "FAIL",
+   "measurements": [
+    {
+     "device": "S24",
+     "direction": "broadcast",
+     "name": "unexpected_events",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "S24",
+     "direction": "broadcast",
+     "name": "sender_drops",
+     "status": "UNMEASURED",
+     "limit": 0,
+     "reason": "Required measurement absent"
+    },
+    {
+     "device": "S24",
+     "direction": "broadcast",
+     "name": "raw_input_drops",
+     "status": "UNMEASURED",
+     "limit": 0,
+     "reason": "Explicit cumulative source input-loss evidence absent; timing samples or zero network drops cannot substitute"
+    },
+    {
+     "device": "S24",
+     "direction": "broadcast",
+     "name": "profile_resolution_mismatches",
+     "status": "UNMEASURED",
+     "limit": 0,
+     "reason": "Required measurement absent"
+    },
+    {
+     "device": "S24",
+     "direction": "broadcast",
+     "name": "profile_fps_mismatches",
+     "status": "UNMEASURED",
+     "limit": 0,
+     "reason": "Required measurement absent"
+    },
+    {
+     "device": "S24",
+     "direction": "broadcast",
+     "name": "profile_encoder_mismatches",
+     "status": "UNMEASURED",
+     "limit": 0,
+     "reason": "Exact requested encoder and post-initialization runtime evidence required; a codec alias or test-launch intent is insufficient"
+    },
+    {
+     "device": "S24",
+     "direction": "broadcast",
+     "name": "profile_allocation_mismatches",
+     "status": "UNMEASURED",
+     "limit": 0,
+     "reason": "Post-start source allocation label/mode required; test-launch intent is insufficient"
+    },
+    {
+     "device": "S24",
+     "direction": "broadcast",
+     "name": "profile_bitrate_mismatches",
+     "status": "UNMEASURED",
+     "limit": 0,
+     "reason": "Receiver logs lack configured source bitrate; join sender evidence"
+    },
+    {
+     "device": "S24",
+     "direction": "broadcast",
+     "name": "actual_offered_load",
+     "status": "UNMEASURED",
+     "reason": "Measured encoder payload, not the selected target; insufficient or absent load does not prove requested transport capacity"
+    },
+    {
+     "device": "A15s",
+     "direction": "broadcast",
+     "name": "unexpected_events",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "A15s",
+     "direction": "broadcast",
+     "name": "decoder_drops",
+     "status": "UNMEASURED",
+     "limit": 0,
+     "reason": "Required measurement absent"
+    },
+    {
+     "device": "A15s",
+     "direction": "broadcast",
+     "name": "audio_drops",
+     "status": "UNMEASURED",
+     "limit": 0,
+     "reason": "Required measurement absent"
+    },
+    {
+     "device": "A15s",
+     "direction": "broadcast",
+     "name": "profile_resolution_mismatches",
+     "status": "UNMEASURED",
+     "limit": 0,
+     "reason": "Required measurement absent"
+    },
+    {
+     "device": "A15s",
+     "direction": "broadcast",
+     "name": "profile_fps_mismatches",
+     "status": "UNMEASURED",
+     "limit": 0,
+     "reason": "Required measurement absent"
+    },
+    {
+     "device": "A15s",
+     "direction": "broadcast",
+     "name": "profile_bitrate_mismatches",
+     "status": "UNMEASURED",
+     "limit": 0,
+     "reason": "Receiver logs lack configured source bitrate; join sender evidence"
+    },
+    {
+     "name": "runner_error",
+     "status": "FAIL",
+     "value": "a15s: no first surface within 30s connection timeout"
+    },
+    {
+     "name": "connection_timeouts",
+     "status": "FAIL",
+     "value": 1,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "name": "captured_logs",
+     "status": "PASS",
+     "value": 2,
+     "limit": 1,
+     "comparison": "min"
+    },
+    {
+     "name": "media_traces",
+     "status": "UNMEASURED",
+     "value": 0,
+     "limit": 2,
+     "reason": "Requested finalized trace evidence must be hash-verified for every participant and every captured phase"
+    }
+   ]
+  },
+  "lifecycle": {
+   "status": "UNMEASURED",
+   "reason": "No connected measurement adapter",
+   "measurements": []
+  },
+  "topology": {
+   "status": "UNMEASURED",
+   "measurements": [
+    {
+     "device": "A15s",
+     "direction": "broadcast",
+     "name": "requested_parent_identity",
+     "status": "UNMEASURED",
+     "limit": 0,
+     "reason": "Requested parent identity and authenticated connection logs required; fallback is not chain coverage"
+    },
+    {
+     "device": "A15s",
+     "direction": "broadcast",
+     "name": "requested_original_source_identity",
+     "status": "UNMEASURED",
+     "limit": 0,
+     "reason": "Explicit authenticated original-source marker or source identity is absent; adjacent signer is not source proof"
+    }
+   ]
+  },
+  "camera": {
+   "status": "UNMEASURED",
+   "reason": "No connected measurement adapter",
+   "measurements": []
+  },
+  "acoustic": {
+   "status": "UNMEASURED",
+   "reason": "No connected measurement adapter",
+   "measurements": []
+  },
+  "physical_latency": {
+   "status": "UNMEASURED",
+   "reason": "No connected measurement adapter",
+   "measurements": []
+  },
+  "endurance": {
+   "status": "UNMEASURED",
+   "reason": "No connected measurement adapter",
+   "measurements": []
+  }
+ },
+ "stream_metrics": {
+  "thresholds_version": null,
+  "overall_status": "FAIL",
+  "log_status": null,
+  "quality_status": null,
+  "streams": [
+   {
+    "device": "S24",
+    "role": "sender",
+    "log_status": "UNMEASURED",
+    "quality_status": "UNMEASURED",
+    "lifecycle_status": "UNMEASURED",
+    "overall_status": "UNMEASURED",
+    "expected": {
+     "fps": 15,
+     "width": 640,
+     "height": 480,
+     "bitrate_kbps": 600
+    },
+    "startup_ms": [],
+    "freezes": null,
+    "freeze_duration_ms": null,
+    "drops": {
+     "decoder_drops": null,
+     "audio_drops": null,
+     "sender_drops": null,
+     "forwarding_drops": null,
+     "camera_input_drops": null,
+     "raw_input_drops": null
+    },
+    "encoder_fps": null,
+    "encoder_kbps": null,
+    "offered_load": {
+     "status": "UNMEASURED",
+     "median_kbps": null,
+     "requested_kbps": 600,
+     "target_fraction": null
+    },
+    "visible_fps": null,
+    "queue_depth_max": {}
+   },
+   {
+    "device": "A15s",
+    "role": "receiver",
+    "log_status": "UNMEASURED",
+    "quality_status": "UNMEASURED",
+    "lifecycle_status": "FAIL",
+    "overall_status": "FAIL",
+    "expected": {
+     "fps": 15,
+     "width": 640,
+     "height": 480,
+     "bitrate_kbps": 600
+    },
+    "startup_ms": [
+     {
+      "kind": "browser-to-first-offer",
+      "ms": 361.9
+     },
+     {
+      "kind": "browser-to-first-offer",
+      "ms": 233.7
+     },
+     {
+      "kind": "browser-to-first-offer",
+      "ms": 327.3
+     },
+     {
+      "kind": "browser-to-first-offer",
+      "ms": 304.7
+     },
+     {
+      "kind": "browser-to-first-offer",
+      "ms": 573.4
+     }
+    ],
+    "freezes": null,
+    "freeze_duration_ms": null,
+    "drops": {
+     "decoder_drops": null,
+     "audio_drops": null,
+     "sender_drops": null,
+     "forwarding_drops": null,
+     "camera_input_drops": null,
+     "raw_input_drops": null
+    },
+    "encoder_fps": null,
+    "encoder_kbps": null,
+    "offered_load": {
+     "status": "UNMEASURED",
+     "median_kbps": null,
+     "requested_kbps": 600,
+     "target_fraction": null
+    },
+    "visible_fps": null,
+    "queue_depth_max": {}
+   }
+  ]
+ },
+ "analyses": [
+  {
+   "suite": "regress-ff0e24e1-r2",
+   "generated_at": "2026-10-08T20:34:32Z",
+   "status": "FAIL",
+   "thresholds_version": "device-run-v3"
+  }
+ ]
+}

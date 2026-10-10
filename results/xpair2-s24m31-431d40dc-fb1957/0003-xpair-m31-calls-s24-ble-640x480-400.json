@@ -1,0 +1,556 @@
+{
+ "schema": "meshlive-benchmark-result-v1",
+ "execution": {
+  "suite": "xpair2-s24m31-431d40dc-fb1957",
+  "sequence": "0003",
+  "run_id": "physical-974e5c57884844958fd266919b0da48a",
+  "manifest_sha256": "37391b488732aaa8f342505af7059246f60a591f1dec72157a5a2b0c7bbf86c4",
+  "date_utc": "2026-10-09T14:28:25Z",
+  "duration_wall_s": 17.1,
+  "concurrency": "concurrent",
+  "actual_media_overlap": {
+   "status": "UNMEASURED",
+   "reason": "Job overlap is not actual media overlap"
+  }
+ },
+ "case": {
+  "baseline_key": "54547f1be9f7d54a8df3",
+  "private_case_id": "xpair-m31-calls-s24-ble-640x480-400",
+  "mode": "private_call",
+  "family": "call",
+  "request": {
+   "caller": "M31",
+   "callee": "S24",
+   "profiles": {
+    "M31": {
+     "codec": "OMX.Exynos.VP9.Encoder",
+     "width": 640,
+     "height": 480,
+     "fps": 15,
+     "bitrate_kbps": 400,
+     "rate_control": "automatic",
+     "playback": "balanced",
+     "thermal_reduction": false
+    },
+    "S24": {
+     "codec": "c2.exynos.vp9.encoder",
+     "width": 640,
+     "height": 480,
+     "fps": 15,
+     "bitrate_kbps": 400,
+     "rate_control": "automatic",
+     "playback": "balanced",
+     "thermal_reduction": false
+    }
+   },
+   "transport": "ble",
+   "duration_s": 45,
+   "connection_timeout_s": 20,
+   "media_trace": true,
+   "call_pipeline_timing": true,
+   "actions": [],
+   "tunables": {},
+   "inputs": {
+    "M31": {
+     "video_sha256": "f3cf2b049764a977453320b75f0b0c330ea98d0f18c44efde8d7dfd700179519",
+     "audio_sha256": "bf8d4ae39a571c3b3278aa1f38fcb1181cf69d1f605a8229df4b0714475464fd"
+    },
+    "S24": {
+     "video_sha256": "f3cf2b049764a977453320b75f0b0c330ea98d0f18c44efde8d7dfd700179519",
+     "audio_sha256": "bf8d4ae39a571c3b3278aa1f38fcb1181cf69d1f605a8229df4b0714475464fd"
+    }
+   }
+  },
+  "description": "Bound file hashes/declarations verified; live readiness, sustained load and quality unmeasured"
+ },
+ "build": {
+  "build_id": "431d40dc",
+  "apk_sha256": "431d40dca06940712784b48d804da7c1147ceeb7da203788d10f2a30ec0e5221",
+  "apk_sha256_per_phone": null,
+  "version_name": {
+   "version_name": "1.0",
+   "source": "read from the retained APK (aapt2 dump badging)",
+   "note": "Pre-release debug build; the app was renamed and versioned 0.1.0-beta later"
+  }
+ },
+ "phones": [
+  {
+   "alias": "M31",
+   "manufacturer": "samsung",
+   "model": "SM-M315F",
+   "android": "12",
+   "sdk": "31",
+   "soc": "Exynos 9611",
+   "firmware_build": "SP1A.210812.016/M315FXXS4CXB1",
+   "apk_sha256": "431d40dca06940712784b48d804da7c1147ceeb7da203788d10f2a30ec0e5221"
+  },
+  {
+   "alias": "S24",
+   "manufacturer": "samsung",
+   "model": "SM-S921B",
+   "android": "16",
+   "sdk": "36",
+   "soc": "s5e9945",
+   "firmware_build": "BP2A.250605.031.A3/S921BXXSACYJ7",
+   "apk_sha256": "431d40dca06940712784b48d804da7c1147ceeb7da203788d10f2a30ec0e5221"
+  }
+ ],
+ "inputs": {
+  "M31": {
+   "video": {
+    "input_id": "vsg/coverage-640x480-15/640x480-15fps",
+    "sha256": "f3cf2b049764a977453320b75f0b0c330ea98d0f18c44efde8d7dfd700179519"
+   },
+   "audio": {
+    "input_id": "vsg/coverage-640x480-15/640x480-15fps",
+    "sha256": "bf8d4ae39a571c3b3278aa1f38fcb1181cf69d1f605a8229df4b0714475464fd"
+   }
+  },
+  "S24": {
+   "video": {
+    "input_id": "vsg/coverage-640x480-15/640x480-15fps",
+    "sha256": "f3cf2b049764a977453320b75f0b0c330ea98d0f18c44efde8d7dfd700179519"
+   },
+   "audio": {
+    "input_id": "vsg/coverage-640x480-15/640x480-15fps",
+    "sha256": "bf8d4ae39a571c3b3278aa1f38fcb1181cf69d1f605a8229df4b0714475464fd"
+   }
+  }
+ },
+ "result": {
+  "status": "FAIL",
+  "reason": null,
+  "scored_in_suite": "xpair2-s24m31-431d40dc-fb1957",
+  "scored_at": "2026-10-09T14:30:22Z",
+  "thresholds_version": "device-run-v3",
+  "acceptance_profile": null,
+  "pipeline_status": "FAIL",
+  "full_experience_status": "FAIL",
+  "required_families": [
+   "picture",
+   "smoothness",
+   "connection",
+   "transport",
+   "lifecycle",
+   "topology",
+   "camera",
+   "acoustic",
+   "physical_latency",
+   "endurance"
+  ],
+  "measurement_errors": [],
+  "family_status": {
+   "picture": "UNMEASURED",
+   "smoothness": "UNMEASURED",
+   "connection": "UNMEASURED",
+   "transport": "UNMEASURED",
+   "lifecycle": "FAIL",
+   "topology": "UNMEASURED",
+   "camera": "UNMEASURED",
+   "acoustic": "UNMEASURED",
+   "physical_latency": "UNMEASURED",
+   "endurance": "UNMEASURED"
+  }
+ },
+ "families": {
+  "picture": {
+   "status": "UNMEASURED",
+   "measurements": [
+    {
+     "device": "S24",
+     "source": "M31",
+     "name": "reference_validity",
+     "status": "UNMEASURED",
+     "reason": "sender: phase is not verified and finalized; receiver: phase is not verified and finalized"
+    },
+    {
+     "device": "S24",
+     "source": "M31",
+     "name": "vmaf",
+     "status": "UNMEASURED",
+     "limit": 90,
+     "reason": "Required measurement absent"
+    },
+    {
+     "device": "S24",
+     "source": "M31",
+     "name": "ssim",
+     "status": "UNMEASURED",
+     "limit": 0.98,
+     "reason": "Required measurement absent"
+    },
+    {
+     "device": "S24",
+     "source": "M31",
+     "name": "psnr_db",
+     "status": "UNMEASURED",
+     "limit": 35,
+     "reason": "Required measurement absent"
+    },
+    {
+     "device": "M31",
+     "source": "S24",
+     "name": "reference_validity",
+     "status": "UNMEASURED",
+     "reason": "receiver: phase is not verified and finalized; sender: phase is not verified and finalized"
+    },
+    {
+     "device": "M31",
+     "source": "S24",
+     "name": "vmaf",
+     "status": "UNMEASURED",
+     "limit": 90,
+     "reason": "Required measurement absent"
+    },
+    {
+     "device": "M31",
+     "source": "S24",
+     "name": "ssim",
+     "status": "UNMEASURED",
+     "limit": 0.98,
+     "reason": "Required measurement absent"
+    },
+    {
+     "device": "M31",
+     "source": "S24",
+     "name": "psnr_db",
+     "status": "UNMEASURED",
+     "limit": 35,
+     "reason": "Required measurement absent"
+    }
+   ]
+  },
+  "smoothness": {
+   "status": "UNMEASURED",
+   "measurements": [
+    {
+     "device": "S24",
+     "direction": "outgoing",
+     "name": "encoder_fps",
+     "status": "UNMEASURED",
+     "reason": "Expected FPS not specified"
+    },
+    {
+     "device": "S24",
+     "direction": "incoming",
+     "name": "surface_p95_ms",
+     "status": "UNMEASURED",
+     "reason": "Expected FPS not specified"
+    },
+    {
+     "device": "S24",
+     "direction": "incoming",
+     "name": "surface_p99_ms",
+     "status": "UNMEASURED",
+     "reason": "Expected FPS not specified"
+    },
+    {
+     "device": "S24",
+     "direction": "incoming",
+     "name": "visible_fps",
+     "status": "UNMEASURED",
+     "reason": "Expected FPS not specified"
+    },
+    {
+     "device": "S24",
+     "direction": "incoming",
+     "name": "unexpected_freeze_events",
+     "status": "UNMEASURED",
+     "limit": 0,
+     "reason": "Required measurement absent"
+    }
+   ],
+   "motion_detail": {
+    "status": "UNMEASURED",
+    "reason": "Detailed callback scorer supports broadcasts; independent call gates remain measured"
+   }
+  },
+  "connection": {
+   "status": "UNMEASURED",
+   "measurements": [
+    {
+     "device": "S24",
+     "direction": "endpoint",
+     "name": "discovery_ms",
+     "status": "DIAGNOSTIC",
+     "limit": 1500,
+     "reason": "Required measurement absent"
+    },
+    {
+     "device": "S24",
+     "direction": "endpoint",
+     "name": "setup_to_first_surface_ms",
+     "status": "UNMEASURED",
+     "limit": 3000,
+     "reason": "Required measurement absent"
+    }
+   ]
+  },
+  "transport": {
+   "status": "UNMEASURED",
+   "measurements": [
+    {
+     "device": "S24",
+     "direction": "endpoint",
+     "name": "selected_transport",
+     "status": "UNMEASURED",
+     "limit": 0,
+     "reason": "Required measurement absent"
+    },
+    {
+     "device": "S24",
+     "direction": "endpoint",
+     "name": "selected_profile_mismatches",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "S24",
+     "direction": "endpoint",
+     "name": "negotiated_remote_header_mismatches",
+     "status": "UNMEASURED",
+     "limit": 0,
+     "reason": "Required measurement absent"
+    },
+    {
+     "device": "S24",
+     "direction": "endpoint",
+     "name": "actual_allocation_mismatches",
+     "status": "UNMEASURED",
+     "limit": 0,
+     "reason": "Required measurement absent"
+    },
+    {
+     "device": "S24",
+     "direction": "outgoing",
+     "name": "unexpected_events",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "S24",
+     "direction": "outgoing",
+     "name": "sender_drops",
+     "status": "UNMEASURED",
+     "limit": 0,
+     "reason": "A final cumulative TX report for the measured call is required to prove zero queue loss"
+    },
+    {
+     "device": "S24",
+     "direction": "outgoing",
+     "name": "raw_input_drops",
+     "status": "UNMEASURED",
+     "limit": 0,
+     "reason": "Explicit cumulative source input-loss evidence absent; timing samples or zero network drops cannot substitute"
+    },
+    {
+     "device": "S24",
+     "direction": "outgoing",
+     "name": "call_tx_counter_regressions",
+     "status": "UNMEASURED",
+     "limit": 0,
+     "reason": "Required measurement absent"
+    },
+    {
+     "device": "S24",
+     "direction": "outgoing",
+     "name": "actual_offered_load",
+     "status": "UNMEASURED",
+     "reason": "Measured encoder payload, not the selected target; insufficient or absent load does not prove requested transport capacity"
+    },
+    {
+     "device": "S24",
+     "direction": "incoming",
+     "name": "unexpected_events",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "S24",
+     "direction": "incoming",
+     "name": "decoder_drops",
+     "status": "UNMEASURED",
+     "limit": 0,
+     "reason": "A final RX counter for the measured call is required to prove zero loss"
+    },
+    {
+     "device": "S24",
+     "direction": "incoming",
+     "name": "audio_drops",
+     "status": "UNMEASURED",
+     "limit": 0,
+     "reason": "A final RX counter for the measured call is required to prove zero loss"
+    },
+    {
+     "device": "S24",
+     "direction": "incoming",
+     "name": "profile_fps_mismatches",
+     "status": "UNMEASURED",
+     "limit": 0,
+     "reason": "A scoped authenticated private-call remote header is required to measure FPS"
+    }
+   ]
+  },
+  "lifecycle": {
+   "status": "FAIL",
+   "measurements": [
+    {
+     "action": "runner",
+     "status": "FAIL",
+     "reason": "m31: ADB ('shell', 'pidof', 'com.example.bluetoothtest') exited 1: ",
+     "gate": {
+      "status": "FAIL"
+     }
+    }
+   ]
+  },
+  "topology": {
+   "status": "UNMEASURED",
+   "measurements": [
+    {
+     "device": "S24",
+     "direction": "endpoint",
+     "name": "authenticated_peer",
+     "status": "UNMEASURED",
+     "limit": 0,
+     "reason": "Required measurement absent"
+    },
+    {
+     "device": "S24",
+     "direction": "endpoint",
+     "name": "call_id_mismatches",
+     "status": "UNMEASURED",
+     "limit": 0,
+     "reason": "Required measurement absent"
+    }
+   ]
+  },
+  "camera": {
+   "status": "UNMEASURED",
+   "reason": "No connected measurement adapter",
+   "measurements": []
+  },
+  "acoustic": {
+   "status": "UNMEASURED",
+   "reason": "No connected measurement adapter",
+   "measurements": []
+  },
+  "physical_latency": {
+   "status": "UNMEASURED",
+   "reason": "No connected measurement adapter",
+   "measurements": []
+  },
+  "endurance": {
+   "status": "UNMEASURED",
+   "reason": "No connected measurement adapter",
+   "measurements": []
+  }
+ },
+ "stream_metrics": {
+  "thresholds_version": "device-run-v3",
+  "overall_status": "FAIL",
+  "log_status": "FAIL",
+  "quality_status": "UNMEASURED",
+  "streams": [
+   {
+    "device": "S24",
+    "setup_role": "callee",
+    "peer": "M31",
+    "requested_profile": {
+     "codec": "c2.exynos.vp9.encoder",
+     "width": 640,
+     "height": 480,
+     "fps": 15,
+     "bitrate_kbps": 400,
+     "rate_control": "automatic",
+     "playback": "balanced",
+     "thermal_reduction": false
+    },
+    "effective_profile": null,
+    "negotiated_changes": {},
+    "outgoing": {
+     "role": "sender",
+     "log_status": "UNMEASURED",
+     "quality_status": "UNMEASURED",
+     "lifecycle_status": "UNMEASURED",
+     "overall_status": "UNMEASURED",
+     "expected": {
+      "fps": null,
+      "width": null,
+      "height": null,
+      "bitrate_kbps": null
+     },
+     "startup_ms": [],
+     "freezes": null,
+     "freeze_duration_ms": null,
+     "drops": {
+      "decoder_drops": null,
+      "audio_drops": null,
+      "sender_drops": null,
+      "forwarding_drops": null,
+      "camera_input_drops": null,
+      "raw_input_drops": null
+     },
+     "encoder_fps": null,
+     "encoder_kbps": null,
+     "offered_load": {
+      "status": "UNMEASURED",
+      "median_kbps": null,
+      "requested_kbps": null,
+      "target_fraction": null
+     },
+     "visible_fps": null,
+     "queue_depth_max": {}
+    },
+    "incoming": {
+     "role": "receiver",
+     "log_status": "UNMEASURED",
+     "quality_status": "UNMEASURED",
+     "lifecycle_status": "UNMEASURED",
+     "overall_status": "UNMEASURED",
+     "expected": {
+      "fps": null,
+      "width": null,
+      "height": null,
+      "bitrate_kbps": null
+     },
+     "startup_ms": [],
+     "freezes": null,
+     "freeze_duration_ms": null,
+     "drops": {
+      "decoder_drops": null,
+      "audio_drops": null,
+      "sender_drops": null,
+      "forwarding_drops": null,
+      "camera_input_drops": null,
+      "raw_input_drops": null
+     },
+     "encoder_fps": null,
+     "encoder_kbps": null,
+     "offered_load": {
+      "status": "UNMEASURED",
+      "median_kbps": null,
+      "requested_kbps": null,
+      "target_fraction": null
+     },
+     "visible_fps": null,
+     "queue_depth_max": {}
+    }
+   }
+  ]
+ },
+ "analyses": [
+  {
+   "suite": "xpair2-s24m31-431d40dc-fb1957",
+   "generated_at": "2026-10-09T14:30:22Z",
+   "status": "FAIL",
+   "thresholds_version": "device-run-v3"
+  }
+ ]
+}

@@ -1,0 +1,489 @@
+{
+ "schema": "meshlive-benchmark-result-v1",
+ "execution": {
+  "suite": "bmaraw-ab-call-9c121b30-run1",
+  "sequence": "0026",
+  "run_id": "physical-b5a381298b374b05b7c5c6f536b0cda8",
+  "manifest_sha256": "26a8e8e056f8b6ce98c7e8f0bb4d110dcb272402794b84c6b7aa1ad96e6516c1",
+  "date_utc": "2026-10-08T22:33:36Z",
+  "duration_wall_s": 92.6,
+  "concurrency": "concurrent",
+  "actual_media_overlap": null
+ },
+ "case": {
+  "baseline_key": "0651f162a41307359fcf",
+  "private_case_id": "raw-6a87dc656a1aef36eb2e2a8b",
+  "mode": "private_call",
+  "family": "call",
+  "request": {
+   "caller": "S24",
+   "callee": "A15s",
+   "profiles": {
+    "S24": {
+     "codec": "c2.exynos.vp9.encoder",
+     "width": 640,
+     "height": 480,
+     "fps": 15,
+     "bitrate_kbps": 1000,
+     "rate_control": "automatic",
+     "playback": "balanced",
+     "thermal_reduction": false
+    },
+    "A15s": {
+     "codec": "libaom-native",
+     "width": 640,
+     "height": 480,
+     "fps": 15,
+     "bitrate_kbps": 1000,
+     "rate_control": "automatic",
+     "playback": "balanced",
+     "thermal_reduction": false
+    }
+   },
+   "transport": "gatt",
+   "duration_s": 45,
+   "connection_timeout_s": 20,
+   "media_trace": true,
+   "call_pipeline_timing": true,
+   "actions": [],
+   "tunables": {
+    "bounded_media_age": false
+   },
+   "inputs": {
+    "A15s": {
+     "video_sha256": "f3cf2b049764a977453320b75f0b0c330ea98d0f18c44efde8d7dfd700179519",
+     "audio_sha256": "bf8d4ae39a571c3b3278aa1f38fcb1181cf69d1f605a8229df4b0714475464fd"
+    },
+    "S24": {
+     "video_sha256": "f3cf2b049764a977453320b75f0b0c330ea98d0f18c44efde8d7dfd700179519",
+     "audio_sha256": "bf8d4ae39a571c3b3278aa1f38fcb1181cf69d1f605a8229df4b0714475464fd"
+    }
+   }
+  },
+  "description": "Bound file hashes/declarations verified; live readiness, sustained load and quality unmeasured"
+ },
+ "build": {
+  "build_id": "9c121b30",
+  "apk_sha256": "9c121b30d2f5b602251fcf9f8d97ea792e1339c1f7c74cec6c9df006c2ce8465",
+  "apk_sha256_per_phone": null,
+  "version_name": {
+   "version_name": "1.0",
+   "source": "read from the retained APK (aapt2 dump badging)",
+   "note": "Pre-release debug build; the app was renamed and versioned 0.1.0-beta later"
+  }
+ },
+ "phones": [
+  {
+   "alias": "A15s",
+   "manufacturer": "OPPO",
+   "model": "CPH2179",
+   "android": "10",
+   "sdk": "29",
+   "soc": "mt6765",
+   "firmware_build": "QP1A.190711.020/2024022110",
+   "apk_sha256": "9c121b30d2f5b602251fcf9f8d97ea792e1339c1f7c74cec6c9df006c2ce8465"
+  },
+  {
+   "alias": "S24",
+   "manufacturer": "samsung",
+   "model": "SM-S921B",
+   "android": "16",
+   "sdk": "36",
+   "soc": "s5e9945",
+   "firmware_build": "BP2A.250605.031.A3/S921BXXSACYJ7",
+   "apk_sha256": "9c121b30d2f5b602251fcf9f8d97ea792e1339c1f7c74cec6c9df006c2ce8465"
+  }
+ ],
+ "inputs": {
+  "S24": {
+   "video": {
+    "input_id": "vsg/coverage-640x480-15/640x480-15fps",
+    "sha256": "f3cf2b049764a977453320b75f0b0c330ea98d0f18c44efde8d7dfd700179519"
+   },
+   "audio": {
+    "input_id": "vsg/coverage-640x480-15/640x480-15fps",
+    "sha256": "bf8d4ae39a571c3b3278aa1f38fcb1181cf69d1f605a8229df4b0714475464fd"
+   }
+  },
+  "A15s": {
+   "video": {
+    "input_id": "vsg/coverage-640x480-15/640x480-15fps",
+    "sha256": "f3cf2b049764a977453320b75f0b0c330ea98d0f18c44efde8d7dfd700179519"
+   },
+   "audio": {
+    "input_id": "vsg/coverage-640x480-15/640x480-15fps",
+    "sha256": "bf8d4ae39a571c3b3278aa1f38fcb1181cf69d1f605a8229df4b0714475464fd"
+   }
+  }
+ },
+ "result": {
+  "status": "ANALYZING",
+  "reason": null,
+  "scored_in_suite": "bmaraw-ab-call-9c121b30-run1",
+  "scored_at": "2026-10-08T22:42:36Z",
+  "thresholds_version": "device-run-v3",
+  "acceptance_profile": null,
+  "pipeline_status": null,
+  "full_experience_status": null,
+  "required_families": null,
+  "measurement_errors": null,
+  "family_status": {
+   "picture": "UNMEASURED",
+   "smoothness": "UNMEASURED",
+   "connection": "UNMEASURED",
+   "transport": "UNMEASURED",
+   "lifecycle": "UNMEASURED",
+   "topology": "UNMEASURED",
+   "camera": "UNMEASURED",
+   "acoustic": "UNMEASURED",
+   "physical_latency": "UNMEASURED",
+   "endurance": "UNMEASURED"
+  }
+ },
+ "families": {
+  "picture": {
+   "status": "UNMEASURED",
+   "reason": "No connected measurement adapter",
+   "measurements": []
+  },
+  "smoothness": {
+   "status": "UNMEASURED",
+   "reason": "No connected measurement adapter",
+   "measurements": []
+  },
+  "connection": {
+   "status": "UNMEASURED",
+   "reason": "No connected measurement adapter",
+   "measurements": []
+  },
+  "transport": {
+   "status": "UNMEASURED",
+   "reason": "No connected measurement adapter",
+   "measurements": []
+  },
+  "lifecycle": {
+   "status": "UNMEASURED",
+   "reason": "No connected measurement adapter",
+   "measurements": []
+  },
+  "topology": {
+   "status": "UNMEASURED",
+   "reason": "No connected measurement adapter",
+   "measurements": []
+  },
+  "camera": {
+   "status": "UNMEASURED",
+   "reason": "No connected measurement adapter",
+   "measurements": []
+  },
+  "acoustic": {
+   "status": "UNMEASURED",
+   "reason": "No connected measurement adapter",
+   "measurements": []
+  },
+  "physical_latency": {
+   "status": "UNMEASURED",
+   "reason": "No connected measurement adapter",
+   "measurements": []
+  },
+  "endurance": {
+   "status": "UNMEASURED",
+   "reason": "No connected measurement adapter",
+   "measurements": []
+  }
+ },
+ "stream_metrics": {
+  "thresholds_version": "device-run-v3",
+  "overall_status": "FAIL",
+  "log_status": "FAIL",
+  "quality_status": "UNMEASURED",
+  "streams": [
+   {
+    "device": "A15s",
+    "setup_role": "callee",
+    "peer": "S24",
+    "requested_profile": {
+     "codec": "libaom-native",
+     "width": 640,
+     "height": 480,
+     "fps": 15,
+     "bitrate_kbps": 1000,
+     "rate_control": "automatic",
+     "playback": "balanced",
+     "thermal_reduction": false
+    },
+    "effective_profile": {
+     "encoder": "libaom-native",
+     "codec": "3",
+     "width": "640",
+     "height": "480",
+     "fps": "15",
+     "bitrateKbps": "1000",
+     "audioKbps": "32",
+     "playbackMs": "250",
+     "rateControl": "AUTOMATIC"
+    },
+    "negotiated_changes": {},
+    "outgoing": {
+     "role": "sender",
+     "log_status": "FAIL",
+     "quality_status": "UNMEASURED",
+     "lifecycle_status": "UNMEASURED",
+     "overall_status": "FAIL",
+     "expected": {
+      "fps": 15,
+      "width": 640,
+      "height": 480,
+      "bitrate_kbps": 1000
+     },
+     "startup_ms": [
+      {
+       "kind": "media-to-first-surface",
+       "ms": 699.3
+      }
+     ],
+     "freezes": 2,
+     "freeze_duration_ms": 5539.8,
+     "drops": {
+      "decoder_drops": 0,
+      "audio_drops": 0,
+      "sender_drops": null,
+      "forwarding_drops": null,
+      "camera_input_drops": 0,
+      "raw_input_drops": 0
+     },
+     "encoder_fps": {
+      "n": 9,
+      "min": 5.0,
+      "median": 7.4,
+      "max": 9.5
+     },
+     "encoder_kbps": {
+      "n": 9,
+      "min": 89.0,
+      "median": 164.0,
+      "max": 220.0
+     },
+     "offered_load": {
+      "status": "UNMEASURED",
+      "median_kbps": 164.0,
+      "requested_kbps": 1000,
+      "target_fraction": 0.164
+     },
+     "visible_fps": {
+      "n": 8,
+      "min": 4.882,
+      "median": 8.742,
+      "max": 14.75
+     },
+     "queue_depth_max": {
+      "decoder": 3
+     }
+    },
+    "incoming": {
+     "role": "receiver",
+     "log_status": "FAIL",
+     "quality_status": "UNMEASURED",
+     "lifecycle_status": "UNMEASURED",
+     "overall_status": "FAIL",
+     "expected": {
+      "fps": 15,
+      "width": null,
+      "height": null,
+      "bitrate_kbps": null
+     },
+     "startup_ms": [
+      {
+       "kind": "media-to-first-surface",
+       "ms": 699.3
+      }
+     ],
+     "freezes": 2,
+     "freeze_duration_ms": 5539.8,
+     "drops": {
+      "decoder_drops": 0,
+      "audio_drops": 0,
+      "sender_drops": null,
+      "forwarding_drops": null,
+      "camera_input_drops": 0,
+      "raw_input_drops": 0
+     },
+     "encoder_fps": {
+      "n": 9,
+      "min": 5.0,
+      "median": 7.4,
+      "max": 9.5
+     },
+     "encoder_kbps": {
+      "n": 9,
+      "min": 89.0,
+      "median": 164.0,
+      "max": 220.0
+     },
+     "offered_load": {
+      "status": "UNMEASURED",
+      "median_kbps": 164.0,
+      "requested_kbps": null,
+      "target_fraction": null
+     },
+     "visible_fps": {
+      "n": 8,
+      "min": 4.882,
+      "median": 8.742,
+      "max": 14.75
+     },
+     "queue_depth_max": {
+      "decoder": 3
+     }
+    }
+   },
+   {
+    "device": "S24",
+    "setup_role": "caller",
+    "peer": "A15s",
+    "requested_profile": {
+     "codec": "c2.exynos.vp9.encoder",
+     "width": 640,
+     "height": 480,
+     "fps": 15,
+     "bitrate_kbps": 1000,
+     "rate_control": "automatic",
+     "playback": "balanced",
+     "thermal_reduction": false
+    },
+    "effective_profile": {
+     "encoder": "c2.exynos.vp9.encoder",
+     "codec": "2",
+     "width": "640",
+     "height": "480",
+     "fps": "15",
+     "bitrateKbps": "1000",
+     "audioKbps": "32",
+     "playbackMs": "250",
+     "rateControl": "AUTOMATIC"
+    },
+    "negotiated_changes": {},
+    "outgoing": {
+     "role": "sender",
+     "log_status": "FAIL",
+     "quality_status": "UNMEASURED",
+     "lifecycle_status": "UNMEASURED",
+     "overall_status": "FAIL",
+     "expected": {
+      "fps": 15,
+      "width": 640,
+      "height": 480,
+      "bitrate_kbps": 1000
+     },
+     "startup_ms": [
+      {
+       "kind": "media-to-first-surface",
+       "ms": 462.6
+      }
+     ],
+     "freezes": 10,
+     "freeze_duration_ms": 3725.4,
+     "drops": {
+      "decoder_drops": 0,
+      "audio_drops": 0,
+      "sender_drops": null,
+      "forwarding_drops": null,
+      "camera_input_drops": 0,
+      "raw_input_drops": 0
+     },
+     "encoder_fps": {
+      "n": 9,
+      "min": 5.0,
+      "median": 9.5,
+      "max": 15.0
+     },
+     "encoder_kbps": {
+      "n": 9,
+      "min": 119.0,
+      "median": 335.0,
+      "max": 691.0
+     },
+     "offered_load": {
+      "status": "UNMEASURED",
+      "median_kbps": 335.0,
+      "requested_kbps": 1000,
+      "target_fraction": 0.335
+     },
+     "visible_fps": {
+      "n": 8,
+      "min": 4.204,
+      "median": 6.744,
+      "max": 8.897
+     },
+     "queue_depth_max": {
+      "decoder": 4
+     }
+    },
+    "incoming": {
+     "role": "receiver",
+     "log_status": "FAIL",
+     "quality_status": "UNMEASURED",
+     "lifecycle_status": "UNMEASURED",
+     "overall_status": "FAIL",
+     "expected": {
+      "fps": 15,
+      "width": null,
+      "height": null,
+      "bitrate_kbps": null
+     },
+     "startup_ms": [
+      {
+       "kind": "media-to-first-surface",
+       "ms": 462.6
+      }
+     ],
+     "freezes": 10,
+     "freeze_duration_ms": 3725.4,
+     "drops": {
+      "decoder_drops": 0,
+      "audio_drops": 0,
+      "sender_drops": null,
+      "forwarding_drops": null,
+      "camera_input_drops": 0,
+      "raw_input_drops": 0
+     },
+     "encoder_fps": {
+      "n": 9,
+      "min": 5.0,
+      "median": 9.5,
+      "max": 15.0
+     },
+     "encoder_kbps": {
+      "n": 9,
+      "min": 119.0,
+      "median": 335.0,
+      "max": 691.0
+     },
+     "offered_load": {
+      "status": "UNMEASURED",
+      "median_kbps": 335.0,
+      "requested_kbps": null,
+      "target_fraction": null
+     },
+     "visible_fps": {
+      "n": 8,
+      "min": 4.204,
+      "median": 6.744,
+      "max": 8.897
+     },
+     "queue_depth_max": {
+      "decoder": 4
+     }
+    }
+   }
+  ]
+ },
+ "analyses": [
+  {
+   "suite": "bmaraw-ab-call-9c121b30-run1",
+   "generated_at": "2026-10-08T22:42:36Z",
+   "status": "ANALYZING",
+   "thresholds_version": "device-run-v3"
+  }
+ ]
+}

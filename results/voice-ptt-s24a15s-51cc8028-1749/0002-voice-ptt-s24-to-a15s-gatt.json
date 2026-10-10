@@ -1,0 +1,776 @@
+{
+ "schema": "meshlive-benchmark-result-v1",
+ "execution": {
+  "suite": "voice-ptt-s24a15s-51cc8028-1749",
+  "sequence": "0002",
+  "run_id": "physical-5df4f08f6fe345e0bd49a3935f56faf3",
+  "manifest_sha256": "2fbe691343f72b81037944c65c6da1145e9c165b1d23a2c48d36f84be1887b42",
+  "date_utc": "2026-10-09T12:24:40Z",
+  "duration_wall_s": 86.1,
+  "concurrency": "concurrent",
+  "actual_media_overlap": {
+   "status": "UNMEASURED",
+   "reason": "Job overlap is not actual media overlap"
+  }
+ },
+ "case": {
+  "baseline_key": "471ac09ac1c3ec583de2",
+  "private_case_id": "voice-ptt-s24-to-a15s-gatt",
+  "mode": "private_call",
+  "family": "call",
+  "request": {
+   "caller": "S24",
+   "callee": "A15s",
+   "call_type": "voice",
+   "profiles": {
+    "S24": {
+     "codec": "c2.exynos.vp9.encoder",
+     "width": 640,
+     "height": 480,
+     "fps": 15,
+     "bitrate_kbps": 1000,
+     "rate_control": "automatic",
+     "playback": "balanced",
+     "thermal_reduction": false
+    },
+    "A15s": {
+     "codec": "libaom-native",
+     "width": 640,
+     "height": 480,
+     "fps": 15,
+     "bitrate_kbps": 1000,
+     "rate_control": "automatic",
+     "playback": "balanced",
+     "thermal_reduction": false
+    }
+   },
+   "transport": "gatt",
+   "duration_s": 45,
+   "connection_timeout_s": 20,
+   "media_trace": true,
+   "actions": [
+    {
+     "phone": "S24",
+     "action": "ptt_press",
+     "at_s": 8
+    },
+    {
+     "phone": "S24",
+     "action": "ptt_release",
+     "at_s": 16
+    },
+    {
+     "phone": "A15s",
+     "action": "ptt_press",
+     "at_s": 22
+    },
+    {
+     "phone": "A15s",
+     "action": "ptt_release",
+     "at_s": 30
+    },
+    {
+     "phone": "S24",
+     "action": "ptt_press",
+     "at_s": 35
+    },
+    {
+     "phone": "S24",
+     "action": "ptt_release",
+     "at_s": 40
+    }
+   ],
+   "tunables": {
+    "voice_calls": true,
+    "ptt_mode": true
+   },
+   "inputs": {
+    "A15s": {
+     "video_sha256": "f3cf2b049764a977453320b75f0b0c330ea98d0f18c44efde8d7dfd700179519",
+     "audio_sha256": "bf8d4ae39a571c3b3278aa1f38fcb1181cf69d1f605a8229df4b0714475464fd"
+    },
+    "S24": {
+     "video_sha256": "f3cf2b049764a977453320b75f0b0c330ea98d0f18c44efde8d7dfd700179519",
+     "audio_sha256": "bf8d4ae39a571c3b3278aa1f38fcb1181cf69d1f605a8229df4b0714475464fd"
+    }
+   }
+  },
+  "description": "Example only: not bound, not executed; bind or regenerate through the benchmark inventory before any run"
+ },
+ "build": {
+  "build_id": "51cc8028",
+  "apk_sha256": "51cc80289544c2f4403781520d520692f0075ca2f5f67b77c296970f1219d762",
+  "apk_sha256_per_phone": null,
+  "version_name": {
+   "version_name": "1.0",
+   "source": "read from the retained APK (aapt2 dump badging)",
+   "note": "Pre-release debug build; the app was renamed and versioned 0.1.0-beta later"
+  }
+ },
+ "phones": [
+  {
+   "alias": "A15s",
+   "manufacturer": "OPPO",
+   "model": "CPH2179",
+   "android": "10",
+   "sdk": "29",
+   "soc": "mt6765",
+   "firmware_build": "QP1A.190711.020/2024022110",
+   "apk_sha256": "51cc80289544c2f4403781520d520692f0075ca2f5f67b77c296970f1219d762"
+  },
+  {
+   "alias": "S24",
+   "manufacturer": "samsung",
+   "model": "SM-S921B",
+   "android": "16",
+   "sdk": "36",
+   "soc": "s5e9945",
+   "firmware_build": "BP2A.250605.031.A3/S921BXXSACYJ7",
+   "apk_sha256": "51cc80289544c2f4403781520d520692f0075ca2f5f67b77c296970f1219d762"
+  }
+ ],
+ "inputs": {
+  "S24": {
+   "video": {
+    "input_id": "vsg/coverage-640x480-15/640x480-15fps",
+    "sha256": "f3cf2b049764a977453320b75f0b0c330ea98d0f18c44efde8d7dfd700179519"
+   },
+   "audio": {
+    "input_id": "vsg/coverage-640x480-15/640x480-15fps",
+    "sha256": "bf8d4ae39a571c3b3278aa1f38fcb1181cf69d1f605a8229df4b0714475464fd"
+   }
+  },
+  "A15s": {
+   "video": {
+    "input_id": "vsg/coverage-640x480-15/640x480-15fps",
+    "sha256": "f3cf2b049764a977453320b75f0b0c330ea98d0f18c44efde8d7dfd700179519"
+   },
+   "audio": {
+    "input_id": "vsg/coverage-640x480-15/640x480-15fps",
+    "sha256": "bf8d4ae39a571c3b3278aa1f38fcb1181cf69d1f605a8229df4b0714475464fd"
+   }
+  }
+ },
+ "result": {
+  "status": "FAIL",
+  "reason": null,
+  "scored_in_suite": "voice-ptt-s24a15s-51cc8028-1749",
+  "scored_at": "2026-10-09T13:59:30Z",
+  "thresholds_version": "device-run-v3",
+  "acceptance_profile": null,
+  "pipeline_status": "FAIL",
+  "full_experience_status": "FAIL",
+  "required_families": [
+   "connection",
+   "transport",
+   "lifecycle",
+   "topology",
+   "camera",
+   "acoustic",
+   "physical_latency",
+   "endurance"
+  ],
+  "measurement_errors": [],
+  "family_status": {
+   "picture": "UNMEASURED",
+   "smoothness": "UNMEASURED",
+   "connection": "PASS",
+   "transport": "FAIL",
+   "lifecycle": "FAIL",
+   "topology": "PASS",
+   "camera": "UNMEASURED",
+   "acoustic": "UNMEASURED",
+   "physical_latency": "UNMEASURED",
+   "endurance": "UNMEASURED"
+  }
+ },
+ "families": {
+  "picture": {
+   "status": "UNMEASURED",
+   "reason": "Not applicable: a voice call carries no video (voice scoring measures no video gate)",
+   "measurements": []
+  },
+  "smoothness": {
+   "status": "UNMEASURED",
+   "reason": "Not applicable: a voice call carries no video (voice scoring measures no video gate)",
+   "measurements": []
+  },
+  "connection": {
+   "status": "PASS",
+   "measurements": [
+    {
+     "device": "A15s",
+     "direction": "endpoint",
+     "name": "discovery_ms",
+     "status": "DIAGNOSTIC",
+     "value": 9007.0,
+     "limit": 1500,
+     "comparison": "max"
+    },
+    {
+     "device": "A15s",
+     "direction": "endpoint",
+     "name": "setup_to_active_ms",
+     "status": "DIAGNOSTIC",
+     "value": 7320.0001
+    },
+    {
+     "device": "S24",
+     "direction": "endpoint",
+     "name": "discovery_ms",
+     "status": "PASS",
+     "value": 54.0,
+     "limit": 1500,
+     "comparison": "max"
+    },
+    {
+     "device": "S24",
+     "direction": "endpoint",
+     "name": "setup_to_active_ms",
+     "status": "DIAGNOSTIC",
+     "value": 7049.0
+    }
+   ]
+  },
+  "transport": {
+   "status": "FAIL",
+   "measurements": [
+    {
+     "device": "A15s",
+     "direction": "endpoint",
+     "name": "selected_transport",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "A15s",
+     "direction": "endpoint",
+     "name": "voice_call_type",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "A15s",
+     "direction": "endpoint",
+     "name": "voice_layout",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "A15s",
+     "direction": "endpoint",
+     "name": "voice_no_video_pipeline",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "A15s",
+     "direction": "outgoing",
+     "name": "unexpected_events",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "A15s",
+     "direction": "outgoing",
+     "name": "sender_drops",
+     "status": "UNMEASURED",
+     "limit": 0,
+     "reason": "A final cumulative TX report for the measured call is required to prove zero queue loss"
+    },
+    {
+     "device": "A15s",
+     "direction": "outgoing",
+     "name": "call_tx_counter_regressions",
+     "status": "UNMEASURED",
+     "limit": 0,
+     "reason": "Required measurement absent"
+    },
+    {
+     "device": "A15s",
+     "direction": "outgoing",
+     "name": "voice_video_packets_sent",
+     "status": "UNMEASURED",
+     "limit": 0,
+     "reason": "A final TX report for the measured call is required to prove zero video packets sent"
+    },
+    {
+     "device": "A15s",
+     "direction": "outgoing",
+     "name": "audio_packets_sent",
+     "status": "UNMEASURED",
+     "limit": 1,
+     "reason": "A final TX report for the measured call is required to prove audio was sent"
+    },
+    {
+     "device": "A15s",
+     "direction": "incoming",
+     "name": "unexpected_events",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "A15s",
+     "direction": "incoming",
+     "name": "audio_drops",
+     "status": "UNMEASURED",
+     "limit": 0,
+     "reason": "A final RX counter for the measured call is required to prove zero loss"
+    },
+    {
+     "device": "A15s",
+     "direction": "incoming",
+     "name": "voice_video_packets_received",
+     "status": "UNMEASURED",
+     "limit": 0,
+     "reason": "A final RX report for the measured call is required to prove zero video packets received"
+    },
+    {
+     "device": "A15s",
+     "direction": "incoming",
+     "name": "audio_packets_received",
+     "status": "UNMEASURED",
+     "limit": 1,
+     "reason": "A final RX report for the measured call is required to prove audio arrived"
+    },
+    {
+     "device": "A15s",
+     "direction": "incoming",
+     "name": "audio_receive_stall_windows",
+     "status": "UNMEASURED",
+     "limit": 0,
+     "reason": "At least two RX audio reports for one identified call are required"
+    },
+    {
+     "device": "S24",
+     "direction": "endpoint",
+     "name": "selected_transport",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "S24",
+     "direction": "endpoint",
+     "name": "voice_call_type",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "S24",
+     "direction": "endpoint",
+     "name": "voice_layout",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "S24",
+     "direction": "endpoint",
+     "name": "voice_no_video_pipeline",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "S24",
+     "direction": "outgoing",
+     "name": "unexpected_events",
+     "status": "FAIL",
+     "value": 1,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "S24",
+     "direction": "outgoing",
+     "name": "sender_drops",
+     "status": "UNMEASURED",
+     "limit": 0,
+     "reason": "A final cumulative TX report for the measured call is required to prove zero queue loss"
+    },
+    {
+     "device": "S24",
+     "direction": "outgoing",
+     "name": "call_tx_counter_regressions",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "S24",
+     "direction": "outgoing",
+     "name": "voice_video_packets_sent",
+     "status": "UNMEASURED",
+     "limit": 0,
+     "reason": "A final TX report for the measured call is required to prove zero video packets sent"
+    },
+    {
+     "device": "S24",
+     "direction": "outgoing",
+     "name": "audio_packets_sent",
+     "status": "UNMEASURED",
+     "limit": 1,
+     "reason": "A final TX report for the measured call is required to prove audio was sent"
+    },
+    {
+     "device": "S24",
+     "direction": "incoming",
+     "name": "unexpected_events",
+     "status": "FAIL",
+     "value": 1,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "S24",
+     "direction": "incoming",
+     "name": "audio_drops",
+     "status": "UNMEASURED",
+     "limit": 0,
+     "reason": "A final RX counter for the measured call is required to prove zero loss"
+    },
+    {
+     "device": "S24",
+     "direction": "incoming",
+     "name": "voice_video_packets_received",
+     "status": "UNMEASURED",
+     "limit": 0,
+     "reason": "A final RX report for the measured call is required to prove zero video packets received"
+    },
+    {
+     "device": "S24",
+     "direction": "incoming",
+     "name": "audio_packets_received",
+     "status": "UNMEASURED",
+     "limit": 1,
+     "reason": "A final RX report for the measured call is required to prove audio arrived"
+    },
+    {
+     "device": "S24",
+     "direction": "incoming",
+     "name": "audio_receive_stall_windows",
+     "status": "UNMEASURED",
+     "limit": 0,
+     "reason": "At least two RX audio reports for one identified call are required"
+    }
+   ]
+  },
+  "lifecycle": {
+   "status": "FAIL",
+   "measurements": [
+    {
+     "device": "S24",
+     "action": "voice_call:<node:A15s>",
+     "status": "PASS",
+     "acknowledged": true,
+     "gate": {
+      "status": "PASS"
+     }
+    },
+    {
+     "device": "A15s",
+     "action": "accept",
+     "status": "FAIL",
+     "acknowledged": false,
+     "gate": {
+      "status": "FAIL"
+     }
+    },
+    {
+     "action": "runner",
+     "status": "FAIL",
+     "reason": "a15s: no app evidence for 'BENCHMARK control accept (?:applied|rejected)' within the deadline",
+     "gate": {
+      "status": "FAIL"
+     }
+    }
+   ]
+  },
+  "topology": {
+   "status": "PASS",
+   "measurements": [
+    {
+     "device": "A15s",
+     "direction": "endpoint",
+     "name": "authenticated_peer",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "A15s",
+     "direction": "endpoint",
+     "name": "call_id_mismatches",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "S24",
+     "direction": "endpoint",
+     "name": "authenticated_peer",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "S24",
+     "direction": "endpoint",
+     "name": "call_id_mismatches",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    }
+   ]
+  },
+  "camera": {
+   "status": "UNMEASURED",
+   "reason": "No connected measurement adapter",
+   "measurements": []
+  },
+  "acoustic": {
+   "status": "UNMEASURED",
+   "reason": "No connected measurement adapter",
+   "measurements": []
+  },
+  "physical_latency": {
+   "status": "UNMEASURED",
+   "reason": "No connected measurement adapter",
+   "measurements": []
+  },
+  "endurance": {
+   "status": "UNMEASURED",
+   "reason": "No connected measurement adapter",
+   "measurements": []
+  }
+ },
+ "stream_metrics": {
+  "thresholds_version": "device-run-v3",
+  "overall_status": "FAIL",
+  "log_status": "FAIL",
+  "quality_status": "UNMEASURED",
+  "streams": [
+   {
+    "device": "A15s",
+    "setup_role": "callee",
+    "peer": "S24",
+    "requested_profile": {
+     "codec": "libaom-native",
+     "width": 640,
+     "height": 480,
+     "fps": 15,
+     "bitrate_kbps": 1000,
+     "rate_control": "automatic",
+     "playback": "balanced",
+     "thermal_reduction": false
+    },
+    "effective_profile": {
+     "encoder": "libaom-native",
+     "codec": "3",
+     "width": "640",
+     "height": "480",
+     "fps": "15",
+     "bitrateKbps": "1000",
+     "audioKbps": "32",
+     "playbackMs": "250",
+     "rateControl": "AUTOMATIC"
+    },
+    "negotiated_changes": {},
+    "outgoing": {
+     "role": "sender",
+     "log_status": "UNMEASURED",
+     "quality_status": "UNMEASURED",
+     "lifecycle_status": "UNMEASURED",
+     "overall_status": "UNMEASURED",
+     "expected": {
+      "fps": null,
+      "width": null,
+      "height": null,
+      "bitrate_kbps": null
+     },
+     "startup_ms": [],
+     "freezes": null,
+     "freeze_duration_ms": null,
+     "drops": {
+      "decoder_drops": null,
+      "audio_drops": null,
+      "sender_drops": null,
+      "forwarding_drops": null,
+      "camera_input_drops": null,
+      "raw_input_drops": null
+     },
+     "encoder_fps": null,
+     "encoder_kbps": null,
+     "offered_load": {
+      "status": "UNMEASURED",
+      "median_kbps": null,
+      "requested_kbps": null,
+      "target_fraction": null
+     },
+     "visible_fps": null,
+     "queue_depth_max": {}
+    },
+    "incoming": {
+     "role": "receiver",
+     "log_status": "UNMEASURED",
+     "quality_status": "UNMEASURED",
+     "lifecycle_status": "UNMEASURED",
+     "overall_status": "UNMEASURED",
+     "expected": {
+      "fps": null,
+      "width": null,
+      "height": null,
+      "bitrate_kbps": null
+     },
+     "startup_ms": [],
+     "freezes": null,
+     "freeze_duration_ms": null,
+     "drops": {
+      "decoder_drops": null,
+      "audio_drops": null,
+      "sender_drops": null,
+      "forwarding_drops": null,
+      "camera_input_drops": null,
+      "raw_input_drops": null
+     },
+     "encoder_fps": null,
+     "encoder_kbps": null,
+     "offered_load": {
+      "status": "UNMEASURED",
+      "median_kbps": null,
+      "requested_kbps": null,
+      "target_fraction": null
+     },
+     "visible_fps": null,
+     "queue_depth_max": {}
+    }
+   },
+   {
+    "device": "S24",
+    "setup_role": "caller",
+    "peer": "A15s",
+    "requested_profile": {
+     "codec": "c2.exynos.vp9.encoder",
+     "width": 640,
+     "height": 480,
+     "fps": 15,
+     "bitrate_kbps": 1000,
+     "rate_control": "automatic",
+     "playback": "balanced",
+     "thermal_reduction": false
+    },
+    "effective_profile": {
+     "encoder": "c2.exynos.vp9.encoder",
+     "codec": "2",
+     "width": "640",
+     "height": "480",
+     "fps": "15",
+     "bitrateKbps": "1000",
+     "audioKbps": "32",
+     "playbackMs": "250",
+     "rateControl": "AUTOMATIC"
+    },
+    "negotiated_changes": {},
+    "outgoing": {
+     "role": "sender",
+     "log_status": "FAIL",
+     "quality_status": "UNMEASURED",
+     "lifecycle_status": "UNMEASURED",
+     "overall_status": "FAIL",
+     "expected": {
+      "fps": null,
+      "width": null,
+      "height": null,
+      "bitrate_kbps": null
+     },
+     "startup_ms": [],
+     "freezes": null,
+     "freeze_duration_ms": null,
+     "drops": {
+      "decoder_drops": null,
+      "audio_drops": null,
+      "sender_drops": null,
+      "forwarding_drops": null,
+      "camera_input_drops": null,
+      "raw_input_drops": null
+     },
+     "encoder_fps": null,
+     "encoder_kbps": null,
+     "offered_load": {
+      "status": "UNMEASURED",
+      "median_kbps": null,
+      "requested_kbps": null,
+      "target_fraction": null
+     },
+     "visible_fps": null,
+     "queue_depth_max": {}
+    },
+    "incoming": {
+     "role": "receiver",
+     "log_status": "FAIL",
+     "quality_status": "UNMEASURED",
+     "lifecycle_status": "UNMEASURED",
+     "overall_status": "FAIL",
+     "expected": {
+      "fps": null,
+      "width": null,
+      "height": null,
+      "bitrate_kbps": null
+     },
+     "startup_ms": [],
+     "freezes": null,
+     "freeze_duration_ms": null,
+     "drops": {
+      "decoder_drops": null,
+      "audio_drops": null,
+      "sender_drops": null,
+      "forwarding_drops": null,
+      "camera_input_drops": null,
+      "raw_input_drops": null
+     },
+     "encoder_fps": null,
+     "encoder_kbps": null,
+     "offered_load": {
+      "status": "UNMEASURED",
+      "median_kbps": null,
+      "requested_kbps": null,
+      "target_fraction": null
+     },
+     "visible_fps": null,
+     "queue_depth_max": {}
+    }
+   }
+  ]
+ },
+ "analyses": [
+  {
+   "suite": "voice-ptt-s24a15s-51cc8028-1749",
+   "generated_at": "2026-10-09T13:59:30Z",
+   "status": "FAIL",
+   "thresholds_version": "device-run-v3"
+  }
+ ]
+}

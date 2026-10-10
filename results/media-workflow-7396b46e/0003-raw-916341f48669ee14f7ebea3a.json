@@ -1,0 +1,834 @@
+{
+ "schema": "meshlive-benchmark-result-v1",
+ "execution": {
+  "suite": "media-workflow-7396b46e",
+  "sequence": "0003",
+  "run_id": "physical-e70705ed91ac41e9832af613a8510da3",
+  "manifest_sha256": "0dd8f91f1dec00b0b514499f11a4ca2ec690b35178bb0c8581437a2589e8e3f2",
+  "date_utc": "2026-10-05T17:56:29Z",
+  "duration_wall_s": null,
+  "concurrency": null,
+  "actual_media_overlap": {
+   "status": "UNMEASURED",
+   "reason": "Job overlap is not actual media overlap"
+  }
+ },
+ "case": {
+  "baseline_key": "da73ed6830c7ecd44205",
+  "private_case_id": "raw-916341f48669ee14f7ebea3a",
+  "mode": "broadcast",
+  "family": null,
+  "request": {
+   "source": "ASUS",
+   "receivers": [
+    {
+     "phone": "S24",
+     "parent": "ASUS"
+    }
+   ],
+   "transport": "classic",
+   "profile": {
+    "codec": "c2.android.vp9.encoder",
+    "width": 640,
+    "height": 480,
+    "fps": 15,
+    "bitrate_kbps": 500,
+    "rate_control": "automatic",
+    "playback": "balanced",
+    "thermal_reduction": false
+   },
+   "duration_s": 12,
+   "connection_timeout_s": 20,
+   "audio_enabled": true,
+   "media_trace": true,
+   "video_presentation_timing": true,
+   "workflow_only": true,
+   "actions": [
+    {
+     "phone": "ASUS",
+     "action": "pause",
+     "at_s": 3
+    },
+    {
+     "phone": "ASUS",
+     "action": "resume",
+     "at_s": 5
+    }
+   ],
+   "inputs": {
+    "ASUS": {
+     "video_sha256": "9cf39a02eef61301748fa7156c156a5554d72cc3201900459cd038062c915dfe",
+     "audio_sha256": "129216bdb207f4fa11ff69bc376f66ae0f7e93157f5bd19b2f9c7f41270a841e"
+    }
+   }
+  },
+  "description": "Bound file hashes/declarations verified; live readiness, sustained load and quality unmeasured"
+ },
+ "build": {
+  "build_id": "7396b46e",
+  "apk_sha256": "7396b46eba05e3fb8f65a90cc14b892becde93632577b4e8f5a236bbdb2df25d",
+  "apk_sha256_per_phone": null,
+  "version_name": {
+   "version_name": "1.0",
+   "source": "read from the retained APK (aapt2 dump badging)",
+   "note": "Pre-release debug build; the app was renamed and versioned 0.1.0-beta later"
+  }
+ },
+ "phones": [
+  {
+   "alias": "ASUS",
+   "manufacturer": "asus",
+   "model": "ASUS_I01WD",
+   "android": "11",
+   "sdk": "30",
+   "soc": "msmnile",
+   "firmware_build": "RKQ1.200710.002/18.0610.2106.156-0",
+   "apk_sha256": "7396b46eba05e3fb8f65a90cc14b892becde93632577b4e8f5a236bbdb2df25d"
+  },
+  {
+   "alias": "S24",
+   "manufacturer": "samsung",
+   "model": "SM-S921B",
+   "android": "16",
+   "sdk": "36",
+   "soc": "s5e9945",
+   "firmware_build": "BP2A.250605.031.A3/S921BXXSACYJ7",
+   "apk_sha256": "7396b46eba05e3fb8f65a90cc14b892becde93632577b4e8f5a236bbdb2df25d"
+  }
+ ],
+ "inputs": {
+  "ASUS": {
+   "video": {
+    "input_id": "vsg/framing-640x480-15/640x480-15fps",
+    "sha256": "9cf39a02eef61301748fa7156c156a5554d72cc3201900459cd038062c915dfe"
+   },
+   "audio": {
+    "input_id": "vsg/framing-640x480-15/640x480-15fps",
+    "sha256": "129216bdb207f4fa11ff69bc376f66ae0f7e93157f5bd19b2f9c7f41270a841e"
+   }
+  }
+ },
+ "result": {
+  "status": "FAIL",
+  "reason": null,
+  "scored_in_suite": "media-workflow-7396b46e-observations",
+  "scored_at": "2026-10-05T17:56:29Z",
+  "thresholds_version": "device-run-v2",
+  "acceptance_profile": null,
+  "pipeline_status": "FAIL",
+  "full_experience_status": "FAIL",
+  "required_families": [
+   "picture",
+   "smoothness",
+   "connection",
+   "transport",
+   "lifecycle",
+   "topology",
+   "camera",
+   "acoustic",
+   "physical_latency",
+   "endurance"
+  ],
+  "measurement_errors": [],
+  "family_status": {
+   "picture": "PASS",
+   "smoothness": "UNMEASURED",
+   "connection": "FAIL",
+   "transport": "FAIL",
+   "lifecycle": "UNMEASURED",
+   "topology": "PASS",
+   "camera": "UNMEASURED",
+   "acoustic": "UNMEASURED",
+   "physical_latency": "UNMEASURED",
+   "endurance": "UNMEASURED"
+  }
+ },
+ "families": {
+  "picture": {
+   "status": "PASS",
+   "measurements": [
+    {
+     "device": "S24",
+     "source": "ASUS",
+     "name": "reference_validity",
+     "status": "PASS",
+     "reason": "Requires every verified finalized active raw-input phase"
+    },
+    {
+     "device": "S24",
+     "source": "ASUS",
+     "name": "vmaf",
+     "status": "PASS",
+     "value": 97.2528,
+     "limit": 90,
+     "comparison": "min"
+    },
+    {
+     "device": "S24",
+     "source": "ASUS",
+     "name": "ssim",
+     "status": "PASS",
+     "value": 0.9995,
+     "limit": 0.98,
+     "comparison": "min"
+    },
+    {
+     "device": "S24",
+     "source": "ASUS",
+     "name": "psnr_db",
+     "status": "PASS",
+     "value": 54.8963,
+     "limit": 35,
+     "comparison": "min"
+    }
+   ],
+   "content_regions": [
+    {
+     "device": "S24",
+     "source": "ASUS",
+     "measurement_status": "MEASURED",
+     "acceptance_status": "UNMEASURED"
+    }
+   ]
+  },
+  "smoothness": {
+   "status": "UNMEASURED",
+   "measurements": [
+    {
+     "device": "ASUS",
+     "direction": "broadcast",
+     "name": "encoder_fps",
+     "status": "UNMEASURED",
+     "limit": 14.25,
+     "reason": "Required measurement absent"
+    },
+    {
+     "device": "S24",
+     "direction": "broadcast",
+     "name": "surface_p95_ms",
+     "status": "UNMEASURED",
+     "limit": 83.3333,
+     "reason": "Required measurement absent"
+    },
+    {
+     "device": "S24",
+     "direction": "broadcast",
+     "name": "surface_p99_ms",
+     "status": "UNMEASURED",
+     "limit": 133.3333,
+     "reason": "Required measurement absent"
+    },
+    {
+     "device": "S24",
+     "direction": "broadcast",
+     "name": "visible_fps",
+     "status": "PASS",
+     "value": 14.8118,
+     "limit": 14.25,
+     "comparison": "min"
+    },
+    {
+     "device": "S24",
+     "direction": "broadcast",
+     "name": "unexpected_freeze_events",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "S24",
+     "direction": "broadcast",
+     "name": "full_lifecycle_cadence_coverage",
+     "status": "UNMEASURED",
+     "reason": "Rolling cadence omits samples after a planned gap; a prefix cannot approve the full lifecycle"
+    }
+   ],
+   "motion_detail": {
+    "status": "MEASURED_WITH_GAPS",
+    "capture_state": "COMPLETE"
+   }
+  },
+  "connection": {
+   "status": "FAIL",
+   "measurements": [
+    {
+     "device": "ASUS",
+     "direction": "broadcast",
+     "name": "discovery_ms",
+     "status": "UNMEASURED",
+     "limit": 3000,
+     "reason": "Required measurement absent"
+    },
+    {
+     "device": "ASUS",
+     "name": "first_surface_ms",
+     "action": "raw_fixture_reused",
+     "status": "UNMEASURED",
+     "limit": 5000,
+     "reason": "Required measurement absent"
+    },
+    {
+     "device": "ASUS",
+     "name": "first_surface_ms",
+     "action": "launch",
+     "status": "UNMEASURED",
+     "limit": 5000,
+     "reason": "Required measurement absent"
+    },
+    {
+     "device": "ASUS",
+     "name": "first_surface_ms",
+     "action": "pause",
+     "status": "UNMEASURED",
+     "limit": 5000,
+     "reason": "Required measurement absent"
+    },
+    {
+     "device": "ASUS",
+     "name": "first_surface_ms",
+     "action": "resume",
+     "status": "UNMEASURED",
+     "limit": 5000,
+     "reason": "Required measurement absent"
+    },
+    {
+     "device": "ASUS",
+     "name": "first_surface_ms",
+     "action": "end",
+     "status": "UNMEASURED",
+     "limit": 5000,
+     "reason": "Required measurement absent"
+    },
+    {
+     "device": "S24",
+     "direction": "broadcast",
+     "name": "discovery_ms",
+     "status": "PASS",
+     "value": 303.7,
+     "limit": 3000,
+     "comparison": "max"
+    },
+    {
+     "device": "S24",
+     "direction": "broadcast",
+     "name": "selection_to_first_surface_ms",
+     "status": "FAIL",
+     "value": 5060.4,
+     "limit": 5000,
+     "comparison": "max"
+    },
+    {
+     "device": "S24",
+     "name": "first_surface_ms",
+     "action": "launch",
+     "status": "FAIL",
+     "value": 5952.0,
+     "limit": 5000,
+     "comparison": "max"
+    }
+   ]
+  },
+  "transport": {
+   "status": "FAIL",
+   "measurements": [
+    {
+     "device": "ASUS",
+     "direction": "broadcast",
+     "name": "unexpected_events",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "ASUS",
+     "direction": "broadcast",
+     "name": "sender_drops",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "ASUS",
+     "direction": "broadcast",
+     "name": "raw_input_drops",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "ASUS",
+     "direction": "broadcast",
+     "name": "profile_resolution_mismatches",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "ASUS",
+     "direction": "broadcast",
+     "name": "profile_fps_mismatches",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "ASUS",
+     "direction": "broadcast",
+     "name": "profile_encoder_mismatches",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "ASUS",
+     "direction": "broadcast",
+     "name": "profile_allocation_mismatches",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "ASUS",
+     "direction": "broadcast",
+     "name": "profile_bitrate_mismatches",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "ASUS",
+     "direction": "broadcast",
+     "name": "actual_offered_load",
+     "status": "UNMEASURED",
+     "reason": "Measured encoder payload, not the selected target; insufficient or absent load does not prove requested transport capacity"
+    },
+    {
+     "device": "S24",
+     "direction": "broadcast",
+     "name": "unexpected_events",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "S24",
+     "direction": "broadcast",
+     "name": "decoder_drops",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "S24",
+     "direction": "broadcast",
+     "name": "audio_drops",
+     "status": "FAIL",
+     "value": 10,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "S24",
+     "direction": "broadcast",
+     "name": "profile_resolution_mismatches",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "S24",
+     "direction": "broadcast",
+     "name": "profile_fps_mismatches",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "S24",
+     "direction": "broadcast",
+     "name": "profile_bitrate_mismatches",
+     "status": "UNMEASURED",
+     "limit": 0,
+     "reason": "Receiver logs lack configured source bitrate; join sender evidence"
+    },
+    {
+     "name": "runner_error",
+     "status": "PASS"
+    },
+    {
+     "name": "connection_timeouts",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "name": "captured_logs",
+     "status": "PASS",
+     "value": 2,
+     "limit": 1,
+     "comparison": "min"
+    },
+    {
+     "name": "media_traces",
+     "status": "PASS",
+     "value": 2,
+     "limit": 2,
+     "reason": "Requested finalized trace evidence must be hash-verified for every participant and every captured phase"
+    },
+    {
+     "device": "ASUS",
+     "source": "ASUS",
+     "name": "raw_capture_to_encode_input_max_ms",
+     "status": "UNMEASURED",
+     "value": 7.1422,
+     "reason": "Measured diagnostic or incomplete evidence; full gate unavailable"
+    },
+    {
+     "device": "ASUS",
+     "source": "ASUS",
+     "name": "encode_input_to_encode_output_max_ms",
+     "status": "UNMEASURED",
+     "value": 27.2823,
+     "reason": "Measured diagnostic or incomplete evidence; full gate unavailable"
+    },
+    {
+     "device": "ASUS",
+     "source": "ASUS",
+     "name": "encode_output_to_send_enqueue_max_ms",
+     "status": "UNMEASURED",
+     "value": 0.9628,
+     "reason": "Measured diagnostic or incomplete evidence; full gate unavailable"
+    },
+    {
+     "device": "ASUS",
+     "source": "ASUS",
+     "name": "send_enqueue_to_write_begin_max_ms",
+     "status": "UNMEASURED",
+     "value": 1.1558,
+     "reason": "Measured diagnostic or incomplete evidence; full gate unavailable"
+    },
+    {
+     "device": "ASUS",
+     "source": "ASUS",
+     "name": "write_begin_to_write_end_max_ms",
+     "status": "UNMEASURED",
+     "value": 1.6865,
+     "reason": "Measured diagnostic or incomplete evidence; full gate unavailable"
+    },
+    {
+     "device": "ASUS",
+     "source": "ASUS",
+     "name": "receive_to_decoder_input_max_ms",
+     "status": "UNMEASURED",
+     "reason": "Measured diagnostic or incomplete evidence; full gate unavailable"
+    },
+    {
+     "device": "ASUS",
+     "source": "ASUS",
+     "name": "decoder_input_to_decoder_output_max_ms",
+     "status": "UNMEASURED",
+     "reason": "Measured diagnostic or incomplete evidence; full gate unavailable"
+    },
+    {
+     "device": "ASUS",
+     "source": "ASUS",
+     "name": "decoder_output_to_release_max_ms",
+     "status": "UNMEASURED",
+     "reason": "Measured diagnostic or incomplete evidence; full gate unavailable"
+    },
+    {
+     "device": "ASUS",
+     "source": "ASUS",
+     "name": "release_to_surface_ack_max_ms",
+     "status": "UNMEASURED",
+     "reason": "Measured diagnostic or incomplete evidence; full gate unavailable"
+    },
+    {
+     "device": "S24",
+     "source": "ASUS",
+     "name": "raw_capture_to_encode_input_max_ms",
+     "status": "UNMEASURED",
+     "reason": "Measured diagnostic or incomplete evidence; full gate unavailable"
+    },
+    {
+     "device": "S24",
+     "source": "ASUS",
+     "name": "encode_input_to_encode_output_max_ms",
+     "status": "UNMEASURED",
+     "reason": "Measured diagnostic or incomplete evidence; full gate unavailable"
+    },
+    {
+     "device": "S24",
+     "source": "ASUS",
+     "name": "encode_output_to_send_enqueue_max_ms",
+     "status": "UNMEASURED",
+     "reason": "Measured diagnostic or incomplete evidence; full gate unavailable"
+    },
+    {
+     "device": "S24",
+     "source": "ASUS",
+     "name": "send_enqueue_to_write_begin_max_ms",
+     "status": "UNMEASURED",
+     "reason": "Measured diagnostic or incomplete evidence; full gate unavailable"
+    },
+    {
+     "device": "S24",
+     "source": "ASUS",
+     "name": "write_begin_to_write_end_max_ms",
+     "status": "UNMEASURED",
+     "reason": "Measured diagnostic or incomplete evidence; full gate unavailable"
+    },
+    {
+     "device": "S24",
+     "source": "ASUS",
+     "name": "receive_to_decoder_input_max_ms",
+     "status": "UNMEASURED",
+     "value": 333.9227,
+     "reason": "Measured diagnostic or incomplete evidence; full gate unavailable"
+    },
+    {
+     "device": "S24",
+     "source": "ASUS",
+     "name": "decoder_input_to_decoder_output_max_ms",
+     "status": "UNMEASURED",
+     "value": 102.3672,
+     "reason": "Measured diagnostic or incomplete evidence; full gate unavailable"
+    },
+    {
+     "device": "S24",
+     "source": "ASUS",
+     "name": "decoder_output_to_release_max_ms",
+     "status": "UNMEASURED",
+     "value": 6.9408,
+     "reason": "Measured diagnostic or incomplete evidence; full gate unavailable"
+    },
+    {
+     "device": "S24",
+     "source": "ASUS",
+     "name": "release_to_surface_ack_max_ms",
+     "status": "UNMEASURED",
+     "value": 75.8107,
+     "reason": "Measured diagnostic or incomplete evidence; full gate unavailable"
+    }
+   ]
+  },
+  "lifecycle": {
+   "status": "UNMEASURED",
+   "measurements": [
+    {
+     "device": "ASUS",
+     "name": "first_surface_ms",
+     "action": "raw_fixture_reused",
+     "status": "UNMEASURED",
+     "limit": 5000,
+     "reason": "Required measurement absent"
+    },
+    {
+     "device": "ASUS",
+     "name": "first_surface_ms",
+     "action": "pause",
+     "status": "UNMEASURED",
+     "limit": 5000,
+     "reason": "Required measurement absent"
+    },
+    {
+     "device": "ASUS",
+     "name": "first_surface_ms",
+     "action": "resume",
+     "status": "UNMEASURED",
+     "limit": 5000,
+     "reason": "Required measurement absent"
+    },
+    {
+     "device": "ASUS",
+     "name": "first_surface_ms",
+     "action": "end",
+     "status": "UNMEASURED",
+     "limit": 5000,
+     "reason": "Required measurement absent"
+    }
+   ]
+  },
+  "topology": {
+   "status": "PASS",
+   "measurements": [
+    {
+     "device": "S24",
+     "direction": "broadcast",
+     "name": "requested_parent_identity",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "S24",
+     "direction": "broadcast",
+     "name": "requested_original_source_identity",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    }
+   ]
+  },
+  "camera": {
+   "status": "UNMEASURED",
+   "reason": "No connected measurement adapter",
+   "measurements": []
+  },
+  "acoustic": {
+   "status": "UNMEASURED",
+   "reason": "No connected measurement adapter",
+   "measurements": []
+  },
+  "physical_latency": {
+   "status": "UNMEASURED",
+   "measurements": [
+    {
+     "device": "ASUS",
+     "source": "ASUS",
+     "name": "physical_pipeline_latency",
+     "status": "UNMEASURED",
+     "reason": "Stage proxies cannot measure physical screen or acoustic latency"
+    },
+    {
+     "device": "S24",
+     "source": "ASUS",
+     "name": "physical_pipeline_latency",
+     "status": "UNMEASURED",
+     "reason": "Stage proxies cannot measure physical screen or acoustic latency"
+    }
+   ]
+  },
+  "endurance": {
+   "status": "UNMEASURED",
+   "reason": "No connected measurement adapter",
+   "measurements": []
+  }
+ },
+ "stream_metrics": {
+  "thresholds_version": null,
+  "overall_status": "FAIL",
+  "log_status": null,
+  "quality_status": null,
+  "streams": [
+   {
+    "device": "ASUS",
+    "role": "sender",
+    "log_status": "UNMEASURED",
+    "quality_status": "UNMEASURED",
+    "lifecycle_status": "UNMEASURED",
+    "overall_status": "UNMEASURED",
+    "expected": {
+     "fps": 15,
+     "width": 640,
+     "height": 480,
+     "bitrate_kbps": 500
+    },
+    "startup_ms": [],
+    "freezes": null,
+    "freeze_duration_ms": null,
+    "drops": {
+     "decoder_drops": null,
+     "audio_drops": null,
+     "sender_drops": 0,
+     "forwarding_drops": null,
+     "camera_input_drops": 0,
+     "raw_input_drops": 0
+    },
+    "encoder_fps": null,
+    "encoder_kbps": null,
+    "offered_load": {
+     "status": "UNMEASURED",
+     "median_kbps": null,
+     "requested_kbps": 500,
+     "target_fraction": null
+    },
+    "visible_fps": null,
+    "queue_depth_max": {
+     "sender": 0
+    }
+   },
+   {
+    "device": "S24",
+    "role": "receiver",
+    "log_status": "FAIL",
+    "quality_status": "UNMEASURED",
+    "lifecycle_status": "FAIL",
+    "overall_status": "FAIL",
+    "expected": {
+     "fps": 15,
+     "width": 640,
+     "height": 480,
+     "bitrate_kbps": 500
+    },
+    "startup_ms": [
+     {
+      "kind": "browser-to-first-offer",
+      "ms": 303.7
+     },
+     {
+      "kind": "selection-to-first-surface",
+      "ms": 5060.4
+     }
+    ],
+    "freezes": 0,
+    "freeze_duration_ms": 0.0,
+    "drops": {
+     "decoder_drops": 0,
+     "audio_drops": 10,
+     "sender_drops": null,
+     "forwarding_drops": null,
+     "camera_input_drops": null,
+     "raw_input_drops": null
+    },
+    "encoder_fps": null,
+    "encoder_kbps": null,
+    "offered_load": {
+     "status": "UNMEASURED",
+     "median_kbps": null,
+     "requested_kbps": 500,
+     "target_fraction": null
+    },
+    "visible_fps": {
+     "n": 1,
+     "min": 14.812,
+     "median": 14.812,
+     "max": 14.812
+    },
+    "queue_depth_max": {
+     "decoder": 5
+    }
+   }
+  ]
+ },
+ "analyses": [
+  {
+   "suite": "media-workflow-7396b46e",
+   "generated_at": "2026-10-05T17:44:55Z",
+   "status": "FAIL",
+   "thresholds_version": "device-run-v2"
+  },
+  {
+   "suite": "media-workflow-7396b46e-observations",
+   "generated_at": "2026-10-05T17:56:29Z",
+   "status": "FAIL",
+   "thresholds_version": "device-run-v2"
+  }
+ ]
+}

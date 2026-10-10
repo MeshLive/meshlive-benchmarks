@@ -1,0 +1,589 @@
+{
+ "schema": "meshlive-benchmark-inputs-v1",
+ "scope": "Every input used by an execution in results/ (plus inputs referenced only by attempts that never executed, with executions_using = 0). No media bytes are stored here; regenerate them and verify by SHA-256.",
+ "excluded_inputs": "Live Camera2 captures and the UVG / SVT natural clips (not redistributable) are not part of this baseline; runs that used them are excluded.",
+ "inputs": [
+  {
+   "id": "speech-v1/speech-v1-20s.wav",
+   "kind": "speech_reference_audio",
+   "file": "speech-v1-20s.wav",
+   "sha256": "0e633eaf5e6768089afa3aa228ef0f38bbf5e080f5d33012c91608ffd7702dc9",
+   "bytes": 1920044,
+   "format": "PCM16 mono 48 kHz WAV",
+   "executions_using": 119,
+   "licence": "LibriSpeech test-clean utterances CC BY 4.0 (c) 2014 Vassil Panayotov; LibriVox German/Spanish public domain; Open Goldberg Variations (Kimiko Ishizaka) CC0. Full notices: benchmarks/inputs/speech-v1/README.md in the app repository.",
+   "how_to_obtain": "Committed in the app repository at benchmarks/inputs/speech-v1/speech-v1-20s.wav. Rebuild and verify from the committed sources with: python -B tools/build_speech_reference.py verify --sources benchmarks/inputs/speech-v1/sources --build benchmarks/inputs/speech-v1 (needs tools/requirements-audio.txt).",
+   "pairs_with": "20 s native video loops (coverage, quick-mosaic recipes)"
+  },
+  {
+   "id": "vsg/coverage-352x288-15/352x288-15fps",
+   "kind": "generated_native_raw",
+   "recipe": "coverage",
+   "recipe_sha256": "e0ce9a6be4979866c042d1511fb0651bf4ec45965b59c0051e42c700e692b2e9",
+   "recipe_file": "inputs/recipes/coverage.json",
+   "mode": "352x288@15",
+   "duration_s": 20,
+   "frame_count": 300,
+   "seed": 20261006,
+   "variant_id": "257610d1f45600465aa478fcc3adfabf3861b144c28d6c5e7f7910285a9c7e1e",
+   "color": {
+    "range": "limited",
+    "primaries": "bt709",
+    "matrix": "bt709",
+    "transfer": "bt709",
+    "chroma_location": "center"
+   },
+   "rgb_to_i420_conversion": "bt709-integer-box420-v1",
+   "generator": {
+    "name": "video-stress-generator",
+    "version": "0.2.0",
+    "source_sha256": "19c0ef90c4937ab8246976867b29da2069e3e8f5ad00ad1e4cc573effbf618b6",
+    "location": "tools/video-stress-generator in the app repository (MIT)"
+   },
+   "generation_environment": {
+    "python": "3.13.3",
+    "libraries": {
+     "numpy": "2.2.6",
+     "Pillow": "11.3.0",
+     "opencv-python": "4.12.0.88",
+     "pytest": "9.0.3",
+     "scipy": "1.16.3",
+     "scikit-image": "0.26.0"
+    }
+   },
+   "files": {
+    "reference_audio.wav": {
+     "sha256": "bf8d4ae39a571c3b3278aa1f38fcb1181cf69d1f605a8229df4b0714475464fd",
+     "bytes": 1920044,
+     "role": "PCM16 mono 48 kHz reference audio (generated cues/noise) fed to Opus"
+    },
+    "source.i420": {
+     "sha256": "96704fd274796a739d3c220ace74cc98da178758945688e147551db6c927cdab",
+     "bytes": 45619200,
+     "role": "raw I420 video fed to the selected encoder (marked reference)"
+    }
+   },
+   "executions_using": 731,
+   "regenerate": [
+    "python -B tools/prepare_native_workload.py plan --recipe coverage --mode 352x288@15",
+    "python -B tools/prepare_native_workload.py prepare --recipe coverage --mode 352x288@15 --output benchmarks/inputs/coverage-352x288-15 --max-bytes 2000000000",
+    "Compare SHA-256 of benchmarks/inputs/coverage-352x288-15/352x288-15fps/reference_audio.wav and source.i420 with this entry."
+   ],
+   "reproducibility": "Same source/version/seed/parameters/frame/platform/library versions. Floating trig and NumPy RNG/font raster versions may differ across environments; container byte identity is not promised.",
+   "licence": "Original implementations and bitmap font: MIT; no third-party clip assets; external tools retain their licenses"
+  },
+  {
+   "id": "vsg/coverage-426x240-15/426x240-15fps",
+   "kind": "generated_native_raw",
+   "recipe": "coverage",
+   "recipe_sha256": "e0ce9a6be4979866c042d1511fb0651bf4ec45965b59c0051e42c700e692b2e9",
+   "recipe_file": "inputs/recipes/coverage.json",
+   "mode": "426x240@15",
+   "duration_s": 20,
+   "frame_count": 300,
+   "seed": 20261006,
+   "variant_id": "50e1d95006f30b6678aa54d555f8a7590da38ddf92f1d1571ad58f7b1e088ec4",
+   "color": {
+    "range": "limited",
+    "primaries": "bt709",
+    "matrix": "bt709",
+    "transfer": "bt709",
+    "chroma_location": "center"
+   },
+   "rgb_to_i420_conversion": "bt709-integer-box420-v1",
+   "generator": {
+    "name": "video-stress-generator",
+    "version": "0.2.0",
+    "source_sha256": "19c0ef90c4937ab8246976867b29da2069e3e8f5ad00ad1e4cc573effbf618b6",
+    "location": "tools/video-stress-generator in the app repository (MIT)"
+   },
+   "generation_environment": {
+    "python": "3.13.3",
+    "libraries": {
+     "numpy": "2.2.6",
+     "Pillow": "11.3.0",
+     "opencv-python": "4.12.0.88",
+     "pytest": "9.0.3",
+     "scipy": "1.16.3",
+     "scikit-image": "0.26.0"
+    }
+   },
+   "files": {
+    "reference_audio.wav": {
+     "sha256": "bf8d4ae39a571c3b3278aa1f38fcb1181cf69d1f605a8229df4b0714475464fd",
+     "bytes": 1920044,
+     "role": "PCM16 mono 48 kHz reference audio (generated cues/noise) fed to Opus"
+    },
+    "source.i420": {
+     "sha256": "ffc54ae3e6b70844cbee50025d2cba15bf73bad5fe368f88871f16ea6a41d0bb",
+     "bytes": 46008000,
+     "role": "raw I420 video fed to the selected encoder (marked reference)"
+    }
+   },
+   "executions_using": 0,
+   "regenerate": [
+    "python -B tools/prepare_native_workload.py plan --recipe coverage --mode 426x240@15",
+    "python -B tools/prepare_native_workload.py prepare --recipe coverage --mode 426x240@15 --output benchmarks/inputs/coverage-426x240-15 --max-bytes 2000000000",
+    "Compare SHA-256 of benchmarks/inputs/coverage-426x240-15/426x240-15fps/reference_audio.wav and source.i420 with this entry."
+   ],
+   "reproducibility": "Same source/version/seed/parameters/frame/platform/library versions. Floating trig and NumPy RNG/font raster versions may differ across environments; container byte identity is not promised.",
+   "licence": "Original implementations and bitmap font: MIT; no third-party clip assets; external tools retain their licenses"
+  },
+  {
+   "id": "vsg/coverage-640x360-15/640x360-15fps",
+   "kind": "generated_native_raw",
+   "recipe": "coverage",
+   "recipe_sha256": "e0ce9a6be4979866c042d1511fb0651bf4ec45965b59c0051e42c700e692b2e9",
+   "recipe_file": "inputs/recipes/coverage.json",
+   "mode": "640x360@15",
+   "duration_s": 20,
+   "frame_count": 300,
+   "seed": 20261006,
+   "variant_id": "29ae1fc0a6e5352fdf6dc0cb6a5e29c3c94d4ade85e4edf622030a2a61f1b862",
+   "color": {
+    "range": "limited",
+    "primaries": "bt709",
+    "matrix": "bt709",
+    "transfer": "bt709",
+    "chroma_location": "center"
+   },
+   "rgb_to_i420_conversion": "bt709-integer-box420-v1",
+   "generator": {
+    "name": "video-stress-generator",
+    "version": "0.2.0",
+    "source_sha256": "19c0ef90c4937ab8246976867b29da2069e3e8f5ad00ad1e4cc573effbf618b6",
+    "location": "tools/video-stress-generator in the app repository (MIT)"
+   },
+   "generation_environment": {
+    "python": "3.13.3",
+    "libraries": {
+     "numpy": "2.2.6",
+     "Pillow": "11.3.0",
+     "opencv-python": "4.12.0.88",
+     "pytest": "9.0.3",
+     "scipy": "1.16.3",
+     "scikit-image": "0.26.0"
+    }
+   },
+   "files": {
+    "reference_audio.wav": {
+     "sha256": "bf8d4ae39a571c3b3278aa1f38fcb1181cf69d1f605a8229df4b0714475464fd",
+     "bytes": 1920044,
+     "role": "PCM16 mono 48 kHz reference audio (generated cues/noise) fed to Opus"
+    },
+    "source.i420": {
+     "sha256": "86e953111d30eee764fa31633e60ca067e437fd2b7dc7fe74215bc91c7017f0e",
+     "bytes": 103680000,
+     "role": "raw I420 video fed to the selected encoder (marked reference)"
+    }
+   },
+   "executions_using": 6,
+   "regenerate": [
+    "python -B tools/prepare_native_workload.py plan --recipe coverage --mode 640x360@15",
+    "python -B tools/prepare_native_workload.py prepare --recipe coverage --mode 640x360@15 --output benchmarks/inputs/coverage-640x360-15 --max-bytes 2000000000",
+    "Compare SHA-256 of benchmarks/inputs/coverage-640x360-15/640x360-15fps/reference_audio.wav and source.i420 with this entry."
+   ],
+   "reproducibility": "Same source/version/seed/parameters/frame/platform/library versions. Floating trig and NumPy RNG/font raster versions may differ across environments; container byte identity is not promised.",
+   "licence": "Original implementations and bitmap font: MIT; no third-party clip assets; external tools retain their licenses"
+  },
+  {
+   "id": "vsg/coverage-640x480-15/640x480-15fps",
+   "kind": "generated_native_raw",
+   "recipe": "coverage",
+   "recipe_sha256": "e0ce9a6be4979866c042d1511fb0651bf4ec45965b59c0051e42c700e692b2e9",
+   "recipe_file": "inputs/recipes/coverage.json",
+   "mode": "640x480@15",
+   "duration_s": 20,
+   "frame_count": 300,
+   "seed": 20261006,
+   "variant_id": "66138ce2132868f142a66cc4ed207d55bed00ab5fdbb3282634b6321f2137c8d",
+   "color": {
+    "range": "limited",
+    "primaries": "bt709",
+    "matrix": "bt709",
+    "transfer": "bt709",
+    "chroma_location": "center"
+   },
+   "rgb_to_i420_conversion": "bt709-integer-box420-v1",
+   "generator": {
+    "name": "video-stress-generator",
+    "version": "0.2.0",
+    "source_sha256": "19c0ef90c4937ab8246976867b29da2069e3e8f5ad00ad1e4cc573effbf618b6",
+    "location": "tools/video-stress-generator in the app repository (MIT)"
+   },
+   "generation_environment": {
+    "python": "3.13.3",
+    "libraries": {
+     "numpy": "2.2.6",
+     "Pillow": "11.3.0",
+     "opencv-python": "4.12.0.88",
+     "pytest": "9.0.3",
+     "scipy": "1.16.3",
+     "scikit-image": "0.26.0"
+    }
+   },
+   "files": {
+    "reference_audio.wav": {
+     "sha256": "bf8d4ae39a571c3b3278aa1f38fcb1181cf69d1f605a8229df4b0714475464fd",
+     "bytes": 1920044,
+     "role": "PCM16 mono 48 kHz reference audio (generated cues/noise) fed to Opus"
+    },
+    "source.i420": {
+     "sha256": "f3cf2b049764a977453320b75f0b0c330ea98d0f18c44efde8d7dfd700179519",
+     "bytes": 138240000,
+     "role": "raw I420 video fed to the selected encoder (marked reference)"
+    }
+   },
+   "executions_using": 1623,
+   "regenerate": [
+    "python -B tools/prepare_native_workload.py plan --recipe coverage --mode 640x480@15",
+    "python -B tools/prepare_native_workload.py prepare --recipe coverage --mode 640x480@15 --output benchmarks/inputs/coverage-640x480-15 --max-bytes 2000000000",
+    "Compare SHA-256 of benchmarks/inputs/coverage-640x480-15/640x480-15fps/reference_audio.wav and source.i420 with this entry."
+   ],
+   "reproducibility": "Same source/version/seed/parameters/frame/platform/library versions. Floating trig and NumPy RNG/font raster versions may differ across environments; container byte identity is not promised.",
+   "licence": "Original implementations and bitmap font: MIT; no third-party clip assets; external tools retain their licenses"
+  },
+  {
+   "id": "vsg/framing-640x360-15/640x360-15fps",
+   "kind": "generated_native_raw",
+   "recipe": "framing",
+   "recipe_sha256": "98ad00b9abc1aeb0faf0d5b4adf5d28bdf1994ee67e75bd5f3190d518b85ac77",
+   "recipe_file": "inputs/recipes/framing.json",
+   "mode": "640x360@15",
+   "duration_s": 12,
+   "frame_count": 180,
+   "seed": 20261005,
+   "variant_id": "7b004e4b77b2cac9655b1fff0eb15d91ebb2f00e140c2a0edbd533d6279ce920",
+   "color": {
+    "range": "limited",
+    "primaries": "bt709",
+    "matrix": "bt709",
+    "transfer": "bt709",
+    "chroma_location": "center"
+   },
+   "rgb_to_i420_conversion": "bt709-integer-box420-v1",
+   "generator": {
+    "name": "video-stress-generator",
+    "version": "0.2.0",
+    "source_sha256": "19c0ef90c4937ab8246976867b29da2069e3e8f5ad00ad1e4cc573effbf618b6",
+    "location": "tools/video-stress-generator in the app repository (MIT)"
+   },
+   "generation_environment": {
+    "python": "3.13.3",
+    "libraries": {
+     "numpy": "2.2.6",
+     "Pillow": "11.3.0",
+     "opencv-python": "4.12.0.88",
+     "pytest": "9.0.3",
+     "scipy": "1.16.3",
+     "scikit-image": "0.26.0"
+    }
+   },
+   "files": {
+    "reference_audio.wav": {
+     "sha256": "129216bdb207f4fa11ff69bc376f66ae0f7e93157f5bd19b2f9c7f41270a841e",
+     "bytes": 1152044,
+     "role": "PCM16 mono 48 kHz reference audio (generated cues/noise) fed to Opus"
+    },
+    "source.i420": {
+     "sha256": "243a0d4cabb413e3061e38e4659eb16a3743d938ff2d76178e1935bda840f9d3",
+     "bytes": 62208000,
+     "role": "raw I420 video fed to the selected encoder (marked reference)"
+    }
+   },
+   "executions_using": 24,
+   "regenerate": [
+    "python -B tools/prepare_native_workload.py plan --recipe framing --mode 640x360@15",
+    "python -B tools/prepare_native_workload.py prepare --recipe framing --mode 640x360@15 --output benchmarks/inputs/framing-640x360-15 --max-bytes 2000000000",
+    "Compare SHA-256 of benchmarks/inputs/framing-640x360-15/640x360-15fps/reference_audio.wav and source.i420 with this entry."
+   ],
+   "reproducibility": "Same source/version/seed/parameters/frame/platform/library versions. Floating trig and NumPy RNG/font raster versions may differ across environments; container byte identity is not promised.",
+   "licence": "Original implementations and bitmap font: MIT; no third-party clip assets; external tools retain their licenses"
+  },
+  {
+   "id": "vsg/framing-640x480-15/640x480-15fps",
+   "kind": "generated_native_raw",
+   "recipe": "framing",
+   "recipe_sha256": "98ad00b9abc1aeb0faf0d5b4adf5d28bdf1994ee67e75bd5f3190d518b85ac77",
+   "recipe_file": "inputs/recipes/framing.json",
+   "mode": "640x480@15",
+   "duration_s": 12,
+   "frame_count": 180,
+   "seed": 20261005,
+   "variant_id": "18a0f673f321399304bb60f79f43ff52bb4788a761f9b0d66f7b70212ee574f4",
+   "color": {
+    "range": "limited",
+    "primaries": "bt709",
+    "matrix": "bt709",
+    "transfer": "bt709",
+    "chroma_location": "center"
+   },
+   "rgb_to_i420_conversion": "bt709-integer-box420-v1",
+   "generator": {
+    "name": "video-stress-generator",
+    "version": "0.2.0",
+    "source_sha256": "19c0ef90c4937ab8246976867b29da2069e3e8f5ad00ad1e4cc573effbf618b6",
+    "location": "tools/video-stress-generator in the app repository (MIT)"
+   },
+   "generation_environment": {
+    "python": "3.13.3",
+    "libraries": {
+     "numpy": "2.2.6",
+     "Pillow": "11.3.0",
+     "opencv-python": "4.12.0.88",
+     "pytest": "9.0.3",
+     "scipy": "1.16.3",
+     "scikit-image": "0.26.0"
+    }
+   },
+   "files": {
+    "reference_audio.wav": {
+     "sha256": "129216bdb207f4fa11ff69bc376f66ae0f7e93157f5bd19b2f9c7f41270a841e",
+     "bytes": 1152044,
+     "role": "PCM16 mono 48 kHz reference audio (generated cues/noise) fed to Opus"
+    },
+    "source.i420": {
+     "sha256": "9cf39a02eef61301748fa7156c156a5554d72cc3201900459cd038062c915dfe",
+     "bytes": 82944000,
+     "role": "raw I420 video fed to the selected encoder (marked reference)"
+    }
+   },
+   "executions_using": 22,
+   "regenerate": [
+    "python -B tools/prepare_native_workload.py plan --recipe framing --mode 640x480@15",
+    "python -B tools/prepare_native_workload.py prepare --recipe framing --mode 640x480@15 --output benchmarks/inputs/framing-640x480-15 --max-bytes 2000000000",
+    "Compare SHA-256 of benchmarks/inputs/framing-640x480-15/640x480-15fps/reference_audio.wav and source.i420 with this entry."
+   ],
+   "reproducibility": "Same source/version/seed/parameters/frame/platform/library versions. Floating trig and NumPy RNG/font raster versions may differ across environments; container byte identity is not promised.",
+   "licence": "Original implementations and bitmap font: MIT; no third-party clip assets; external tools retain their licenses"
+  },
+  {
+   "id": "vsg/quick-mosaic-640x360-15/640x360-15fps",
+   "kind": "generated_native_raw",
+   "recipe": "quick-mosaic",
+   "recipe_sha256": "b136e8f498727bbaab8a4c82597684bae49a285caeec0d92a01a5538842be74b",
+   "recipe_file": "inputs/recipes/quick-mosaic.json",
+   "mode": "640x360@15",
+   "duration_s": 20,
+   "frame_count": 300,
+   "seed": 20261005,
+   "variant_id": "9dd00d586902db376e03cc82188c0146b8a3ad7ade9084a97b5b187a9a8dc9ec",
+   "color": {
+    "range": "limited",
+    "primaries": "bt709",
+    "matrix": "bt709",
+    "transfer": "bt709",
+    "chroma_location": "center"
+   },
+   "rgb_to_i420_conversion": "bt709-integer-box420-v1",
+   "generator": {
+    "name": "video-stress-generator",
+    "version": "0.2.0",
+    "source_sha256": "19c0ef90c4937ab8246976867b29da2069e3e8f5ad00ad1e4cc573effbf618b6",
+    "location": "tools/video-stress-generator in the app repository (MIT)"
+   },
+   "generation_environment": {
+    "python": "3.13.3",
+    "libraries": {
+     "numpy": "2.2.6",
+     "Pillow": "11.3.0",
+     "opencv-python": "4.12.0.88",
+     "pytest": "9.0.3",
+     "scipy": "1.16.3",
+     "scikit-image": "0.26.0"
+    }
+   },
+   "files": {
+    "reference_audio.wav": {
+     "sha256": "4d8bc9d26043b7f8589f5abdf47bdc496f4e7df0270c6687c9f8b8f41ced7fa8",
+     "bytes": 1920044,
+     "role": "PCM16 mono 48 kHz reference audio (generated cues/noise) fed to Opus"
+    },
+    "source.i420": {
+     "sha256": "6e09a906293e78a7564413348b2c74e590e55c1bf1dee057c2c51943452bdbf1",
+     "bytes": 103680000,
+     "role": "raw I420 video fed to the selected encoder (marked reference)"
+    }
+   },
+   "executions_using": 12,
+   "regenerate": [
+    "python -B tools/prepare_native_workload.py plan --recipe quick-mosaic --mode 640x360@15",
+    "python -B tools/prepare_native_workload.py prepare --recipe quick-mosaic --mode 640x360@15 --output benchmarks/inputs/quick-mosaic-640x360-15 --max-bytes 2000000000",
+    "Compare SHA-256 of benchmarks/inputs/quick-mosaic-640x360-15/640x360-15fps/reference_audio.wav and source.i420 with this entry."
+   ],
+   "reproducibility": "Same source/version/seed/parameters/frame/platform/library versions. Floating trig and NumPy RNG/font raster versions may differ across environments; container byte identity is not promised.",
+   "licence": "Original implementations and bitmap font: MIT; no third-party clip assets; external tools retain their licenses"
+  },
+  {
+   "id": "vsg/quick-mosaic-640x480-15/640x480-15fps",
+   "kind": "generated_native_raw",
+   "recipe": "quick-mosaic",
+   "recipe_sha256": "b136e8f498727bbaab8a4c82597684bae49a285caeec0d92a01a5538842be74b",
+   "recipe_file": "inputs/recipes/quick-mosaic.json",
+   "mode": "640x480@15",
+   "duration_s": 20,
+   "frame_count": 300,
+   "seed": 20261005,
+   "variant_id": "1dd2e3d92a8167d9535e673ad6610fa9db640cb8185d2e18715bcda0b9ecf9ed",
+   "color": {
+    "range": "limited",
+    "primaries": "bt709",
+    "matrix": "bt709",
+    "transfer": "bt709",
+    "chroma_location": "center"
+   },
+   "rgb_to_i420_conversion": "bt709-integer-box420-v1",
+   "generator": {
+    "name": "video-stress-generator",
+    "version": "0.2.0",
+    "source_sha256": "19c0ef90c4937ab8246976867b29da2069e3e8f5ad00ad1e4cc573effbf618b6",
+    "location": "tools/video-stress-generator in the app repository (MIT)"
+   },
+   "generation_environment": {
+    "python": "3.13.3",
+    "libraries": {
+     "numpy": "2.2.6",
+     "Pillow": "11.3.0",
+     "opencv-python": "4.12.0.88",
+     "pytest": "9.0.3",
+     "scipy": "1.16.3",
+     "scikit-image": "0.26.0"
+    }
+   },
+   "files": {
+    "reference_audio.wav": {
+     "sha256": "4d8bc9d26043b7f8589f5abdf47bdc496f4e7df0270c6687c9f8b8f41ced7fa8",
+     "bytes": 1920044,
+     "role": "PCM16 mono 48 kHz reference audio (generated cues/noise) fed to Opus"
+    },
+    "source.i420": {
+     "sha256": "a7e220f72257634651e707382e26415d939e1eef598ece490c381766e26f6c54",
+     "bytes": 138240000,
+     "role": "raw I420 video fed to the selected encoder (marked reference)"
+    }
+   },
+   "executions_using": 36,
+   "regenerate": [
+    "python -B tools/prepare_native_workload.py plan --recipe quick-mosaic --mode 640x480@15",
+    "python -B tools/prepare_native_workload.py prepare --recipe quick-mosaic --mode 640x480@15 --output benchmarks/inputs/quick-mosaic-640x480-15 --max-bytes 2000000000",
+    "Compare SHA-256 of benchmarks/inputs/quick-mosaic-640x480-15/640x480-15fps/reference_audio.wav and source.i420 with this entry."
+   ],
+   "reproducibility": "Same source/version/seed/parameters/frame/platform/library versions. Floating trig and NumPy RNG/font raster versions may differ across environments; container byte identity is not promised.",
+   "licence": "Original implementations and bitmap font: MIT; no third-party clip assets; external tools retain their licenses"
+  },
+  {
+   "id": "vsg/sustained-640x360-15/640x360-15fps",
+   "kind": "generated_native_raw",
+   "recipe": "sustained",
+   "recipe_sha256": "1d889561f9977ae9b291d88a58e6f155d0159a2caa5fb5b52d2c4da48a25d316",
+   "recipe_file": "inputs/recipes/sustained.json",
+   "mode": "640x360@15",
+   "duration_s": 60,
+   "frame_count": 900,
+   "seed": 20261005,
+   "variant_id": "33887509a143660dca819640d02a19459ba014ac3219e468bf8c4b560b81581f",
+   "color": {
+    "range": "limited",
+    "primaries": "bt709",
+    "matrix": "bt709",
+    "transfer": "bt709",
+    "chroma_location": "center"
+   },
+   "rgb_to_i420_conversion": "bt709-integer-box420-v1",
+   "generator": {
+    "name": "video-stress-generator",
+    "version": "0.2.0",
+    "source_sha256": "19c0ef90c4937ab8246976867b29da2069e3e8f5ad00ad1e4cc573effbf618b6",
+    "location": "tools/video-stress-generator in the app repository (MIT)"
+   },
+   "generation_environment": {
+    "python": "3.13.3",
+    "libraries": {
+     "numpy": "2.2.6",
+     "Pillow": "11.3.0",
+     "opencv-python": "4.12.0.88",
+     "pytest": "9.0.3",
+     "scipy": "1.16.3",
+     "scikit-image": "0.26.0"
+    }
+   },
+   "files": {
+    "reference_audio.wav": {
+     "sha256": "3c4f6429a49b7047bf38a89726fb61c24fafc645dfda3553ed563866f1b421a8",
+     "bytes": 5760044,
+     "role": "PCM16 mono 48 kHz reference audio (generated cues/noise) fed to Opus"
+    },
+    "source.i420": {
+     "sha256": "239f1b253854570180221b64e0de93e8178345bd7017f141f8732bc36883a957",
+     "bytes": 311040000,
+     "role": "raw I420 video fed to the selected encoder (marked reference)"
+    }
+   },
+   "executions_using": 0,
+   "regenerate": [
+    "python -B tools/prepare_native_workload.py plan --recipe sustained --mode 640x360@15",
+    "python -B tools/prepare_native_workload.py prepare --recipe sustained --mode 640x360@15 --output benchmarks/inputs/sustained-640x360-15 --max-bytes 2000000000",
+    "Compare SHA-256 of benchmarks/inputs/sustained-640x360-15/640x360-15fps/reference_audio.wav and source.i420 with this entry."
+   ],
+   "reproducibility": "Same source/version/seed/parameters/frame/platform/library versions. Floating trig and NumPy RNG/font raster versions may differ across environments; container byte identity is not promised.",
+   "licence": "Original implementations and bitmap font: MIT; no third-party clip assets; external tools retain their licenses"
+  },
+  {
+   "id": "vsg/sustained-640x480-15/640x480-15fps",
+   "kind": "generated_native_raw",
+   "recipe": "sustained",
+   "recipe_sha256": "1d889561f9977ae9b291d88a58e6f155d0159a2caa5fb5b52d2c4da48a25d316",
+   "recipe_file": "inputs/recipes/sustained.json",
+   "mode": "640x480@15",
+   "duration_s": 60,
+   "frame_count": 900,
+   "seed": 20261005,
+   "variant_id": "edb72e673c75eaffde78061a2f650d4e1be8890d56e629eb5acf5780fb8895db",
+   "color": {
+    "range": "limited",
+    "primaries": "bt709",
+    "matrix": "bt709",
+    "transfer": "bt709",
+    "chroma_location": "center"
+   },
+   "rgb_to_i420_conversion": "bt709-integer-box420-v1",
+   "generator": {
+    "name": "video-stress-generator",
+    "version": "0.2.0",
+    "source_sha256": "19c0ef90c4937ab8246976867b29da2069e3e8f5ad00ad1e4cc573effbf618b6",
+    "location": "tools/video-stress-generator in the app repository (MIT)"
+   },
+   "generation_environment": {
+    "python": "3.13.3",
+    "libraries": {
+     "numpy": "2.2.6",
+     "Pillow": "11.3.0",
+     "opencv-python": "4.12.0.88",
+     "pytest": "9.0.3",
+     "scipy": "1.16.3",
+     "scikit-image": "0.26.0"
+    }
+   },
+   "files": {
+    "reference_audio.wav": {
+     "sha256": "3c4f6429a49b7047bf38a89726fb61c24fafc645dfda3553ed563866f1b421a8",
+     "bytes": 5760044,
+     "role": "PCM16 mono 48 kHz reference audio (generated cues/noise) fed to Opus"
+    },
+    "source.i420": {
+     "sha256": "ec01ebcf2510821efead12d8200afb14eee8bb499384c0caf4448624e7149b68",
+     "bytes": 414720000,
+     "role": "raw I420 video fed to the selected encoder (marked reference)"
+    }
+   },
+   "executions_using": 0,
+   "regenerate": [
+    "python -B tools/prepare_native_workload.py plan --recipe sustained --mode 640x480@15",
+    "python -B tools/prepare_native_workload.py prepare --recipe sustained --mode 640x480@15 --output benchmarks/inputs/sustained-640x480-15 --max-bytes 2000000000",
+    "Compare SHA-256 of benchmarks/inputs/sustained-640x480-15/640x480-15fps/reference_audio.wav and source.i420 with this entry."
+   ],
+   "reproducibility": "Same source/version/seed/parameters/frame/platform/library versions. Floating trig and NumPy RNG/font raster versions may differ across environments; container byte identity is not promised.",
+   "licence": "Original implementations and bitmap font: MIT; no third-party clip assets; external tools retain their licenses"
+  }
+ ]
+}

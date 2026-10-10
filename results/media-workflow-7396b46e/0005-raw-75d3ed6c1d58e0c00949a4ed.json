@@ -1,0 +1,834 @@
+{
+ "schema": "meshlive-benchmark-result-v1",
+ "execution": {
+  "suite": "media-workflow-7396b46e",
+  "sequence": "0005",
+  "run_id": "physical-c35f5455be6d400bb5840f30eab5016d",
+  "manifest_sha256": "6248f94bd56de3a254bec59aec79239d6f83a5e382b22fc5edef9b03bfdd90fb",
+  "date_utc": "2026-10-05T17:56:29Z",
+  "duration_wall_s": null,
+  "concurrency": null,
+  "actual_media_overlap": {
+   "status": "UNMEASURED",
+   "reason": "Job overlap is not actual media overlap"
+  }
+ },
+ "case": {
+  "baseline_key": "ffa2697e048117b18c5d",
+  "private_case_id": "raw-75d3ed6c1d58e0c00949a4ed",
+  "mode": "broadcast",
+  "family": null,
+  "request": {
+   "source": "S24",
+   "receivers": [
+    {
+     "phone": "M31",
+     "parent": "S24"
+    }
+   ],
+   "transport": "gatt",
+   "profile": {
+    "codec": "c2.exynos.vp9.encoder",
+    "width": 640,
+    "height": 360,
+    "fps": 15,
+    "bitrate_kbps": 500,
+    "rate_control": "automatic",
+    "playback": "balanced",
+    "thermal_reduction": false
+   },
+   "duration_s": 12,
+   "connection_timeout_s": 20,
+   "audio_enabled": true,
+   "media_trace": true,
+   "video_presentation_timing": true,
+   "workflow_only": true,
+   "actions": [
+    {
+     "phone": "S24",
+     "action": "pause",
+     "at_s": 3
+    },
+    {
+     "phone": "S24",
+     "action": "resume",
+     "at_s": 5
+    }
+   ],
+   "inputs": {
+    "S24": {
+     "video_sha256": "243a0d4cabb413e3061e38e4659eb16a3743d938ff2d76178e1935bda840f9d3",
+     "audio_sha256": "129216bdb207f4fa11ff69bc376f66ae0f7e93157f5bd19b2f9c7f41270a841e"
+    }
+   }
+  },
+  "description": "Bound file hashes/declarations verified; live readiness, sustained load and quality unmeasured"
+ },
+ "build": {
+  "build_id": "7396b46e",
+  "apk_sha256": "7396b46eba05e3fb8f65a90cc14b892becde93632577b4e8f5a236bbdb2df25d",
+  "apk_sha256_per_phone": null,
+  "version_name": {
+   "version_name": "1.0",
+   "source": "read from the retained APK (aapt2 dump badging)",
+   "note": "Pre-release debug build; the app was renamed and versioned 0.1.0-beta later"
+  }
+ },
+ "phones": [
+  {
+   "alias": "M31",
+   "manufacturer": "samsung",
+   "model": "SM-M315F",
+   "android": "12",
+   "sdk": "31",
+   "soc": "Exynos 9611",
+   "firmware_build": "SP1A.210812.016/M315FXXS4CXB1",
+   "apk_sha256": "7396b46eba05e3fb8f65a90cc14b892becde93632577b4e8f5a236bbdb2df25d"
+  },
+  {
+   "alias": "S24",
+   "manufacturer": "samsung",
+   "model": "SM-S921B",
+   "android": "16",
+   "sdk": "36",
+   "soc": "s5e9945",
+   "firmware_build": "BP2A.250605.031.A3/S921BXXSACYJ7",
+   "apk_sha256": "7396b46eba05e3fb8f65a90cc14b892becde93632577b4e8f5a236bbdb2df25d"
+  }
+ ],
+ "inputs": {
+  "S24": {
+   "video": {
+    "input_id": "vsg/framing-640x360-15/640x360-15fps",
+    "sha256": "243a0d4cabb413e3061e38e4659eb16a3743d938ff2d76178e1935bda840f9d3"
+   },
+   "audio": {
+    "input_id": "vsg/framing-640x360-15/640x360-15fps",
+    "sha256": "129216bdb207f4fa11ff69bc376f66ae0f7e93157f5bd19b2f9c7f41270a841e"
+   }
+  }
+ },
+ "result": {
+  "status": "UNMEASURED",
+  "reason": null,
+  "scored_in_suite": "media-workflow-7396b46e-observations",
+  "scored_at": "2026-10-05T17:56:29Z",
+  "thresholds_version": "device-run-v2",
+  "acceptance_profile": null,
+  "pipeline_status": "UNMEASURED",
+  "full_experience_status": "UNMEASURED",
+  "required_families": [
+   "picture",
+   "smoothness",
+   "connection",
+   "transport",
+   "lifecycle",
+   "topology",
+   "camera",
+   "acoustic",
+   "physical_latency",
+   "endurance"
+  ],
+  "measurement_errors": [],
+  "family_status": {
+   "picture": "PASS",
+   "smoothness": "UNMEASURED",
+   "connection": "UNMEASURED",
+   "transport": "UNMEASURED",
+   "lifecycle": "UNMEASURED",
+   "topology": "PASS",
+   "camera": "UNMEASURED",
+   "acoustic": "UNMEASURED",
+   "physical_latency": "UNMEASURED",
+   "endurance": "UNMEASURED"
+  }
+ },
+ "families": {
+  "picture": {
+   "status": "PASS",
+   "measurements": [
+    {
+     "device": "M31",
+     "source": "S24",
+     "name": "reference_validity",
+     "status": "PASS",
+     "reason": "Requires every verified finalized active raw-input phase"
+    },
+    {
+     "device": "M31",
+     "source": "S24",
+     "name": "vmaf",
+     "status": "PASS",
+     "value": 97.0063,
+     "limit": 90,
+     "comparison": "min"
+    },
+    {
+     "device": "M31",
+     "source": "S24",
+     "name": "ssim",
+     "status": "PASS",
+     "value": 0.9993,
+     "limit": 0.98,
+     "comparison": "min"
+    },
+    {
+     "device": "M31",
+     "source": "S24",
+     "name": "psnr_db",
+     "status": "PASS",
+     "value": 50.6385,
+     "limit": 35,
+     "comparison": "min"
+    }
+   ],
+   "content_regions": [
+    {
+     "device": "M31",
+     "source": "S24",
+     "measurement_status": "MEASURED",
+     "acceptance_status": "UNMEASURED"
+    }
+   ]
+  },
+  "smoothness": {
+   "status": "UNMEASURED",
+   "measurements": [
+    {
+     "device": "S24",
+     "direction": "broadcast",
+     "name": "encoder_fps",
+     "status": "UNMEASURED",
+     "limit": 14.25,
+     "reason": "Required measurement absent"
+    },
+    {
+     "device": "M31",
+     "direction": "broadcast",
+     "name": "surface_p95_ms",
+     "status": "UNMEASURED",
+     "limit": 83.3333,
+     "reason": "Required measurement absent"
+    },
+    {
+     "device": "M31",
+     "direction": "broadcast",
+     "name": "surface_p99_ms",
+     "status": "UNMEASURED",
+     "limit": 133.3333,
+     "reason": "Required measurement absent"
+    },
+    {
+     "device": "M31",
+     "direction": "broadcast",
+     "name": "visible_fps",
+     "status": "PASS",
+     "value": 14.976,
+     "limit": 14.25,
+     "comparison": "min"
+    },
+    {
+     "device": "M31",
+     "direction": "broadcast",
+     "name": "unexpected_freeze_events",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "M31",
+     "direction": "broadcast",
+     "name": "full_lifecycle_cadence_coverage",
+     "status": "UNMEASURED",
+     "reason": "Rolling cadence omits samples after a planned gap; a prefix cannot approve the full lifecycle"
+    }
+   ],
+   "motion_detail": {
+    "status": "MEASURED_WITH_GAPS",
+    "capture_state": "COMPLETE"
+   }
+  },
+  "connection": {
+   "status": "UNMEASURED",
+   "measurements": [
+    {
+     "device": "S24",
+     "direction": "broadcast",
+     "name": "discovery_ms",
+     "status": "UNMEASURED",
+     "limit": 3000,
+     "reason": "Required measurement absent"
+    },
+    {
+     "device": "S24",
+     "name": "first_surface_ms",
+     "action": "raw_fixture_reused",
+     "status": "UNMEASURED",
+     "limit": 5000,
+     "reason": "Required measurement absent"
+    },
+    {
+     "device": "S24",
+     "name": "first_surface_ms",
+     "action": "launch",
+     "status": "UNMEASURED",
+     "limit": 5000,
+     "reason": "Required measurement absent"
+    },
+    {
+     "device": "S24",
+     "name": "first_surface_ms",
+     "action": "pause",
+     "status": "UNMEASURED",
+     "limit": 5000,
+     "reason": "Required measurement absent"
+    },
+    {
+     "device": "S24",
+     "name": "first_surface_ms",
+     "action": "resume",
+     "status": "UNMEASURED",
+     "limit": 5000,
+     "reason": "Required measurement absent"
+    },
+    {
+     "device": "S24",
+     "name": "first_surface_ms",
+     "action": "end",
+     "status": "UNMEASURED",
+     "limit": 5000,
+     "reason": "Required measurement absent"
+    },
+    {
+     "device": "M31",
+     "direction": "broadcast",
+     "name": "discovery_ms",
+     "status": "PASS",
+     "value": 196.7,
+     "limit": 3000,
+     "comparison": "max"
+    },
+    {
+     "device": "M31",
+     "direction": "broadcast",
+     "name": "selection_to_first_surface_ms",
+     "status": "PASS",
+     "value": 2919.4,
+     "limit": 5000,
+     "comparison": "max"
+    },
+    {
+     "device": "M31",
+     "name": "first_surface_ms",
+     "action": "launch",
+     "status": "PASS",
+     "value": 4382.0,
+     "limit": 5000,
+     "comparison": "max"
+    }
+   ]
+  },
+  "transport": {
+   "status": "UNMEASURED",
+   "measurements": [
+    {
+     "device": "S24",
+     "direction": "broadcast",
+     "name": "unexpected_events",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "S24",
+     "direction": "broadcast",
+     "name": "sender_drops",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "S24",
+     "direction": "broadcast",
+     "name": "raw_input_drops",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "S24",
+     "direction": "broadcast",
+     "name": "profile_resolution_mismatches",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "S24",
+     "direction": "broadcast",
+     "name": "profile_fps_mismatches",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "S24",
+     "direction": "broadcast",
+     "name": "profile_encoder_mismatches",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "S24",
+     "direction": "broadcast",
+     "name": "profile_allocation_mismatches",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "S24",
+     "direction": "broadcast",
+     "name": "profile_bitrate_mismatches",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "S24",
+     "direction": "broadcast",
+     "name": "actual_offered_load",
+     "status": "UNMEASURED",
+     "reason": "Measured encoder payload, not the selected target; insufficient or absent load does not prove requested transport capacity"
+    },
+    {
+     "device": "M31",
+     "direction": "broadcast",
+     "name": "unexpected_events",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "M31",
+     "direction": "broadcast",
+     "name": "decoder_drops",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "M31",
+     "direction": "broadcast",
+     "name": "audio_drops",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "M31",
+     "direction": "broadcast",
+     "name": "profile_resolution_mismatches",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "M31",
+     "direction": "broadcast",
+     "name": "profile_fps_mismatches",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "M31",
+     "direction": "broadcast",
+     "name": "profile_bitrate_mismatches",
+     "status": "UNMEASURED",
+     "limit": 0,
+     "reason": "Receiver logs lack configured source bitrate; join sender evidence"
+    },
+    {
+     "name": "runner_error",
+     "status": "PASS"
+    },
+    {
+     "name": "connection_timeouts",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "name": "captured_logs",
+     "status": "PASS",
+     "value": 2,
+     "limit": 1,
+     "comparison": "min"
+    },
+    {
+     "name": "media_traces",
+     "status": "PASS",
+     "value": 2,
+     "limit": 2,
+     "reason": "Requested finalized trace evidence must be hash-verified for every participant and every captured phase"
+    },
+    {
+     "device": "S24",
+     "source": "S24",
+     "name": "raw_capture_to_encode_input_max_ms",
+     "status": "UNMEASURED",
+     "value": 48.708,
+     "reason": "Measured diagnostic or incomplete evidence; full gate unavailable"
+    },
+    {
+     "device": "S24",
+     "source": "S24",
+     "name": "encode_input_to_encode_output_max_ms",
+     "status": "UNMEASURED",
+     "value": 17.9082,
+     "reason": "Measured diagnostic or incomplete evidence; full gate unavailable"
+    },
+    {
+     "device": "S24",
+     "source": "S24",
+     "name": "encode_output_to_send_enqueue_max_ms",
+     "status": "UNMEASURED",
+     "value": 2.7205,
+     "reason": "Measured diagnostic or incomplete evidence; full gate unavailable"
+    },
+    {
+     "device": "S24",
+     "source": "S24",
+     "name": "send_enqueue_to_write_begin_max_ms",
+     "status": "UNMEASURED",
+     "value": 2.5501,
+     "reason": "Measured diagnostic or incomplete evidence; full gate unavailable"
+    },
+    {
+     "device": "S24",
+     "source": "S24",
+     "name": "write_begin_to_write_end_max_ms",
+     "status": "UNMEASURED",
+     "value": 7.7987,
+     "reason": "Measured diagnostic or incomplete evidence; full gate unavailable"
+    },
+    {
+     "device": "S24",
+     "source": "S24",
+     "name": "receive_to_decoder_input_max_ms",
+     "status": "UNMEASURED",
+     "reason": "Measured diagnostic or incomplete evidence; full gate unavailable"
+    },
+    {
+     "device": "S24",
+     "source": "S24",
+     "name": "decoder_input_to_decoder_output_max_ms",
+     "status": "UNMEASURED",
+     "reason": "Measured diagnostic or incomplete evidence; full gate unavailable"
+    },
+    {
+     "device": "S24",
+     "source": "S24",
+     "name": "decoder_output_to_release_max_ms",
+     "status": "UNMEASURED",
+     "reason": "Measured diagnostic or incomplete evidence; full gate unavailable"
+    },
+    {
+     "device": "S24",
+     "source": "S24",
+     "name": "release_to_surface_ack_max_ms",
+     "status": "UNMEASURED",
+     "reason": "Measured diagnostic or incomplete evidence; full gate unavailable"
+    },
+    {
+     "device": "M31",
+     "source": "S24",
+     "name": "raw_capture_to_encode_input_max_ms",
+     "status": "UNMEASURED",
+     "reason": "Measured diagnostic or incomplete evidence; full gate unavailable"
+    },
+    {
+     "device": "M31",
+     "source": "S24",
+     "name": "encode_input_to_encode_output_max_ms",
+     "status": "UNMEASURED",
+     "reason": "Measured diagnostic or incomplete evidence; full gate unavailable"
+    },
+    {
+     "device": "M31",
+     "source": "S24",
+     "name": "encode_output_to_send_enqueue_max_ms",
+     "status": "UNMEASURED",
+     "reason": "Measured diagnostic or incomplete evidence; full gate unavailable"
+    },
+    {
+     "device": "M31",
+     "source": "S24",
+     "name": "send_enqueue_to_write_begin_max_ms",
+     "status": "UNMEASURED",
+     "reason": "Measured diagnostic or incomplete evidence; full gate unavailable"
+    },
+    {
+     "device": "M31",
+     "source": "S24",
+     "name": "write_begin_to_write_end_max_ms",
+     "status": "UNMEASURED",
+     "reason": "Measured diagnostic or incomplete evidence; full gate unavailable"
+    },
+    {
+     "device": "M31",
+     "source": "S24",
+     "name": "receive_to_decoder_input_max_ms",
+     "status": "UNMEASURED",
+     "value": 697.8371,
+     "reason": "Measured diagnostic or incomplete evidence; full gate unavailable"
+    },
+    {
+     "device": "M31",
+     "source": "S24",
+     "name": "decoder_input_to_decoder_output_max_ms",
+     "status": "UNMEASURED",
+     "value": 43.4398,
+     "reason": "Measured diagnostic or incomplete evidence; full gate unavailable"
+    },
+    {
+     "device": "M31",
+     "source": "S24",
+     "name": "decoder_output_to_release_max_ms",
+     "status": "UNMEASURED",
+     "value": 13.4893,
+     "reason": "Measured diagnostic or incomplete evidence; full gate unavailable"
+    },
+    {
+     "device": "M31",
+     "source": "S24",
+     "name": "release_to_surface_ack_max_ms",
+     "status": "UNMEASURED",
+     "value": 2236.6818,
+     "reason": "Measured diagnostic or incomplete evidence; full gate unavailable"
+    }
+   ]
+  },
+  "lifecycle": {
+   "status": "UNMEASURED",
+   "measurements": [
+    {
+     "device": "S24",
+     "name": "first_surface_ms",
+     "action": "raw_fixture_reused",
+     "status": "UNMEASURED",
+     "limit": 5000,
+     "reason": "Required measurement absent"
+    },
+    {
+     "device": "S24",
+     "name": "first_surface_ms",
+     "action": "pause",
+     "status": "UNMEASURED",
+     "limit": 5000,
+     "reason": "Required measurement absent"
+    },
+    {
+     "device": "S24",
+     "name": "first_surface_ms",
+     "action": "resume",
+     "status": "UNMEASURED",
+     "limit": 5000,
+     "reason": "Required measurement absent"
+    },
+    {
+     "device": "S24",
+     "name": "first_surface_ms",
+     "action": "end",
+     "status": "UNMEASURED",
+     "limit": 5000,
+     "reason": "Required measurement absent"
+    }
+   ]
+  },
+  "topology": {
+   "status": "PASS",
+   "measurements": [
+    {
+     "device": "M31",
+     "direction": "broadcast",
+     "name": "requested_parent_identity",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "M31",
+     "direction": "broadcast",
+     "name": "requested_original_source_identity",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    }
+   ]
+  },
+  "camera": {
+   "status": "UNMEASURED",
+   "reason": "No connected measurement adapter",
+   "measurements": []
+  },
+  "acoustic": {
+   "status": "UNMEASURED",
+   "reason": "No connected measurement adapter",
+   "measurements": []
+  },
+  "physical_latency": {
+   "status": "UNMEASURED",
+   "measurements": [
+    {
+     "device": "S24",
+     "source": "S24",
+     "name": "physical_pipeline_latency",
+     "status": "UNMEASURED",
+     "reason": "Stage proxies cannot measure physical screen or acoustic latency"
+    },
+    {
+     "device": "M31",
+     "source": "S24",
+     "name": "physical_pipeline_latency",
+     "status": "UNMEASURED",
+     "reason": "Stage proxies cannot measure physical screen or acoustic latency"
+    }
+   ]
+  },
+  "endurance": {
+   "status": "UNMEASURED",
+   "reason": "No connected measurement adapter",
+   "measurements": []
+  }
+ },
+ "stream_metrics": {
+  "thresholds_version": null,
+  "overall_status": "UNMEASURED",
+  "log_status": null,
+  "quality_status": null,
+  "streams": [
+   {
+    "device": "S24",
+    "role": "sender",
+    "log_status": "UNMEASURED",
+    "quality_status": "UNMEASURED",
+    "lifecycle_status": "UNMEASURED",
+    "overall_status": "UNMEASURED",
+    "expected": {
+     "fps": 15,
+     "width": 640,
+     "height": 360,
+     "bitrate_kbps": 500
+    },
+    "startup_ms": [],
+    "freezes": null,
+    "freeze_duration_ms": null,
+    "drops": {
+     "decoder_drops": null,
+     "audio_drops": null,
+     "sender_drops": 0,
+     "forwarding_drops": null,
+     "camera_input_drops": 0,
+     "raw_input_drops": 0
+    },
+    "encoder_fps": null,
+    "encoder_kbps": null,
+    "offered_load": {
+     "status": "UNMEASURED",
+     "median_kbps": null,
+     "requested_kbps": 500,
+     "target_fraction": null
+    },
+    "visible_fps": null,
+    "queue_depth_max": {
+     "sender": 0
+    }
+   },
+   {
+    "device": "M31",
+    "role": "receiver",
+    "log_status": "UNMEASURED",
+    "quality_status": "UNMEASURED",
+    "lifecycle_status": "PASS",
+    "overall_status": "UNMEASURED",
+    "expected": {
+     "fps": 15,
+     "width": 640,
+     "height": 360,
+     "bitrate_kbps": 500
+    },
+    "startup_ms": [
+     {
+      "kind": "browser-to-first-offer",
+      "ms": 196.7
+     },
+     {
+      "kind": "selection-to-first-surface",
+      "ms": 2919.4
+     }
+    ],
+    "freezes": 0,
+    "freeze_duration_ms": 0.0,
+    "drops": {
+     "decoder_drops": 0,
+     "audio_drops": 0,
+     "sender_drops": null,
+     "forwarding_drops": null,
+     "camera_input_drops": null,
+     "raw_input_drops": null
+    },
+    "encoder_fps": null,
+    "encoder_kbps": null,
+    "offered_load": {
+     "status": "UNMEASURED",
+     "median_kbps": null,
+     "requested_kbps": 500,
+     "target_fraction": null
+    },
+    "visible_fps": {
+     "n": 1,
+     "min": 14.976,
+     "median": 14.976,
+     "max": 14.976
+    },
+    "queue_depth_max": {
+     "decoder": 9
+    }
+   }
+  ]
+ },
+ "analyses": [
+  {
+   "suite": "media-workflow-7396b46e",
+   "generated_at": "2026-10-05T17:44:55Z",
+   "status": "UNMEASURED",
+   "thresholds_version": "device-run-v2"
+  },
+  {
+   "suite": "media-workflow-7396b46e-observations",
+   "generated_at": "2026-10-05T17:56:29Z",
+   "status": "UNMEASURED",
+   "thresholds_version": "device-run-v2"
+  }
+ ]
+}

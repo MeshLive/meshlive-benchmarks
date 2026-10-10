@@ -1,0 +1,861 @@
+{
+ "schema": "meshlive-benchmark-result-v1",
+ "execution": {
+  "suite": "mesh4-5b63ccda-loop13-1",
+  "sequence": "0002",
+  "run_id": "physical-1f920e5ef66a4c53bce2cfd6f6cf3d72",
+  "manifest_sha256": "79e41bd368f6fdbd54e1c787146350b4779e881a105bdbf855fad32d4fb4c165",
+  "date_utc": "2026-10-10T01:02:50Z",
+  "duration_wall_s": 315.0,
+  "concurrency": "isolated",
+  "actual_media_overlap": {
+   "status": "UNMEASURED",
+   "reason": "Job overlap is not actual media overlap"
+  }
+ },
+ "case": {
+  "baseline_key": "e6bd428eb9cc0ca0c716",
+  "private_case_id": "raw-81b9bc10d76b6f3d4d2a6d53",
+  "mode": "broadcast",
+  "family": "broadcast",
+  "request": {
+   "source": "ASUS",
+   "transport": "ble",
+   "profile": {
+    "codec": "libaom-native",
+    "rate_control": "automatic",
+    "playback": "auto",
+    "thermal_reduction": false,
+    "width": 640,
+    "height": 480,
+    "fps": 15,
+    "bitrate_kbps": 300
+   },
+   "receivers": [
+    {
+     "phone": "S24",
+     "parent": "ASUS"
+    },
+    {
+     "phone": "M31",
+     "parent": "ASUS"
+    },
+    {
+     "phone": "A15s",
+     "parent": "ASUS"
+    }
+   ],
+   "media_trace": true,
+   "duration_s": 40,
+   "actions": [
+    {
+     "at_s": 37,
+     "phone": "ASUS",
+     "action": "end"
+    }
+   ],
+   "family": "broadcast",
+   "inputs": {
+    "ASUS": {
+     "video_sha256": "f3cf2b049764a977453320b75f0b0c330ea98d0f18c44efde8d7dfd700179519",
+     "audio_sha256": null
+    }
+   }
+  },
+  "description": "Bound file hashes/declarations verified; live readiness, sustained load and quality unmeasured"
+ },
+ "build": {
+  "build_id": "5b63ccda",
+  "apk_sha256": "5b63ccda6d884ed36af38c2501fdd6a465a12d147ea29f791491aae7acb189c4",
+  "apk_sha256_per_phone": null,
+  "version_name": {
+   "version_name": "1.0",
+   "source": "read from the retained APK (aapt2 dump badging)",
+   "note": "Pre-release debug build; the app was renamed and versioned 0.1.0-beta later"
+  }
+ },
+ "phones": [
+  {
+   "alias": "A15s",
+   "manufacturer": "OPPO",
+   "model": "CPH2179",
+   "android": "10",
+   "sdk": "29",
+   "soc": "mt6765",
+   "firmware_build": "QP1A.190711.020/2024022110",
+   "apk_sha256": "5b63ccda6d884ed36af38c2501fdd6a465a12d147ea29f791491aae7acb189c4"
+  },
+  {
+   "alias": "ASUS",
+   "manufacturer": "asus",
+   "model": "ASUS_I01WD",
+   "android": "11",
+   "sdk": "30",
+   "soc": "msmnile",
+   "firmware_build": "RKQ1.200710.002/18.0610.2106.156-0",
+   "apk_sha256": "5b63ccda6d884ed36af38c2501fdd6a465a12d147ea29f791491aae7acb189c4"
+  },
+  {
+   "alias": "M31",
+   "manufacturer": "samsung",
+   "model": "SM-M315F",
+   "android": "12",
+   "sdk": "31",
+   "soc": "Exynos 9611",
+   "firmware_build": "SP1A.210812.016/M315FXXS4CXB1",
+   "apk_sha256": "5b63ccda6d884ed36af38c2501fdd6a465a12d147ea29f791491aae7acb189c4"
+  },
+  {
+   "alias": "S24",
+   "manufacturer": "samsung",
+   "model": "SM-S921B",
+   "android": "16",
+   "sdk": "36",
+   "soc": "s5e9945",
+   "firmware_build": "BP2A.250605.031.A3/S921BXXSACYJ7",
+   "apk_sha256": "5b63ccda6d884ed36af38c2501fdd6a465a12d147ea29f791491aae7acb189c4"
+  }
+ ],
+ "inputs": {
+  "ASUS": {
+   "video": {
+    "input_id": "vsg/coverage-640x480-15/640x480-15fps",
+    "sha256": "f3cf2b049764a977453320b75f0b0c330ea98d0f18c44efde8d7dfd700179519"
+   },
+   "audio": {
+    "input_id": null,
+    "note": "No reference audio bound: live microphone (not reproducible, not recorded here)"
+   }
+  }
+ },
+ "result": {
+  "status": "FAIL",
+  "reason": null,
+  "scored_in_suite": "mesh4-5b63ccda-loop13-1",
+  "scored_at": "2026-10-10T01:28:45Z",
+  "thresholds_version": "device-run-v3",
+  "acceptance_profile": null,
+  "pipeline_status": "FAIL",
+  "full_experience_status": "FAIL",
+  "required_families": [
+   "picture",
+   "smoothness",
+   "connection",
+   "transport",
+   "lifecycle",
+   "topology"
+  ],
+  "measurement_errors": [],
+  "family_status": {
+   "picture": "FAIL",
+   "smoothness": "FAIL",
+   "connection": "FAIL",
+   "transport": "FAIL",
+   "lifecycle": "UNMEASURED",
+   "topology": "UNMEASURED",
+   "camera": "UNMEASURED",
+   "acoustic": "UNMEASURED",
+   "physical_latency": "UNMEASURED",
+   "endurance": "UNMEASURED"
+  }
+ },
+ "families": {
+  "picture": {
+   "status": "FAIL",
+   "measurements": [
+    {
+     "device": "S24",
+     "source": "ASUS",
+     "name": "reference_validity",
+     "status": "PASS",
+     "reason": "Requires every verified finalized active raw-input phase"
+    },
+    {
+     "device": "S24",
+     "source": "ASUS",
+     "name": "vmaf",
+     "status": "FAIL",
+     "value": 76.1121,
+     "limit": 90,
+     "comparison": "min"
+    },
+    {
+     "device": "S24",
+     "source": "ASUS",
+     "name": "ssim",
+     "status": "FAIL",
+     "value": 0.8631,
+     "limit": 0.98,
+     "comparison": "min"
+    },
+    {
+     "device": "S24",
+     "source": "ASUS",
+     "name": "psnr_db",
+     "status": "FAIL",
+     "value": 23.4959,
+     "limit": 35,
+     "comparison": "min"
+    },
+    {
+     "device": "M31",
+     "source": "ASUS",
+     "name": "reference_validity",
+     "status": "UNMEASURED",
+     "reason": "receiver: phase is not verified and finalized"
+    },
+    {
+     "device": "M31",
+     "source": "ASUS",
+     "name": "vmaf",
+     "status": "UNMEASURED",
+     "limit": 90,
+     "reason": "Required measurement absent"
+    },
+    {
+     "device": "M31",
+     "source": "ASUS",
+     "name": "ssim",
+     "status": "UNMEASURED",
+     "limit": 0.98,
+     "reason": "Required measurement absent"
+    },
+    {
+     "device": "M31",
+     "source": "ASUS",
+     "name": "psnr_db",
+     "status": "UNMEASURED",
+     "limit": 35,
+     "reason": "Required measurement absent"
+    },
+    {
+     "device": "A15s",
+     "source": "ASUS",
+     "name": "reference_validity",
+     "status": "UNMEASURED",
+     "reason": "receiver: phase is not verified and finalized"
+    },
+    {
+     "device": "A15s",
+     "source": "ASUS",
+     "name": "vmaf",
+     "status": "UNMEASURED",
+     "limit": 90,
+     "reason": "Required measurement absent"
+    },
+    {
+     "device": "A15s",
+     "source": "ASUS",
+     "name": "ssim",
+     "status": "UNMEASURED",
+     "limit": 0.98,
+     "reason": "Required measurement absent"
+    },
+    {
+     "device": "A15s",
+     "source": "ASUS",
+     "name": "psnr_db",
+     "status": "UNMEASURED",
+     "limit": 35,
+     "reason": "Required measurement absent"
+    }
+   ],
+   "content_regions": [
+    {
+     "device": "S24",
+     "source": "ASUS",
+     "measurement_status": "MEASURED",
+     "acceptance_status": "UNMEASURED"
+    }
+   ]
+  },
+  "smoothness": {
+   "status": "FAIL",
+   "measurements": [
+    {
+     "device": "ASUS",
+     "direction": "broadcast",
+     "name": "encoder_fps",
+     "status": "PASS",
+     "value": 15.0,
+     "limit": 14.25,
+     "comparison": "min"
+    },
+    {
+     "device": "S24",
+     "direction": "broadcast",
+     "name": "surface_p95_ms",
+     "status": "PASS",
+     "value": 75.8,
+     "limit": 83.3333,
+     "comparison": "max"
+    },
+    {
+     "device": "S24",
+     "direction": "broadcast",
+     "name": "surface_p99_ms",
+     "status": "FAIL",
+     "value": 159.4,
+     "limit": 133.3333,
+     "comparison": "max"
+    },
+    {
+     "device": "S24",
+     "direction": "broadcast",
+     "name": "visible_fps",
+     "status": "PASS",
+     "value": 14.5476,
+     "limit": 14.25,
+     "comparison": "min"
+    },
+    {
+     "device": "S24",
+     "direction": "broadcast",
+     "name": "unexpected_freeze_events",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "S24",
+     "direction": "broadcast",
+     "name": "full_lifecycle_cadence_coverage",
+     "status": "UNMEASURED",
+     "reason": "Rolling cadence omits samples after a planned gap; a prefix cannot approve the full lifecycle"
+    },
+    {
+     "device": "M31",
+     "direction": "broadcast",
+     "name": "surface_p95_ms",
+     "status": "UNMEASURED",
+     "limit": 83.3333,
+     "reason": "Required measurement absent"
+    },
+    {
+     "device": "M31",
+     "direction": "broadcast",
+     "name": "surface_p99_ms",
+     "status": "UNMEASURED",
+     "limit": 133.3333,
+     "reason": "Required measurement absent"
+    },
+    {
+     "device": "M31",
+     "direction": "broadcast",
+     "name": "visible_fps",
+     "status": "UNMEASURED",
+     "limit": 14.25,
+     "reason": "Required measurement absent"
+    },
+    {
+     "device": "M31",
+     "direction": "broadcast",
+     "name": "unexpected_freeze_events",
+     "status": "UNMEASURED",
+     "limit": 0,
+     "reason": "Required measurement absent"
+    }
+   ],
+   "motion_detail": {
+    "status": "UNMEASURED",
+    "capture_state": "PARTIAL"
+   }
+  },
+  "connection": {
+   "status": "FAIL",
+   "measurements": [
+    {
+     "device": "S24",
+     "direction": "broadcast",
+     "name": "discovery_ms",
+     "status": "PASS",
+     "value": 136.3,
+     "limit": 1500,
+     "comparison": "max"
+    },
+    {
+     "device": "S24",
+     "direction": "broadcast",
+     "name": "selection_to_first_surface_ms",
+     "status": "FAIL",
+     "value": 3858.3,
+     "limit": 3000,
+     "comparison": "max"
+    },
+    {
+     "device": "S24",
+     "name": "first_surface_ms",
+     "action": "launch",
+     "status": "FAIL",
+     "value": 4835.0,
+     "limit": 3000,
+     "comparison": "max"
+    },
+    {
+     "device": "M31",
+     "direction": "broadcast",
+     "name": "discovery_ms",
+     "status": "PASS",
+     "value": 214.7,
+     "limit": 1500,
+     "comparison": "max"
+    },
+    {
+     "device": "M31",
+     "direction": "broadcast",
+     "name": "selection_to_first_surface_ms",
+     "status": "UNMEASURED",
+     "limit": 3000,
+     "reason": "Required measurement absent"
+    },
+    {
+     "device": "M31",
+     "name": "first_surface_ms",
+     "action": "launch",
+     "status": "UNMEASURED",
+     "limit": 3000,
+     "reason": "Required measurement absent"
+    },
+    {
+     "device": "M31",
+     "name": "first_surface_ms",
+     "action": "connection_timeout",
+     "status": "FAIL",
+     "limit": 3000,
+     "reason": "Runner recorded a connection timeout; later frames do not erase the failure"
+    }
+   ]
+  },
+  "transport": {
+   "status": "FAIL",
+   "measurements": [
+    {
+     "device": "ASUS",
+     "direction": "broadcast",
+     "name": "unexpected_events",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "ASUS",
+     "direction": "broadcast",
+     "name": "sender_drops",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "ASUS",
+     "direction": "broadcast",
+     "name": "raw_input_drops",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "ASUS",
+     "direction": "broadcast",
+     "name": "profile_resolution_mismatches",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "ASUS",
+     "direction": "broadcast",
+     "name": "profile_fps_mismatches",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "ASUS",
+     "direction": "broadcast",
+     "name": "profile_encoder_mismatches",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "ASUS",
+     "direction": "broadcast",
+     "name": "profile_allocation_mismatches",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "ASUS",
+     "direction": "broadcast",
+     "name": "profile_bitrate_mismatches",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "ASUS",
+     "direction": "broadcast",
+     "name": "actual_offered_load",
+     "status": "PASS",
+     "reason": "Measured encoder payload, not the selected target; insufficient or absent load does not prove requested transport capacity"
+    },
+    {
+     "device": "S24",
+     "direction": "broadcast",
+     "name": "unexpected_events",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "S24",
+     "direction": "broadcast",
+     "name": "decoder_drops",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "S24",
+     "direction": "broadcast",
+     "name": "audio_drops",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "S24",
+     "direction": "broadcast",
+     "name": "profile_resolution_mismatches",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "S24",
+     "direction": "broadcast",
+     "name": "profile_fps_mismatches",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "S24",
+     "direction": "broadcast",
+     "name": "profile_bitrate_mismatches",
+     "status": "UNMEASURED",
+     "limit": 0,
+     "reason": "Receiver logs lack configured source bitrate; join sender evidence"
+    },
+    {
+     "device": "M31",
+     "direction": "broadcast",
+     "name": "unexpected_events",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "M31",
+     "direction": "broadcast",
+     "name": "decoder_drops",
+     "status": "UNMEASURED",
+     "limit": 0,
+     "reason": "Required measurement absent"
+    },
+    {
+     "device": "M31",
+     "direction": "broadcast",
+     "name": "audio_drops",
+     "status": "UNMEASURED",
+     "limit": 0,
+     "reason": "Required measurement absent"
+    },
+    {
+     "device": "M31",
+     "direction": "broadcast",
+     "name": "profile_resolution_mismatches",
+     "status": "UNMEASURED",
+     "limit": 0,
+     "reason": "Required measurement absent"
+    },
+    {
+     "device": "M31",
+     "direction": "broadcast",
+     "name": "profile_fps_mismatches",
+     "status": "UNMEASURED",
+     "limit": 0,
+     "reason": "Required measurement absent"
+    },
+    {
+     "device": "M31",
+     "direction": "broadcast",
+     "name": "profile_bitrate_mismatches",
+     "status": "UNMEASURED",
+     "limit": 0,
+     "reason": "Receiver logs lack configured source bitrate; join sender evidence"
+    },
+    {
+     "name": "runner_error",
+     "status": "FAIL",
+     "value": "m31: no first surface within 30s connection timeout"
+    },
+    {
+     "name": "connection_timeouts",
+     "status": "FAIL",
+     "value": 1,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "name": "captured_logs",
+     "status": "PASS",
+     "value": 3,
+     "limit": 1,
+     "comparison": "min"
+    },
+    {
+     "name": "media_traces",
+     "status": "UNMEASURED",
+     "value": 2,
+     "limit": 4,
+     "reason": "Requested finalized trace evidence must be hash-verified for every participant and every captured phase"
+    }
+   ]
+  },
+  "lifecycle": {
+   "status": "UNMEASURED",
+   "reason": "No connected measurement adapter",
+   "measurements": []
+  },
+  "topology": {
+   "status": "UNMEASURED",
+   "measurements": [
+    {
+     "device": "S24",
+     "direction": "broadcast",
+     "name": "requested_parent_identity",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "S24",
+     "direction": "broadcast",
+     "name": "requested_original_source_identity",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "M31",
+     "direction": "broadcast",
+     "name": "requested_parent_identity",
+     "status": "UNMEASURED",
+     "limit": 0,
+     "reason": "Requested parent identity and authenticated connection logs required; fallback is not chain coverage"
+    },
+    {
+     "device": "M31",
+     "direction": "broadcast",
+     "name": "requested_original_source_identity",
+     "status": "UNMEASURED",
+     "limit": 0,
+     "reason": "Explicit authenticated original-source marker or source identity is absent; adjacent signer is not source proof"
+    }
+   ]
+  },
+  "camera": {
+   "status": "UNMEASURED",
+   "reason": "No connected measurement adapter",
+   "measurements": []
+  },
+  "acoustic": {
+   "status": "UNMEASURED",
+   "reason": "No connected measurement adapter",
+   "measurements": []
+  },
+  "physical_latency": {
+   "status": "UNMEASURED",
+   "reason": "No connected measurement adapter",
+   "measurements": []
+  },
+  "endurance": {
+   "status": "UNMEASURED",
+   "reason": "No connected measurement adapter",
+   "measurements": []
+  }
+ },
+ "stream_metrics": {
+  "thresholds_version": "device-run-v3",
+  "overall_status": "FAIL",
+  "log_status": null,
+  "quality_status": null,
+  "streams": [
+   {
+    "device": "ASUS",
+    "role": "sender",
+    "log_status": "PASS",
+    "quality_status": "UNMEASURED",
+    "lifecycle_status": "UNMEASURED",
+    "overall_status": "UNMEASURED",
+    "expected": {
+     "fps": 15,
+     "width": 640,
+     "height": 480,
+     "bitrate_kbps": 300
+    },
+    "startup_ms": [],
+    "freezes": null,
+    "freeze_duration_ms": null,
+    "drops": {
+     "decoder_drops": null,
+     "audio_drops": null,
+     "sender_drops": 0,
+     "forwarding_drops": null,
+     "camera_input_drops": 0,
+     "raw_input_drops": 0
+    },
+    "encoder_fps": {
+     "n": 7,
+     "min": 15.0,
+     "median": 15.0,
+     "max": 15.2
+    },
+    "encoder_kbps": {
+     "n": 7,
+     "min": 273.0,
+     "median": 298.0,
+     "max": 368.0
+    },
+    "offered_load": {
+     "status": "PASS",
+     "median_kbps": 298.0,
+     "requested_kbps": 300,
+     "target_fraction": 0.9933
+    },
+    "visible_fps": null,
+    "queue_depth_max": {
+     "sender": 1
+    }
+   },
+   {
+    "device": "S24",
+    "role": "receiver",
+    "log_status": "FAIL",
+    "quality_status": "UNMEASURED",
+    "lifecycle_status": "FAIL",
+    "overall_status": "FAIL",
+    "expected": {
+     "fps": 15,
+     "width": 640,
+     "height": 480,
+     "bitrate_kbps": 300
+    },
+    "startup_ms": [
+     {
+      "kind": "browser-to-first-offer",
+      "ms": 136.3
+     },
+     {
+      "kind": "selection-to-first-surface",
+      "ms": 3858.3
+     }
+    ],
+    "freezes": 0,
+    "freeze_duration_ms": 0.0,
+    "drops": {
+     "decoder_drops": 0,
+     "audio_drops": 0,
+     "sender_drops": null,
+     "forwarding_drops": null,
+     "camera_input_drops": null,
+     "raw_input_drops": null
+    },
+    "encoder_fps": null,
+    "encoder_kbps": null,
+    "offered_load": {
+     "status": "UNMEASURED",
+     "median_kbps": null,
+     "requested_kbps": 300,
+     "target_fraction": null
+    },
+    "visible_fps": {
+     "n": 7,
+     "min": 14.548,
+     "median": 14.999,
+     "max": 15.011
+    },
+    "queue_depth_max": {
+     "decoder": 4
+    }
+   },
+   {
+    "device": "M31",
+    "role": "receiver",
+    "log_status": "UNMEASURED",
+    "quality_status": "UNMEASURED",
+    "lifecycle_status": "FAIL",
+    "overall_status": "FAIL",
+    "expected": {
+     "fps": 15,
+     "width": 640,
+     "height": 480,
+     "bitrate_kbps": 300
+    },
+    "startup_ms": [
+     {
+      "kind": "browser-to-first-offer",
+      "ms": 214.7
+     }
+    ],
+    "freezes": null,
+    "freeze_duration_ms": null,
+    "drops": {
+     "decoder_drops": null,
+     "audio_drops": null,
+     "sender_drops": null,
+     "forwarding_drops": null,
+     "camera_input_drops": null,
+     "raw_input_drops": null
+    },
+    "encoder_fps": null,
+    "encoder_kbps": null,
+    "offered_load": {
+     "status": "UNMEASURED",
+     "median_kbps": null,
+     "requested_kbps": 300,
+     "target_fraction": null
+    },
+    "visible_fps": null,
+    "queue_depth_max": {}
+   }
+  ]
+ },
+ "analyses": [
+  {
+   "suite": "mesh4-5b63ccda-loop13-1",
+   "generated_at": "2026-10-10T01:28:45Z",
+   "status": "FAIL",
+   "thresholds_version": "device-run-v3"
+  }
+ ]
+}

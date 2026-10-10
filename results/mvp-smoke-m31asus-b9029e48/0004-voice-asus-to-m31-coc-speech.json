@@ -1,0 +1,717 @@
+{
+ "schema": "meshlive-benchmark-result-v1",
+ "execution": {
+  "suite": "mvp-smoke-m31asus-b9029e48",
+  "sequence": "0004",
+  "run_id": "physical-07f3902b624646499ca5fb0481c52d99",
+  "manifest_sha256": "a0f9bc73b4aac0a37e7688dd69b82c0b6e5897f2010b8bc2858c0143f4e205c1",
+  "date_utc": "2026-10-09T13:35:14Z",
+  "duration_wall_s": 38.0,
+  "concurrency": "concurrent",
+  "actual_media_overlap": {
+   "status": "UNMEASURED",
+   "reason": "Job overlap is not actual media overlap"
+  }
+ },
+ "case": {
+  "baseline_key": "92b93714d62360e03e3e",
+  "private_case_id": "voice-asus-to-m31-coc-speech",
+  "mode": "private_call",
+  "family": "call",
+  "request": {
+   "caller": "ASUS",
+   "callee": "M31",
+   "call_type": "voice",
+   "profiles": {
+    "M31": {
+     "codec": "OMX.Exynos.VP9.Encoder",
+     "width": 352,
+     "height": 288,
+     "fps": 15,
+     "bitrate_kbps": 1000,
+     "rate_control": "automatic",
+     "playback": "balanced",
+     "thermal_reduction": false
+    },
+    "ASUS": {
+     "codec": "c2.android.vp9.encoder",
+     "width": 352,
+     "height": 288,
+     "fps": 15,
+     "bitrate_kbps": 1000,
+     "rate_control": "automatic",
+     "playback": "balanced",
+     "thermal_reduction": false
+    }
+   },
+   "transport": "ble",
+   "duration_s": 45,
+   "connection_timeout_s": 20,
+   "media_trace": true,
+   "actions": [
+    {
+     "phone": "ASUS",
+     "action": "mute",
+     "at_s": 15
+    },
+    {
+     "phone": "ASUS",
+     "action": "unmute",
+     "at_s": 21
+    }
+   ],
+   "tunables": {
+    "voice_calls": true
+   },
+   "inputs": {
+    "ASUS": {
+     "video_sha256": "96704fd274796a739d3c220ace74cc98da178758945688e147551db6c927cdab",
+     "audio_sha256": "0e633eaf5e6768089afa3aa228ef0f38bbf5e080f5d33012c91608ffd7702dc9"
+    },
+    "M31": {
+     "video_sha256": "96704fd274796a739d3c220ace74cc98da178758945688e147551db6c927cdab",
+     "audio_sha256": "0e633eaf5e6768089afa3aa228ef0f38bbf5e080f5d33012c91608ffd7702dc9"
+    }
+   }
+  },
+  "description": "Example only: not bound, not executed; bind or regenerate through the benchmark inventory before any run"
+ },
+ "build": {
+  "build_id": "b9029e48",
+  "apk_sha256": "b9029e48257d78898a9d647c4748a76d4dd9aa608a3a67d93d683ca559966c44",
+  "apk_sha256_per_phone": null,
+  "version_name": {
+   "version_name": "1.0",
+   "source": "read from the retained APK (aapt2 dump badging)",
+   "note": "Pre-release debug build; the app was renamed and versioned 0.1.0-beta later"
+  }
+ },
+ "phones": [
+  {
+   "alias": "ASUS",
+   "manufacturer": "asus",
+   "model": "ASUS_I01WD",
+   "android": "11",
+   "sdk": "30",
+   "soc": "msmnile",
+   "firmware_build": "RKQ1.200710.002/18.0610.2106.156-0",
+   "apk_sha256": "b9029e48257d78898a9d647c4748a76d4dd9aa608a3a67d93d683ca559966c44"
+  },
+  {
+   "alias": "M31",
+   "manufacturer": "samsung",
+   "model": "SM-M315F",
+   "android": "12",
+   "sdk": "31",
+   "soc": "Exynos 9611",
+   "firmware_build": "SP1A.210812.016/M315FXXS4CXB1",
+   "apk_sha256": "b9029e48257d78898a9d647c4748a76d4dd9aa608a3a67d93d683ca559966c44"
+  }
+ ],
+ "inputs": {
+  "M31": {
+   "video": {
+    "input_id": "vsg/coverage-352x288-15/352x288-15fps",
+    "sha256": "96704fd274796a739d3c220ace74cc98da178758945688e147551db6c927cdab"
+   },
+   "audio": {
+    "input_id": "speech-v1/speech-v1-20s.wav",
+    "sha256": "0e633eaf5e6768089afa3aa228ef0f38bbf5e080f5d33012c91608ffd7702dc9"
+   }
+  },
+  "ASUS": {
+   "video": {
+    "input_id": "vsg/coverage-352x288-15/352x288-15fps",
+    "sha256": "96704fd274796a739d3c220ace74cc98da178758945688e147551db6c927cdab"
+   },
+   "audio": {
+    "input_id": "speech-v1/speech-v1-20s.wav",
+    "sha256": "0e633eaf5e6768089afa3aa228ef0f38bbf5e080f5d33012c91608ffd7702dc9"
+   }
+  }
+ },
+ "result": {
+  "status": "FAIL",
+  "reason": null,
+  "scored_in_suite": "mvp-smoke-m31asus-b9029e48",
+  "scored_at": "2026-10-09T14:11:47Z",
+  "thresholds_version": "device-run-v3",
+  "acceptance_profile": null,
+  "pipeline_status": "FAIL",
+  "full_experience_status": "FAIL",
+  "required_families": [
+   "connection",
+   "transport",
+   "lifecycle",
+   "topology",
+   "camera",
+   "acoustic",
+   "physical_latency",
+   "endurance"
+  ],
+  "measurement_errors": [],
+  "family_status": {
+   "picture": "UNMEASURED",
+   "smoothness": "UNMEASURED",
+   "connection": "UNMEASURED",
+   "transport": "UNMEASURED",
+   "lifecycle": "FAIL",
+   "topology": "UNMEASURED",
+   "camera": "UNMEASURED",
+   "acoustic": "UNMEASURED",
+   "physical_latency": "UNMEASURED",
+   "endurance": "UNMEASURED"
+  }
+ },
+ "families": {
+  "picture": {
+   "status": "UNMEASURED",
+   "reason": "Not applicable: a voice call carries no video (voice scoring measures no video gate)",
+   "measurements": []
+  },
+  "smoothness": {
+   "status": "UNMEASURED",
+   "reason": "Not applicable: a voice call carries no video (voice scoring measures no video gate)",
+   "measurements": []
+  },
+  "connection": {
+   "status": "UNMEASURED",
+   "measurements": [
+    {
+     "device": "M31",
+     "direction": "endpoint",
+     "name": "discovery_ms",
+     "status": "DIAGNOSTIC",
+     "value": 3089.0,
+     "limit": 1500,
+     "comparison": "max"
+    },
+    {
+     "device": "M31",
+     "direction": "endpoint",
+     "name": "setup_to_active_ms",
+     "status": "UNMEASURED",
+     "reason": "Setup anchor and the call's ACTIVE phase are required"
+    },
+    {
+     "device": "ASUS",
+     "direction": "endpoint",
+     "name": "discovery_ms",
+     "status": "PASS",
+     "value": 215.0,
+     "limit": 1500,
+     "comparison": "max"
+    },
+    {
+     "device": "ASUS",
+     "direction": "endpoint",
+     "name": "setup_to_active_ms",
+     "status": "UNMEASURED",
+     "reason": "Setup anchor and the call's ACTIVE phase are required"
+    }
+   ]
+  },
+  "transport": {
+   "status": "UNMEASURED",
+   "measurements": [
+    {
+     "device": "M31",
+     "direction": "endpoint",
+     "name": "selected_transport",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "M31",
+     "direction": "endpoint",
+     "name": "voice_call_type",
+     "status": "UNMEASURED",
+     "limit": 0,
+     "reason": "No BENCHMARK call_type line from the measured call"
+    },
+    {
+     "device": "M31",
+     "direction": "endpoint",
+     "name": "voice_layout",
+     "status": "UNMEASURED",
+     "limit": 0,
+     "reason": "No BENCHMARK call_mode line from the measured call"
+    },
+    {
+     "device": "M31",
+     "direction": "endpoint",
+     "name": "voice_no_video_pipeline",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "M31",
+     "direction": "outgoing",
+     "name": "unexpected_events",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "M31",
+     "direction": "outgoing",
+     "name": "sender_drops",
+     "status": "UNMEASURED",
+     "limit": 0,
+     "reason": "A final cumulative TX report for the measured call is required to prove zero queue loss"
+    },
+    {
+     "device": "M31",
+     "direction": "outgoing",
+     "name": "call_tx_counter_regressions",
+     "status": "UNMEASURED",
+     "limit": 0,
+     "reason": "Required measurement absent"
+    },
+    {
+     "device": "M31",
+     "direction": "outgoing",
+     "name": "voice_video_packets_sent",
+     "status": "UNMEASURED",
+     "limit": 0,
+     "reason": "A final TX report for the measured call is required to prove zero video packets sent"
+    },
+    {
+     "device": "M31",
+     "direction": "outgoing",
+     "name": "audio_packets_sent",
+     "status": "UNMEASURED",
+     "limit": 1,
+     "reason": "A final TX report for the measured call is required to prove audio was sent"
+    },
+    {
+     "device": "M31",
+     "direction": "incoming",
+     "name": "unexpected_events",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "M31",
+     "direction": "incoming",
+     "name": "audio_drops",
+     "status": "UNMEASURED",
+     "limit": 0,
+     "reason": "A final RX counter for the measured call is required to prove zero loss"
+    },
+    {
+     "device": "M31",
+     "direction": "incoming",
+     "name": "voice_video_packets_received",
+     "status": "UNMEASURED",
+     "limit": 0,
+     "reason": "A final RX report for the measured call is required to prove zero video packets received"
+    },
+    {
+     "device": "M31",
+     "direction": "incoming",
+     "name": "audio_packets_received",
+     "status": "UNMEASURED",
+     "limit": 1,
+     "reason": "A final RX report for the measured call is required to prove audio arrived"
+    },
+    {
+     "device": "M31",
+     "direction": "incoming",
+     "name": "audio_receive_stall_windows",
+     "status": "UNMEASURED",
+     "limit": 0,
+     "reason": "At least two RX audio reports for one identified call are required"
+    },
+    {
+     "device": "ASUS",
+     "direction": "endpoint",
+     "name": "selected_transport",
+     "status": "UNMEASURED",
+     "limit": 0,
+     "reason": "Required measurement absent"
+    },
+    {
+     "device": "ASUS",
+     "direction": "endpoint",
+     "name": "voice_call_type",
+     "status": "UNMEASURED",
+     "limit": 0,
+     "reason": "No BENCHMARK call_type line from the measured call"
+    },
+    {
+     "device": "ASUS",
+     "direction": "endpoint",
+     "name": "voice_layout",
+     "status": "UNMEASURED",
+     "limit": 0,
+     "reason": "No BENCHMARK call_mode line from the measured call"
+    },
+    {
+     "device": "ASUS",
+     "direction": "endpoint",
+     "name": "voice_no_video_pipeline",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "ASUS",
+     "direction": "outgoing",
+     "name": "unexpected_events",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "ASUS",
+     "direction": "outgoing",
+     "name": "sender_drops",
+     "status": "UNMEASURED",
+     "limit": 0,
+     "reason": "A final cumulative TX report for the measured call is required to prove zero queue loss"
+    },
+    {
+     "device": "ASUS",
+     "direction": "outgoing",
+     "name": "call_tx_counter_regressions",
+     "status": "UNMEASURED",
+     "limit": 0,
+     "reason": "Required measurement absent"
+    },
+    {
+     "device": "ASUS",
+     "direction": "outgoing",
+     "name": "voice_video_packets_sent",
+     "status": "UNMEASURED",
+     "limit": 0,
+     "reason": "A final TX report for the measured call is required to prove zero video packets sent"
+    },
+    {
+     "device": "ASUS",
+     "direction": "outgoing",
+     "name": "audio_packets_sent",
+     "status": "UNMEASURED",
+     "limit": 1,
+     "reason": "A final TX report for the measured call is required to prove audio was sent"
+    },
+    {
+     "device": "ASUS",
+     "direction": "incoming",
+     "name": "unexpected_events",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "ASUS",
+     "direction": "incoming",
+     "name": "audio_drops",
+     "status": "UNMEASURED",
+     "limit": 0,
+     "reason": "A final RX counter for the measured call is required to prove zero loss"
+    },
+    {
+     "device": "ASUS",
+     "direction": "incoming",
+     "name": "voice_video_packets_received",
+     "status": "UNMEASURED",
+     "limit": 0,
+     "reason": "A final RX report for the measured call is required to prove zero video packets received"
+    },
+    {
+     "device": "ASUS",
+     "direction": "incoming",
+     "name": "audio_packets_received",
+     "status": "UNMEASURED",
+     "limit": 1,
+     "reason": "A final RX report for the measured call is required to prove audio arrived"
+    },
+    {
+     "device": "ASUS",
+     "direction": "incoming",
+     "name": "audio_receive_stall_windows",
+     "status": "UNMEASURED",
+     "limit": 0,
+     "reason": "At least two RX audio reports for one identified call are required"
+    }
+   ]
+  },
+  "lifecycle": {
+   "status": "FAIL",
+   "measurements": [
+    {
+     "device": "ASUS",
+     "action": "voice_call:<node:M31>",
+     "status": "FAIL",
+     "acknowledged": false,
+     "gate": {
+      "status": "FAIL"
+     }
+    },
+    {
+     "action": "runner",
+     "status": "FAIL",
+     "reason": "asus: no app evidence for 'BENCHMARK control voice_call:<node:M31> (?:applied|rejected)' within the deadline",
+     "gate": {
+      "status": "FAIL"
+     }
+    }
+   ]
+  },
+  "topology": {
+   "status": "UNMEASURED",
+   "measurements": [
+    {
+     "device": "M31",
+     "direction": "endpoint",
+     "name": "authenticated_peer",
+     "status": "PASS",
+     "value": 0,
+     "limit": 0,
+     "comparison": "max"
+    },
+    {
+     "device": "M31",
+     "direction": "endpoint",
+     "name": "call_id_mismatches",
+     "status": "UNMEASURED",
+     "limit": 0,
+     "reason": "Required measurement absent"
+    },
+    {
+     "device": "ASUS",
+     "direction": "endpoint",
+     "name": "authenticated_peer",
+     "status": "UNMEASURED",
+     "limit": 0,
+     "reason": "Required measurement absent"
+    },
+    {
+     "device": "ASUS",
+     "direction": "endpoint",
+     "name": "call_id_mismatches",
+     "status": "UNMEASURED",
+     "limit": 0,
+     "reason": "Required measurement absent"
+    }
+   ]
+  },
+  "camera": {
+   "status": "UNMEASURED",
+   "reason": "No connected measurement adapter",
+   "measurements": []
+  },
+  "acoustic": {
+   "status": "UNMEASURED",
+   "reason": "No connected measurement adapter",
+   "measurements": []
+  },
+  "physical_latency": {
+   "status": "UNMEASURED",
+   "reason": "No connected measurement adapter",
+   "measurements": []
+  },
+  "endurance": {
+   "status": "UNMEASURED",
+   "reason": "No connected measurement adapter",
+   "measurements": []
+  }
+ },
+ "stream_metrics": {
+  "thresholds_version": "device-run-v3",
+  "overall_status": "FAIL",
+  "log_status": "FAIL",
+  "quality_status": "UNMEASURED",
+  "streams": [
+   {
+    "device": "M31",
+    "setup_role": "callee",
+    "peer": "ASUS",
+    "requested_profile": {
+     "codec": "OMX.Exynos.VP9.Encoder",
+     "width": 352,
+     "height": 288,
+     "fps": 15,
+     "bitrate_kbps": 1000,
+     "rate_control": "automatic",
+     "playback": "balanced",
+     "thermal_reduction": false
+    },
+    "effective_profile": null,
+    "negotiated_changes": {},
+    "outgoing": {
+     "role": "sender",
+     "log_status": "UNMEASURED",
+     "quality_status": "UNMEASURED",
+     "lifecycle_status": "UNMEASURED",
+     "overall_status": "UNMEASURED",
+     "expected": {
+      "fps": null,
+      "width": null,
+      "height": null,
+      "bitrate_kbps": null
+     },
+     "startup_ms": [],
+     "freezes": null,
+     "freeze_duration_ms": null,
+     "drops": {
+      "decoder_drops": null,
+      "audio_drops": null,
+      "sender_drops": null,
+      "forwarding_drops": null,
+      "camera_input_drops": null,
+      "raw_input_drops": null
+     },
+     "encoder_fps": null,
+     "encoder_kbps": null,
+     "offered_load": {
+      "status": "UNMEASURED",
+      "median_kbps": null,
+      "requested_kbps": null,
+      "target_fraction": null
+     },
+     "visible_fps": null,
+     "queue_depth_max": {}
+    },
+    "incoming": {
+     "role": "receiver",
+     "log_status": "UNMEASURED",
+     "quality_status": "UNMEASURED",
+     "lifecycle_status": "UNMEASURED",
+     "overall_status": "UNMEASURED",
+     "expected": {
+      "fps": null,
+      "width": null,
+      "height": null,
+      "bitrate_kbps": null
+     },
+     "startup_ms": [],
+     "freezes": null,
+     "freeze_duration_ms": null,
+     "drops": {
+      "decoder_drops": null,
+      "audio_drops": null,
+      "sender_drops": null,
+      "forwarding_drops": null,
+      "camera_input_drops": null,
+      "raw_input_drops": null
+     },
+     "encoder_fps": null,
+     "encoder_kbps": null,
+     "offered_load": {
+      "status": "UNMEASURED",
+      "median_kbps": null,
+      "requested_kbps": null,
+      "target_fraction": null
+     },
+     "visible_fps": null,
+     "queue_depth_max": {}
+    }
+   },
+   {
+    "device": "ASUS",
+    "setup_role": "caller",
+    "peer": "M31",
+    "requested_profile": {
+     "codec": "c2.android.vp9.encoder",
+     "width": 352,
+     "height": 288,
+     "fps": 15,
+     "bitrate_kbps": 1000,
+     "rate_control": "automatic",
+     "playback": "balanced",
+     "thermal_reduction": false
+    },
+    "effective_profile": null,
+    "negotiated_changes": {},
+    "outgoing": {
+     "role": "sender",
+     "log_status": "UNMEASURED",
+     "quality_status": "UNMEASURED",
+     "lifecycle_status": "UNMEASURED",
+     "overall_status": "UNMEASURED",
+     "expected": {
+      "fps": null,
+      "width": null,
+      "height": null,
+      "bitrate_kbps": null
+     },
+     "startup_ms": [],
+     "freezes": null,
+     "freeze_duration_ms": null,
+     "drops": {
+      "decoder_drops": null,
+      "audio_drops": null,
+      "sender_drops": null,
+      "forwarding_drops": null,
+      "camera_input_drops": null,
+      "raw_input_drops": null
+     },
+     "encoder_fps": null,
+     "encoder_kbps": null,
+     "offered_load": {
+      "status": "UNMEASURED",
+      "median_kbps": null,
+      "requested_kbps": null,
+      "target_fraction": null
+     },
+     "visible_fps": null,
+     "queue_depth_max": {}
+    },
+    "incoming": {
+     "role": "receiver",
+     "log_status": "UNMEASURED",
+     "quality_status": "UNMEASURED",
+     "lifecycle_status": "UNMEASURED",
+     "overall_status": "UNMEASURED",
+     "expected": {
+      "fps": null,
+      "width": null,
+      "height": null,
+      "bitrate_kbps": null
+     },
+     "startup_ms": [],
+     "freezes": null,
+     "freeze_duration_ms": null,
+     "drops": {
+      "decoder_drops": null,
+      "audio_drops": null,
+      "sender_drops": null,
+      "forwarding_drops": null,
+      "camera_input_drops": null,
+      "raw_input_drops": null
+     },
+     "encoder_fps": null,
+     "encoder_kbps": null,
+     "offered_load": {
+      "status": "UNMEASURED",
+      "median_kbps": null,
+      "requested_kbps": null,
+      "target_fraction": null
+     },
+     "visible_fps": null,
+     "queue_depth_max": {}
+    }
+   }
+  ]
+ },
+ "analyses": [
+  {
+   "suite": "mvp-smoke-m31asus-b9029e48",
+   "generated_at": "2026-10-09T14:11:47Z",
+   "status": "FAIL",
+   "thresholds_version": "device-run-v3"
+  }
+ ]
+}
