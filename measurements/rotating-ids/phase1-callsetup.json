@@ -1,0 +1,42 @@
+{
+ "schema": "meshlive-rotating-id-measurement-v1",
+ "name": "rotid-phase1-callsetup",
+ "purpose": "Phase 1: call setup with test_rotating_ids on (call by the RDI the caller saw) versus off (call by the prefix); ASUS calls M31, 3 calls each.",
+ "build_id": "0725a213",
+ "apk_sha256": "0725a213bdd1b6db767b37ce9301e0a084572ef21010b65f0a1e25b650ebba07",
+ "phone_roles": {
+  "ASUS": "caller",
+  "M31": "callee"
+ },
+ "intervals_local_time": {
+  "on": "\u0001 to \u0002",
+  "off": "\u0001 to \u0002"
+ },
+ "results": {
+  "caller": "asus",
+  "callee": "m31",
+  "rotating_on": {
+   "caller_control_to_ACTIVE_s": [
+    2.97,
+    2.42,
+    3.37
+   ],
+   "notes": "call by the RDI the caller saw in adv_address_seen version=5 (<id> each time: same RDI across 4 relaunches in the epoch)"
+  },
+  "rotating_off": {
+   "caller_control_to_ACTIVE_s": [
+    3.29,
+    3.22,
+    2.55
+   ]
+  },
+  "means_s": {
+   "on": 2.92,
+   "off": 3.02
+  },
+  "note": "Caller clock only (control applied -> call phase ACTIVE). Both phones need test_rotating_ids to see each other: with the switch only on M31, ASUS accepted 0 of 136 raw scan results (scan_stats raw=136 accepted=0). Discovery latency (launch to first offer) was not saved for these six runs.",
+  "adv_report_csv": {}
+ },
+ "method": "Manual measurement session (not a runner suite, no generated media input). Address and identifier values, raw logs and controller captures are not published; counts and timings are.",
+ "intervals_local_time_zone": "IST (UTC+05:30), 2026-10-11"
+}

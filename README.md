@@ -4,8 +4,8 @@
 
 <p align="center">
   <a href="LICENSE"><img alt="Data licence: CC BY 4.0" src="https://img.shields.io/badge/data-CC%20BY%204.0-lightgrey?style=for-the-badge"></a>
-  <img alt="1,519 executions" src="https://img.shields.io/badge/executions-1%2C519-blue?style=for-the-badge">
-  <img alt="362 distinct requests" src="https://img.shields.io/badge/requests-362-blue?style=for-the-badge">
+  <img alt="1,554 executions" src="https://img.shields.io/badge/executions-1%2C554-blue?style=for-the-badge">
+  <img alt="393 distinct requests" src="https://img.shields.io/badge/requests-393-blue?style=for-the-badge">
   <img alt="Status: no full pass yet" src="https://img.shields.io/badge/status-no%20full%20pass%20yet-orange?style=for-the-badge">
 </p>
 
@@ -54,22 +54,23 @@ request. The app itself is at [MeshLive/meshlive-android](https://github.com/Mes
 | `summary/history.csv` | Every execution in date order |
 | `summary/builds.csv` | Tested builds: build ID, APK SHA-256, versionName, execution dates |
 | `summary/counts.json` | Totals, status counts and exclusion counts |
+| `measurements/rotating-ids/*.json` | Scrubbed summaries of five manual rotating-identifier measurement sessions (not executions; see [Measurements that are not executions](#measurements-that-are-not-executions)) |
 | `inputs/manifest.json` | Every input used: ID, SHA-256 of every file, generator recipe, seed, mode, how to regenerate it, licence |
 | `inputs/recipes/*.json` | The generator recipes (copied unchanged from `tools/video-stress-generator/examples`) |
 | `tools/compare_baseline.py` | Joins your `suite-result.json` with this baseline by `baseline_key` |
 | `tools/export_suite.py` | Exports selected baseline requests as a suite you can bind and run |
 
-Coverage: 1,519 executions of 362 distinct requests between 2026-10-05 and 2026-10-10 (UTC) on 84 pre-release
+Coverage: 1,554 executions of 393 distinct requests between 2026-10-05 and 2026-10-11 (UTC) on 85 pre-release
 builds, with four phones taking part: S24 (Samsung SM-S921B, Android 16), M31 (Samsung SM-M315F, Android 12), ASUS
-(ASUS_I01WD, Android 11) and A15s (OPPO CPH2179, Android 10). There are 814 one-to-many stream executions, 26 chain
+(ASUS_I01WD, Android 11) and A15s (OPPO CPH2179, Android 10). There are 849 one-to-many stream executions (the 35 of 2026-10-11 are relayed topologies, recorded as `broadcast` like the others of that kind), 26 chain
 (relay) executions and 679 private calls. Transports: `ble` = LE L2CAP CoC, `gatt` = LE GATT, `classic` = RFCOMM.
 The reference scope also names S22, Xiaomi and A55, but none of the qualifying executions used them.
 
 ### Status, honestly
 
-No request has passed the full acceptance gates yet. Of the 1,519 executions, 1,226 are FAIL, 81 UNMEASURED, 145
+No request has passed the full acceptance gates yet. Of the 1,554 executions, 1,261 are FAIL, 81 UNMEASURED, 145
 PENDING_ANALYSIS (executed, then never scored) and 67 ANALYZING (scoring was interrupted). Latest status per request:
-284 FAIL, 14 UNMEASURED, 64 PENDING_ANALYSIS. These rows are kept on purpose: a baseline that hides failures is useless.
+315 FAIL, 14 UNMEASURED, 64 PENDING_ANALYSIS. These rows are kept on purpose: a baseline that hides failures is useless.
 
 - **FAIL**: at least one gate missed its limit. The v3 gates (`device-run-v3`) are strict: for example VMAF of at least
   90, SSIM of at least 0.98 and PSNR of at least 35 dB against the generated reference, zero freezes and drops, rolling
@@ -163,10 +164,31 @@ replaced by their SHA-256 per phone (`case.request` in every result file). The k
 
 `build.build_id` is the first 8 hex digits of the tested APK's SHA-256 (full value in `build.apk_sha256`). All
 builds are private development builds made before the public 0.1.0-beta release. Their `versionName` is `1.0` (read
-from each retained APK; package `com.example.bluetoothtest`, renamed `io.github.meshlive.app` at release). The public
+from each retained APK), except build `0725a213` (2026-10-11), which already reports `0.1.0-beta`; package
+`com.example.bluetoothtest`, renamed `io.github.meshlive.app` at release. The public
 repository starts from a single scrubbed initial commit, so **private build IDs are opaque identifiers with no
 matching public commit**. New contributions should record the public commit hash and `versionName` of the APK they
 test (for example `0.1.0-beta`), plus its SHA-256.
+
+## Measurements that are not executions
+
+`measurements/rotating-ids/` holds five manual sessions on build `0725a213` (2026-10-11) that measured how
+Bluetooth advertising addresses and the rotating device identifiers behave on the four phones: whether a restarted
+advertising set gets a new address, whether the stack rotates the address of a running set on its own, epoch-boundary
+timing, and call setup with rotating identifiers on and off. They are not runner suites, use no generated media and have
+no `baseline_key`. Only the counts, timings and conclusions are published. Addresses and identifiers are replaced by
+`<addr>` and `<id>`; the raw app logs, controller-level captures (which contain unrelated nearby devices) and advertising
+report tables are not included, and the sizes and hashes of those private captures are omitted too.
+
+## Refresh log
+
+- 2026-10-11: added 35 executions (31 new requests) from seven `relayfix-0725a213-*` verification suites on build
+  `0725a213` (relay joins, relay recovery grace A/B, a relay feedback-switch diagnostic and direct GATT pairs at
+  different connection priorities; S24, M31, ASUS and A15s) and the five rotating-identifier measurement sessions.
+  Four further suites of that day were not included: one was still running, one had all four cases blocked before
+  execution, and two finished after this export was cut. Eight requests whose latest result was from build `84f65ff3`
+  now show `on_newest_dataset_build = no`.
+- 2026-10-10: baseline of 1,519 executions.
 
 ## Privacy
 
@@ -189,7 +211,7 @@ values you used, because a request's latest result can change when the baseline 
 
 ## Licence
 
-Data in this repository (`results/`, `summary/`, `inputs/manifest.json`, `index.html`) under
+Data in this repository (`results/`, `summary/`, `measurements/`, `inputs/manifest.json`, `index.html`) under
 **Creative Commons Attribution 4.0 International (CC BY 4.0)** (full text in [LICENSE](LICENSE)). The scripts in `tools/` are GPL-3.0-or-later, like the app; the recipe files in
 `inputs/recipes/` are part of `video-stress-generator` (MIT). The
 `speech-v1` sources keep their own licences (LibriSpeech CC BY 4.0, LibriVox public domain, Open Goldberg Variations

@@ -1,0 +1,44 @@
+{
+ "schema": "meshlive-rotating-id-measurement-v1",
+ "name": "rotid-phase0-h1",
+ "purpose": "Phase 0: address behaviour of advertising sets (relaunch and stack timer). S24 and M31 advertise a stream-ready set, ASUS and A15s scan.",
+ "build_id": "0725a213",
+ "apk_sha256": "0725a213bdd1b6db767b37ce9301e0a084572ef21010b65f0a1e25b650ebba07",
+ "phone_roles": {
+  "S24": "advertiser",
+  "M31": "advertiser",
+  "ASUS": "scanner (controller-level capture full)",
+  "A15s": "scanner"
+ },
+ "intervals_local_time": {
+  "start": "14:07:55",
+  "relaunch1": "14:10:30",
+  "relaunch2": "14:13:05",
+  "end": "14:29:59"
+ },
+ "results": {
+  "question": "Does a new advertising set (app relaunch) get a new address; does the stack rotate the address of a running set (timer)?",
+  "source": "ASUS controller-level capture (controller view, extended advertising reports), app logs adv_set_churn on advertisers",
+  "phones": {
+   "S24": {
+    "restart_new_address": "3 sets, 3 different RPAs (<addr>, <addr>, <addr>): 2 of 2 restarts changed the address",
+    "timer_rotation": "none; <addr> was on air \u0001 to \u0002 (1014 s, 16.9 min) unchanged",
+    "android": "16, One UI"
+   },
+   "M31": {
+    "restart_new_address": "3 sets, 3 different RPAs (<addr>, <addr>, <addr>): 2 of 2 changed",
+    "timer_rotation": "<addr> -> <addr> after 850 s (14.2 min, 14:13:07 -> 14:27:16)",
+    "android": "12"
+   }
+  },
+  "address_type": "random (type 1) for every report",
+  "note": "ASUS app log and A15s app log showed S24 and M31 with the same RPA values; ASUS app log alone showed S24 identity address <addr> because ASUS is bonded to S24 and Android resolves the RPA for bonded peers.",
+  "adv_report_csv": {
+   "ASUS": {
+    "rows": 5605
+   }
+  }
+ },
+ "method": "Manual measurement session (not a runner suite, no generated media input). Address and identifier values, raw logs and controller captures are not published; counts and timings are.",
+ "intervals_local_time_zone": "IST (UTC+05:30), 2026-10-11"
+}

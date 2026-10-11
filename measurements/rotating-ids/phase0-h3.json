@@ -1,0 +1,43 @@
+{
+ "schema": "meshlive-rotating-id-measurement-v1",
+ "name": "rotid-phase0-h3",
+ "purpose": "Phase 0: A15s and S24 advertising (relaunch x2, then 31 minutes undisturbed); ASUS and M31 scan with controller-level capture.",
+ "build_id": "0725a213",
+ "apk_sha256": "0725a213bdd1b6db767b37ce9301e0a084572ef21010b65f0a1e25b650ebba07",
+ "phone_roles": {
+  "A15s": "advertiser",
+  "S24": "advertiser",
+  "ASUS": "scanner (controller-level capture full)",
+  "M31": "scanner (controller-level capture)"
+ },
+ "intervals_local_time": {
+  "start": "15:00:06",
+  "relaunch1": "15:02:42",
+  "relaunch2": "15:05:18",
+  "end": "15:36:12"
+ },
+ "results": {
+  "phones": {
+   "A15s": {
+    "restart_new_address": "3 sets, 3 different RPAs (<addr>, <addr>, <addr>): 2 of 2 changed",
+    "timer_rotation": "none: <addr> on air \u0001 to \u0002 (1849 s, 30.8 min) unchanged (Android 10, ColorOS)",
+    "android": "10"
+   },
+   "S24": {
+    "restart_new_address": "3 sets, 3 different RPAs (<addr>, <addr>, <addr>): 2 of 2 changed",
+    "timer_rotation": "none: <addr> on air \u0001 to \u0002 (1854 s, 30.9 min) unchanged"
+   }
+  },
+  "source": "ASUS controller-level capture; M31 capture retrieved too (scanner)",
+  "adv_report_csv": {
+   "ASUS": {
+    "rows": 10618
+   },
+   "M31": {
+    "rows": 12928
+   }
+  }
+ },
+ "method": "Manual measurement session (not a runner suite, no generated media input). Address and identifier values, raw logs and controller captures are not published; counts and timings are.",
+ "intervals_local_time_zone": "IST (UTC+05:30), 2026-10-11"
+}

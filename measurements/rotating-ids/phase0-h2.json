@@ -1,0 +1,35 @@
+{
+ "schema": "meshlive-rotating-id-measurement-v1",
+ "name": "rotid-phase0-h2",
+ "purpose": "Phase 0: ASUS advertising (relaunch x2, then undisturbed timer observation); S24 and M31 scan. A15s advertiser failed to start (codec vp9 on an AV1-only phone), repeated in h3.",
+ "build_id": "0725a213",
+ "apk_sha256": "0725a213bdd1b6db767b37ce9301e0a084572ef21010b65f0a1e25b650ebba07",
+ "phone_roles": {
+  "ASUS": "advertiser",
+  "A15s": "advertiser (never advertised, wrong codec)",
+  "S24": "scanner",
+  "M31": "scanner"
+ },
+ "intervals_local_time": {
+  "start": "14:30:06",
+  "relaunch1": "14:32:42",
+  "relaunch2": "14:35:18",
+  "end": "14:52:12"
+ },
+ "results": {
+  "phones": {
+   "ASUS": {
+    "restart_new_address": "3 sets, 3 different addresses seen by M31 app log (<addr>, <addr>, <addr>): 2 of 2 changed",
+    "timer_rotation": "<addr> -> <addr> -> <addr> at 14:43:04 and 14:50:47: 463 s and 463 s (7 min 43 s) after each start/rotation",
+    "android": "11"
+   },
+   "A15s": {
+    "result": "UNMEASURED in h2: launched with codec vp9, the phone has only libaom-native; the app never advertised. Repeated in h3."
+   }
+  },
+  "source": "M31 and S24 app logs (adv_address_seen); no capture of the scanner",
+  "adv_report_csv": {}
+ },
+ "method": "Manual measurement session (not a runner suite, no generated media input). Address and identifier values, raw logs and controller captures are not published; counts and timings are.",
+ "intervals_local_time_zone": "IST (UTC+05:30), 2026-10-11"
+}

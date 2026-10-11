@@ -1,0 +1,62 @@
+{
+ "schema": "meshlive-rotating-id-measurement-v1",
+ "name": "rotid-phase1-boundaries",
+ "purpose": "Phase 1 (test_rotating_ids on all four phones): epoch boundaries 15:45 and 16:00 IST, restart inside an epoch, a call S24 to M31 across the 15:45 boundary, passive-tracker view from ASUS and M31 controller-level capture.",
+ "build_id": "0725a213",
+ "apk_sha256": "0725a213bdd1b6db767b37ce9301e0a084572ef21010b65f0a1e25b650ebba07",
+ "phone_roles": {
+  "S24": "rotating browser, caller",
+  "M31": "rotating browser, callee",
+  "ASUS": "rotating browser, passive observer (controller-level capture full)",
+  "A15s": "rotating browser"
+ },
+ "intervals_local_time": {
+  "start": "15:37:00",
+  "relaunch_a15s": "15:41:33",
+  "call_invite": "15:43:23",
+  "call_end": "15:48:02",
+  "boundary1": "15:45:00",
+  "boundary2": "16:00:00",
+  "end": "16:08:00"
+ },
+ "results": {
+  "boundaries": {
+   "epoch_1990793": "15:45:00.05 on all four phones (wallOffsetMs 50-53, listeners=1)",
+   "epoch_1990794": "16:00:00.05 on all four (wallOffsetMs 50-53, listeners=1)"
+  },
+  "set_stop_at_boundary_ms": "listener set stopped 8-25 ms after the boundary callback on every phone",
+  "silence_before_new_set_ms": {
+   "S24": [
+    1016
+   ],
+   "A15s": [
+    6576,
+    1285
+   ],
+   "ASUS": [
+    2769,
+    3519
+   ],
+   "M31": [
+    6766
+   ]
+  },
+  "silence_design_range_ms": "1000-8000: all 6 observed values inside",
+  "restart_inside_epoch_keeps_rdi": "A15s relaunched 15:41:33: RDI <id> unchanged, address <addr> -> <addr> (controller-level capture and observer logs); M31 relaunched 4 times in 14:53-14:59 (epoch 14:45-15:00): RDI <id> unchanged each time (phase1-callsetup)",
+  "zero_carry_over": "No RDI and no advertising address (random type) seen in more than one epoch, in both observers (ASUS capture and M31 capture): epoch 1 RDIs <id> <id> <id> <id>; epoch 2 <id> <id> <id> <id>; epoch 3 <id> <id> <id> <id>. Inside epoch 2, <id> changed address <addr> -> <addr> at 15:58:31 (stack timer; linkable only through the same RDI). Check on the CSVs: 19 (ASUS) and 20 (M31) distinct RDI/address identifiers; none was reported on both sides (more than 3 s, observer clocks differ by up to 2 s) of either boundary.",
+  "bonded_identity_leak": "App-level scan results of bonded phones (ASUS<->S24) show the identity address (S24 <addr>, ASUS <addr>) for the rotating RDIs; the HCI view shows RPAs.",
+  "call_across_boundary": "S24 called M31 by RDI <id> at 15:43:23.6 (rotid_open PASS rdi=<id> prefix=<node:M31>), ACTIVE 15:43:27.3, ended by control at 15:48:02.6 (274 s) across the 15:45:00 boundary. Both phones had stopped their call listener sets when the call was accepted (15:43:23 / 15:43:27) and advertised again only at 15:48:04-06 on the new epoch RDIs: no advertising during a call.",
+  "link_survives_set_stop": "PASS: call link carried ACTIVE for 274 s with the listener set stopped (n=1 call)",
+  "quick_stop_start": "No set start failure logged in 9 observed restarts (silence 1.0-6.8 s) and 12 relaunches (3 s apart); sub-second restart not exercised: UNMEASURED",
+  "adv_report_csv": {
+   "ASUS": {
+    "rows": 10999
+   },
+   "M31": {
+    "rows": 13109
+   }
+  }
+ },
+ "method": "Manual measurement session (not a runner suite, no generated media input). Address and identifier values, raw logs and controller captures are not published; counts and timings are.",
+ "intervals_local_time_zone": "IST (UTC+05:30), 2026-10-11"
+}
