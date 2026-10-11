@@ -63,7 +63,7 @@
      "role": "raw I420 video fed to the selected encoder (marked reference)"
     }
    },
-   "executions_using": 731,
+   "executions_using": 735,
    "regenerate": [
     "python -B tools/prepare_native_workload.py plan --recipe coverage --mode 352x288@15",
     "python -B tools/prepare_native_workload.py prepare --recipe coverage --mode 352x288@15 --output benchmarks/inputs/coverage-352x288-15 --max-bytes 2000000000",
@@ -234,7 +234,7 @@
      "role": "raw I420 video fed to the selected encoder (marked reference)"
     }
    },
-   "executions_using": 1623,
+   "executions_using": 1654,
    "regenerate": [
     "python -B tools/prepare_native_workload.py plan --recipe coverage --mode 640x480@15",
     "python -B tools/prepare_native_workload.py prepare --recipe coverage --mode 640x480@15 --output benchmarks/inputs/coverage-640x480-15 --max-bytes 2000000000",

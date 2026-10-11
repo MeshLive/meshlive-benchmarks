@@ -1,20 +1,20 @@
 {
- "executions": 1519,
- "cases": 362,
- "newest_build": "84f65ff3",
+ "executions": 1554,
+ "cases": 393,
+ "newest_build": "0725a213",
  "latest_status_counts": {
-  "FAIL": 284,
+  "FAIL": 315,
   "PENDING_ANALYSIS": 64,
   "UNMEASURED": 14
  },
  "execution_status_counts": {
-  "FAIL": 1226,
+  "FAIL": 1261,
   "UNMEASURED": 81,
   "ANALYZING": 67,
   "PENDING_ANALYSIS": 145
  },
  "class_counts": {
-  "qualifying": 1519,
+  "qualifying": 1554,
   "camera": 101,
   "uvg_svt": 3
  },
@@ -26,6 +26,6 @@
  "attempts_without_execution": 758,
  "date_range_utc": [
   "2026-10-05T13:57:48Z",
-  "2026-10-10T04:08:22Z"
+  "2026-10-11T08:25:33Z"
  ]
 }
