@@ -1,0 +1,51 @@
+name: Share comparison results
+description: Report what your phones measured for the same requests as the baseline (failures are welcome too).
+labels: ["results", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you. Please run the same requests with `tools/compare_baseline.py` (README, "Reproduce and compare")
+        and summarise below. Share numbers and identifiers, not raw captures, logs, serial numbers or addresses.
+        Results shared here are reviewed, and are not added to the baseline automatically.
+  - type: input
+    id: phones
+    attributes:
+      label: Phone models and OS versions
+      placeholder: "Samsung SM-S921B (Android 16), Samsung SM-M315F (Android 12)"
+    validations:
+      required: true
+  - type: input
+    id: app
+    attributes:
+      label: App commit and APK SHA-256
+      description: The public meshlive-android commit (or release version) you tested, and the APK's SHA-256.
+    validations:
+      required: true
+  - type: input
+    id: inputs
+    attributes:
+      label: Inputs
+      description: Did the regenerated inputs match the SHA-256 values in inputs/manifest.json? Name any that did not.
+    validations:
+      required: true
+  - type: textarea
+    id: keys
+    attributes:
+      label: baseline_key values and outcomes
+      description: Paste the relevant rows of the compare_baseline.py CSV (baseline_key, your status, the baseline status, failed families).
+      render: text
+    validations:
+      required: true
+  - type: textarea
+    id: notes
+    attributes:
+      label: Conditions and notes
+      description: Distance, Wi-Fi band and traffic nearby, whether phones ran in parallel, and anything unusual.
+  - type: checkboxes
+    id: consent
+    attributes:
+      label: Before you submit
+      options:
+        - label: I did not include recordings, screenshots, Bluetooth logs, serial numbers, addresses or other people's data.
+          required: true

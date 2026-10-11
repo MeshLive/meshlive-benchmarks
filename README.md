@@ -1,8 +1,25 @@
 # MeshLive benchmark baseline
 
+**Measured results of MeshLive on real phones, with inputs anyone can regenerate: a baseline to compare your own phones against.**
+
+<p align="center">
+  <a href="LICENSE"><img alt="Data licence: CC BY 4.0" src="https://img.shields.io/badge/data-CC%20BY%204.0-lightgrey?style=for-the-badge"></a>
+  <img alt="1,519 executions" src="https://img.shields.io/badge/executions-1%2C519-blue?style=for-the-badge">
+  <img alt="362 distinct requests" src="https://img.shields.io/badge/requests-362-blue?style=for-the-badge">
+  <img alt="Status: no full pass yet" src="https://img.shields.io/badge/status-no%20full%20pass%20yet-orange?style=for-the-badge">
+</p>
+
+<p align="center">
+  <a href="https://github.com/MeshLive/meshlive-android">MeshLive for Android</a> ·
+  <a href="https://github.com/MeshLive/meshlive-ios">MeshLive for iPhone</a> ·
+  <a href="https://github.com/MeshLive">MeshLive organisation</a> ·
+  <a href="https://github.com/MeshLive/meshlive-benchmarks/issues/new/choose">Ask about a result</a>
+</p>
+
 Measured results of MeshLive (Android, Bluetooth-only live video, calls and relayed streams) on real phones, published
 so that anyone can regenerate the same inputs, run the same requests and compare their results with ours, request by
-request. The app itself is at [MeshLive/meshlive-android](https://github.com/MeshLive/meshlive-android).
+request. The app itself is at [MeshLive/meshlive-android](https://github.com/MeshLive/meshlive-android). The iPhone app
+([MeshLive/meshlive-ios](https://github.com/MeshLive/meshlive-ios)) has no results here yet.
 
 > **Read this first: no execution here is a full pass, by design.** An execution passes only when every family
 > passes, and four families (camera, acoustic, physical latency, endurance) need measuring equipment that is not set
@@ -14,7 +31,17 @@ request. The app itself is at [MeshLive/meshlive-android](https://github.com/Mes
 > environment. No camera frames, audio recordings, screenshots, Bluetooth traces, phone serials or addresses are
 > included: only numbers, settings and the fingerprints and recipes of the generated inputs.
 
-Open [`index.html`](index.html) for the summary table.
+## Where to start
+
+- **Just want the numbers?** Download [`index.html`](index.html) and open it in a browser (GitHub shows HTML files as
+  source, not as a page). It is a self-contained summary table linking to every result. For a spreadsheet, use
+  [`summary/baseline.csv`](summary/baseline.csv) (latest result per request) or [`summary/history.csv`](summary/history.csv)
+  (every execution).
+- **Want to compare your phones?** Follow [Reproduce and compare](#reproduce-and-compare). It needs the app repository,
+  Python 3.13, adb and your own phones.
+- **Want to know how to read a row?** Read [Status, honestly](#status-honestly) and [Caveats](#caveats) first.
+- **Found something odd, or want to share results?** Use the [issue forms](https://github.com/MeshLive/meshlive-benchmarks/issues/new/choose).
+  Please do not attach captures, logs with addresses or serial numbers, or anything else listed under [Privacy](#privacy).
 
 ## What is in it
 
@@ -147,6 +174,17 @@ reports. ADB serials, Bluetooth addresses, node IDs and key prefixes, local path
 replaced by phone aliases. Every file is checked by a blocking scanner before commit. App logs are not included.
 Compressed, they would be about 620 MB (raw about 7.5 GB, mostly Bluetooth stack logs that also contain unrelated
 nearby traffic), so they would need a separate scrubbing pass first.
+
+## Sharing your results and citing this data
+
+Results from other phones are welcome, including ones that fail. Open a "Share comparison results" issue with the
+phone model and OS version, the app commit and APK SHA-256, the `baseline_key` values and the family-level outcome
+(`tools/compare_baseline.py --csv` gives you these). Share summaries, not raw captures. Reports are not merged into the
+baseline automatically; the maintainers re-run or review before anything is added.
+
+To cite the data, name the repository and a commit, for example "MeshLive benchmark baseline,
+github.com/MeshLive/meshlive-benchmarks, commit <short hash>, CC BY 4.0". Say which executions or `baseline_key`
+values you used, because a request's latest result can change when the baseline is refreshed.
 
 ## Licence
 

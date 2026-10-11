@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: App bugs (Android)
+    url: https://github.com/MeshLive/meshlive-android/issues/new/choose
+    about: A bug in the MeshLive app itself, rather than a question about a benchmark result, belongs in the app repository.
+  - name: App bugs (iPhone)
+    url: https://github.com/MeshLive/meshlive-ios/issues/new/choose
+    about: The iPhone app has its own repository. It has no benchmark results yet.

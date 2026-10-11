@@ -1,0 +1,39 @@
+name: Question or problem with a result
+description: Something in the data looks wrong, is unclear, or does not reproduce.
+labels: ["question", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for looking closely. Please remember the baseline is from development builds, no execution is a
+        full pass by design, and four measurement families are always UNMEASURED (see the README, "Status, honestly").
+
+        Do not attach captures, Bluetooth logs, phone serials, addresses or anything else the README lists under
+        Privacy. Share numbers and identifiers only.
+  - type: input
+    id: key
+    attributes:
+      label: baseline_key or result file
+      description: The 20-character baseline_key from summary/baseline.csv, or the path of the result file under results/.
+      placeholder: "0123456789abcdef0123"
+    validations:
+      required: true
+  - type: dropdown
+    id: kind
+    attributes:
+      label: What is it about
+      options: ["A result looks wrong or inconsistent", "I cannot regenerate an input (hash differs)", "The export or compare tool fails", "I do not understand a field or gate", "A privacy problem in the data", "Something else"]
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: Details
+      description: What you expected, what you saw, and (for reproduction problems) your tool and library versions and the SHA-256 you got.
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: |
+        If this is a privacy problem (a name, address, serial number or similar in the data), do not quote it here:
+        write only "privacy problem in <file path>" and the maintainers will fix it.
