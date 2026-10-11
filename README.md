@@ -224,6 +224,26 @@ report tables are not included, and the sizes and hashes of those private captur
   now show `on_newest_dataset_build = no`.
 - 2026-10-10: baseline of 1,519 executions.
 
+## How this was built
+
+The measurements are real: every execution is a run on physical phones, recorded as it happened, and failures are kept.
+But the way they were produced matters for how far you trust them:
+
+- **Heavy AI assistance.** The app being measured, the test harness that runs the phones and the scoring and
+  publishing scripts in `tools/` were written mostly by Anthropic's Claude (through Claude Code), directed by the
+  maintainer, who chooses what to test, runs the phones and reviews the results. A scoring script can still have a bug;
+  one analysis error (`'time'`, 5 executions) is visible in the data as recorded (see [Status, honestly](#status-honestly)). If a number looks
+  wrong, say so.
+- **No independent audit.** Neither the app nor this dataset has been reviewed by a third party.
+- **Small, uncontrolled setup.** A handful of reference phones, uncontrolled radio conditions and development builds
+  (see [Caveats](#caveats)). Treat the data as a baseline to compare against, not as a certification of any phone.
+- **You can check it.** Inputs are regenerated from recipes and per-request results are in plain JSON and CSV
+  ([Reproduce and compare](#reproduce-and-compare)).
+
+Questions about a result: [open an issue](https://github.com/MeshLive/meshlive-benchmarks/issues/new/choose). Security
+problems with the app go through the private route in the app repository's
+[SECURITY.md](https://github.com/MeshLive/meshlive-android/blob/main/SECURITY.md).
+
 ## Privacy
 
 This dataset contains no camera frames, images, video, audio recordings, screenshots, Bluetooth snoop logs or bug
