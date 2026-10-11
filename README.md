@@ -7,6 +7,7 @@
   <img alt="1,554 executions" src="https://img.shields.io/badge/executions-1%2C554-blue?style=for-the-badge">
   <img alt="393 distinct requests" src="https://img.shields.io/badge/requests-393-blue?style=for-the-badge">
   <img alt="Status: no full pass yet" src="https://img.shields.io/badge/status-no%20full%20pass%20yet-orange?style=for-the-badge">
+  <img alt="74% of FAIL executions delivered media to every receiving phone" src="https://img.shields.io/badge/FAILs%20that%20carried%20media-74%25-blue?style=for-the-badge">
 </p>
 
 <p align="center">
@@ -21,11 +22,35 @@ so that anyone can regenerate the same inputs, run the same requests and compare
 request. The app itself is at [MeshLive/meshlive-android](https://github.com/MeshLive/meshlive-android). The iPhone app
 ([MeshLive/meshlive-ios](https://github.com/MeshLive/meshlive-ios)) has no results here yet.
 
-> **Read this first: no execution here is a full pass, by design.** An execution passes only when every family
-> passes, and four families (camera, acoustic, physical latency, endurance) need measuring equipment that is not set
-> up yet, so they are always `UNMEASURED`. Many executions also record real failures (connection, picture,
-> smoothness) on development builds, many of which were fixed later. Compare the **per-family results and the
-> stream metrics** for the same phone model and request, not the overall verdict.
+> **Read this first: FAIL here does not mean "the app does not work".** Every execution is scored against
+> deliberately strict engineering gates, and one missed gate makes the whole run FAIL. For example: first picture within
+> 3 s of start, discovery within 1.5 s, the slowest report interval at 95% or more of the requested frame rate, the
+> 95th-percentile gap between frames at most 1.25 frame periods, zero freezes, zero dropped audio or packets, and VMAF
+> 90 / SSIM 0.98 / PSNR 35 dB against the generated reference picture. Four more families (camera, acoustic, physical
+> latency, endurance) have no measuring equipment yet, so they are always `UNMEASURED` and no execution can reach a full-experience PASS yet.
+>
+> **What the FAILs actually are** (1,261 FAIL executions; in brackets, the 315 latest results per request):
+>
+> | What the run shows | Executions |
+> | --- | --- |
+> | Media reached every phone meant to receive it, then missed one or more gates (quality, timing, route or a scripted control step) | 930 = 73.8% (219 = 69.5%) |
+> | Connected, but a media measurement is missing for some phone (ambiguous, not proof of loss) | 23 = 1.8% (10 = 3.2%) |
+> | Media reached only some of the receiving phones (typical of relayed and multi-phone streams) | 113 = 9.0% (27 = 8.6%) |
+> | Never connected or no media at any receiver (timeout, call never started, or no evidence recorded) | 195 = 15.5% (59 = 18.7%) |
+>
+> "Media reached" means the receiver recorded a frame-rate, frame-interval, first-picture or picture-fidelity
+> measurement (or audio packets for a voice call). It does not prove that audio and video lasted the whole planned
+> duration; full-lifecycle coverage is `UNMEASURED` in every row. "Reached" is also not "good": most of those runs missed
+> several gates at once (median 5 of 13 gate types; they are correlated, since one stall also hurts frame spacing,
+> freezes and VMAF). Where the first-picture gate failed, the typical value was about 3.5 s against the 3 s limit;
+> where VMAF failed, about 76 against 90. In 89% of the receiver streams that report it, the run-median delivered frame
+> rate was already at least 95% of the requested rate; the gate judges the *slowest* report interval, so one slow
+> interval fails it. The no-connection and partial cases are real failures: they concentrate in relayed and
+> multi-phone topologies, in calls, and in phone pairs that include the OPPO A15s (Android 10).
+>
+> So compare the **per-family results and the stream metrics** for the same phone model and request, not the overall
+> verdict. The dashboard's "Media reached" and "Why not a pass" columns (and the same columns in `summary/*.csv`) show
+> this split for every request.
 >
 > These are results from development builds leading up to 0.1.0-beta, on four reference phones, in one home radio
 > environment. No camera frames, audio recordings, screenshots, Bluetooth traces, phone serials or addresses are
@@ -40,6 +65,10 @@ request. The app itself is at [MeshLive/meshlive-android](https://github.com/Mes
   (every execution).
 - **Want to compare your phones?** Follow [Reproduce and compare](#reproduce-and-compare). It needs the app repository,
   Python 3.13, adb and your own phones.
+- **Wondering whether FAIL means broken?** Read the box above, then filter the dashboard by "all endpoints" in the
+  "Media reached" column to see the requests that carried media and only missed gates. Better numbers than PASS/FAIL:
+  whether it connected, delivered frame rate against requested (`stream_metrics`), time to first picture, and freeze
+  count. Capture-to-screen media age is not measured in these runs.
 - **Want to know how to read a row?** Read [Status, honestly](#status-honestly) and [Caveats](#caveats) first.
 - **Found something odd, or want to share results?** Use the [issue forms](https://github.com/MeshLive/meshlive-benchmarks/issues/new/choose).
   Please do not attach captures, logs with addresses or serial numbers, or anything else listed under [Privacy](#privacy).
@@ -50,7 +79,7 @@ request. The app itself is at [MeshLive/meshlive-android](https://github.com/Mes
 | --- | --- |
 | `results/<suite>/<seq>-<case>.json` | One file per execution: the request, phones, build, inputs, gate results per family, stream metrics, and every analysis of that execution |
 | `results/attempts-without-execution.json` | Selected cases that never produced an execution (blocked by preflight or a dependency, or interrupted while running). These are not results |
-| `summary/baseline.csv` | Latest result per distinct request (`baseline_key`), with its build, failed families and history counts |
+| `summary/baseline.csv` | Latest result per distinct request (`baseline_key`), with its build, failed families, history counts, and `media_reached` / `media_endpoints` / `not_pass_class` (did media reach the receivers, and why the run is not a pass) |
 | `summary/history.csv` | Every execution in date order |
 | `summary/builds.csv` | Tested builds: build ID, APK SHA-256, versionName, execution dates |
 | `summary/counts.json` | Totals, status counts and exclusion counts |
@@ -74,8 +103,13 @@ PENDING_ANALYSIS (executed, then never scored) and 67 ANALYZING (scoring was int
 
 - **FAIL**: at least one gate missed its limit. The v3 gates (`device-run-v3`) are strict: for example VMAF of at least
   90, SSIM of at least 0.98 and PSNR of at least 35 dB against the generated reference, zero freezes and drops, rolling
-  p95 frame interval of at most 1.25 periods, discovery within 1.5 s and first picture within 3 s. A FAIL often means
-  "worked, but below one strict gate". Read `families` and `stream_metrics` before drawing conclusions.
+  p95 frame interval of at most 1.25 periods, discovery within 1.5 s and first picture within 3 s. A FAIL does **not**
+  by itself mean the call or stream failed: 73.8% of FAIL executions delivered media to every receiving phone (see the
+  box at the top). Those runs usually miss several gates (median 5 of 13 gate types; only 3% miss a single type),
+  by margins from small (first picture 3.5 s against 3 s) to large (stalls of seconds). Read `families` and
+  `stream_metrics` before drawing conclusions. A user-centred profile (`device-run-v4-user`: longest stall, frozen-time
+  share, cadence, media age; VMAF/SSIM/PSNR become diagnostic) exists in the app repository, but no execution here was
+  scored with it.
 - **UNMEASURED**: a required measurement had no data or no adapter. Camera, acoustic, physical (glass-to-glass)
   latency and endurance have no adapter in these runs, so those families are always UNMEASURED.
 - Some FAILs are infrastructure problems, kept as recorded: `Phone cleanup is unconfirmed` (14) and an analysis error
