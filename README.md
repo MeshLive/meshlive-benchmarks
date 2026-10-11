@@ -33,8 +33,9 @@ request. The app itself is at [MeshLive/meshlive-android](https://github.com/Mes
 
 ## Where to start
 
-- **Just want the numbers?** Download [`index.html`](index.html) and open it in a browser (GitHub shows HTML files as
-  source, not as a page). It is a self-contained summary table linking to every result. For a spreadsheet, use
+- **Just want the numbers?** Open the [results dashboard](https://meshlive.github.io/meshlive-benchmarks/) in your
+  browser (the same [`index.html`](index.html), served by GitHub Pages). It is a self-contained summary table linking to
+  every result. For a spreadsheet, use
   [`summary/baseline.csv`](summary/baseline.csv) (latest result per request) or [`summary/history.csv`](summary/history.csv)
   (every execution).
 - **Want to compare your phones?** Follow [Reproduce and compare](#reproduce-and-compare). It needs the app repository,
