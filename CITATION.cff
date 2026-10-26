@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "If you use this data, please cite it, and name the commit and the baseline_key values you used."
+title: "MeshLive benchmark baseline"
+type: dataset
+abstract: "Measured results of MeshLive (Bluetooth-only calls and live streams) on real Android phones, with regenerable generated inputs. 1,554 executions of 393 distinct requests, 2026-10-05 to 2026-10-11, development builds."
+authors:
+  - name: "The MeshLive Authors"
+repository-code: "https://github.com/MeshLive/meshlive-benchmarks"
+url: "https://meshlive.github.io/meshlive-benchmarks/"
+license: CC-BY-4.0
+date-released: "2026-10-11"
+keywords:
+  - bluetooth
+  - bluetooth low energy
+  - mesh network
+  - benchmark
+  - live streaming

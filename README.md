@@ -1,26 +1,46 @@
+<div align="center">
+
+<img src="assets/meshlive-icon-192.png" width="96" alt="MeshLive icon" />
+
 # MeshLive benchmark baseline
 
-**Measured results of MeshLive on real phones, with inputs anyone can regenerate: a baseline to compare your own phones against.**
+Measured results of MeshLive on real phones,<br/>
+with inputs anyone can regenerate: a baseline to compare your own phones against.
 
-<p align="center">
-  <a href="LICENSE"><img alt="Data licence: CC BY 4.0" src="https://img.shields.io/badge/data-CC%20BY%204.0-lightgrey?style=for-the-badge"></a>
-  <img alt="1,554 executions" src="https://img.shields.io/badge/executions-1%2C554-blue?style=for-the-badge">
-  <img alt="393 distinct requests" src="https://img.shields.io/badge/requests-393-blue?style=for-the-badge">
-  <img alt="Status: no full pass yet" src="https://img.shields.io/badge/status-no%20full%20pass%20yet-orange?style=for-the-badge">
-  <img alt="74% of FAIL executions delivered media to every receiving phone" src="https://img.shields.io/badge/FAILs%20that%20carried%20media-74%25-blue?style=for-the-badge">
+<br/>
+
+<p>
+  <a href="LICENSE"><img alt="Data licence: CC BY 4.0" src="https://img.shields.io/badge/Data-CC%20BY%204.0-FF3B30?style=flat" /></a>
+  <img alt="1,554 executions" src="https://img.shields.io/badge/executions-1%2C554-181717?style=flat" />
+  <img alt="393 distinct requests" src="https://img.shields.io/badge/requests-393-181717?style=flat" />
+  <img alt="Status: no full pass yet" src="https://img.shields.io/badge/status-no%20full%20pass%20yet-181717?style=flat" />
+  <img alt="74% of FAIL executions delivered media to every receiving phone" src="https://img.shields.io/badge/FAILs%20that%20carried%20media-74%25-181717?style=flat" />
 </p>
 
-<p align="center">
-  <a href="https://github.com/MeshLive/meshlive-android">MeshLive for Android</a> ·
-  <a href="https://github.com/MeshLive/meshlive-ios">MeshLive for iPhone</a> ·
-  <a href="https://github.com/MeshLive">MeshLive organisation</a> ·
+<a href="https://meshlive.github.io/meshlive-benchmarks/"><img alt="Open the results dashboard" src="https://img.shields.io/badge/Open%20the%20results%20dashboard-000000?style=for-the-badge&logo=githubpages&logoColor=white" /></a>
+
+<sub>
+  <a href="https://github.com/MeshLive/meshlive-android">Android</a> ·
+  <a href="https://github.com/MeshLive/meshlive-windows">Windows</a> ·
+  <a href="https://github.com/MeshLive/meshlive-ios">iPhone and Mac</a> ·
+  <a href="https://meshlive.github.io">Website</a> ·
+  <a href="https://github.com/MeshLive">Organisation</a> ·
   <a href="https://github.com/MeshLive/meshlive-benchmarks/issues/new/choose">Ask about a result</a>
-</p>
+</sub>
+
+</div>
 
 Measured results of MeshLive (Android, Bluetooth-only live video, calls and relayed streams) on real phones, published
 so that anyone can regenerate the same inputs, run the same requests and compare their results with ours, request by
-request. The app itself is at [MeshLive/meshlive-android](https://github.com/MeshLive/meshlive-android). The iPhone app
-([MeshLive/meshlive-ios](https://github.com/MeshLive/meshlive-ios)) has no results here yet.
+request.
+
+| Platform | Results here |
+| --- | --- |
+| Android ([meshlive-android](https://github.com/MeshLive/meshlive-android), beta) | Yes: everything in this repository |
+| Windows ([meshlive-windows](https://github.com/MeshLive/meshlive-windows), beta-quality source) | None yet. Its calls, Watch and Go live passed hands-on checks against Android phones, which is not a benchmark |
+| iPhone and Mac ([meshlive-ios](https://github.com/MeshLive/meshlive-ios), source builds) | None yet |
+
+The data comes from October 2026 development builds leading up to 0.1.0-beta; the Android app has moved on since (0.3.1-beta is the latest release). A result belongs to the build it ran on, so treat it as a baseline for the method and the phones, not as a result for today's release.
 
 > **Read this first: FAIL here does not mean "the app does not work".** Every execution is scored against
 > deliberately strict engineering gates, and one missed gate makes the whole run FAIL. For example: first picture within
@@ -149,8 +169,8 @@ You need the MeshLive app repository (github.com/MeshLive/meshlive-android), Pyt
    do not compare against this baseline until it matches. `speech-v1` WAVs are committed in the app repository
    (`benchmarks/inputs/speech-v1`); `tools/build_speech_reference.py verify` rebuilds and checks them.
 
-2. **Export and bind the requests.** Map your phones to the baseline aliases in `tools/benchmark_devices.json` of the
-   app repository, then:
+2. **Export and bind the requests.** Map your phones to the baseline aliases in a `tools/benchmark_devices.json` you create in the
+   app repository (alias, ADB serial and node prefix per phone), then:
 
    ```
    python -B PATH/meshlive-benchmarks/tools/export_suite.py --out-dir benchmarks/catalog/baseline-export --phones S24,M31
@@ -165,7 +185,7 @@ You need the MeshLive app repository (github.com/MeshLive/meshlive-android), Pyt
    `raw-...` case IDs (they include local paths); the portable `baseline_key` stays the same. This export, bind and
    key round trip has been checked offline with regenerated inputs.
 
-3. **Run** the bound bundle with `tools/run_benchmark_suite.py run` as described in `docs/TESTING.md` of the app
+3. **Run** the bound bundle with `tools/run_benchmark_suite.py run` as described in [`docs/dev/testing.md`](https://github.com/MeshLive/meshlive-android/blob/main/docs/dev/testing.md) of the app
    repository, on a frozen APK, and finish analysis.
 
 4. **Compare:**
@@ -224,26 +244,6 @@ report tables are not included, and the sizes and hashes of those private captur
   now show `on_newest_dataset_build = no`.
 - 2026-10-10: baseline of 1,519 executions.
 
-## How this was built
-
-The measurements are real: every execution is a run on physical phones, recorded as it happened, and failures are kept.
-But the way they were produced matters for how far you trust them:
-
-- **Heavy AI assistance.** The app being measured, the test harness that runs the phones and the scoring and
-  publishing scripts in `tools/` were written mostly by Anthropic's Claude (through Claude Code), directed by the
-  maintainer, who chooses what to test, runs the phones and reviews the results. A scoring script can still have a bug;
-  one analysis error (`'time'`, 5 executions) is visible in the data as recorded (see [Status, honestly](#status-honestly)). If a number looks
-  wrong, say so.
-- **No independent audit.** Neither the app nor this dataset has been reviewed by a third party.
-- **Small, uncontrolled setup.** A handful of reference phones, uncontrolled radio conditions and development builds
-  (see [Caveats](#caveats)). Treat the data as a baseline to compare against, not as a certification of any phone.
-- **You can check it.** Inputs are regenerated from recipes and per-request results are in plain JSON and CSV
-  ([Reproduce and compare](#reproduce-and-compare)).
-
-Questions about a result: [open an issue](https://github.com/MeshLive/meshlive-benchmarks/issues/new/choose). Security
-problems with the app go through the private route in the app repository's
-[SECURITY.md](https://github.com/MeshLive/meshlive-android/blob/main/SECURITY.md).
-
 ## Privacy
 
 This dataset contains no camera frames, images, video, audio recordings, screenshots, Bluetooth snoop logs or bug
@@ -266,7 +266,7 @@ values you used, because a request's latest result can change when the baseline 
 ## Licence
 
 Data in this repository (`results/`, `summary/`, `measurements/`, `inputs/manifest.json`, `index.html`) under
-**Creative Commons Attribution 4.0 International (CC BY 4.0)** (full text in [LICENSE](LICENSE)). The scripts in `tools/` are GPL-3.0-or-later, like the app; the recipe files in
+**Creative Commons Attribution 4.0 International (CC BY 4.0)** (full text in [LICENSE](LICENSE)). The scripts in `tools/` are GPL-3.0-or-later, like the app (full text in [LICENSE-GPL-3.0](LICENSE-GPL-3.0)); the recipe files in
 `inputs/recipes/` are part of `video-stress-generator` (MIT). The
 `speech-v1` sources keep their own licences (LibriSpeech CC BY 4.0, LibriVox public domain, Open Goldberg Variations
 CC0), listed in the app repository.

@@ -3,6 +3,12 @@ contact_links:
   - name: App bugs (Android)
     url: https://github.com/MeshLive/meshlive-android/issues/new/choose
     about: A bug in the MeshLive app itself, rather than a question about a benchmark result, belongs in the app repository.
-  - name: App bugs (iPhone)
+  - name: App bugs (Windows)
+    url: https://github.com/MeshLive/meshlive-windows/issues/new/choose
+    about: The Windows app has its own repository. It has no benchmark results yet.
+  - name: App bugs (iPhone and Mac)
     url: https://github.com/MeshLive/meshlive-ios/issues/new/choose
-    about: The iPhone app has its own repository. It has no benchmark results yet.
+    about: The iPhone and Mac apps have their own repository. They have no benchmark results yet.
+  - name: Security problem
+    url: https://github.com/MeshLive/.github/blob/main/SECURITY.md
+    about: Never post security details or personal data that slipped into the data in a public issue. Use the private route in the security policy.

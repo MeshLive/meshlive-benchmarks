@@ -1,11 +1,12 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>MeshLive benchmark baseline</title>
+<link rel="icon" type="image/png" href="assets/favicon.png">
 <style>
-:root{--bg:#fbfbfa;--fg:#1c1c1a;--mut:#6b6b66;--line:#e2e1dc;--card:#fff;--fail:#b3261e;--failbg:#fbe9e7;--unm:#7a5c00;--unmbg:#fff4d6;--pass:#1b6e3a;--passbg:#e3f4e8;--pend:#38517a;--pendbg:#e6edf8}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#161615;--fg:#e8e7e3;--mut:#9b9a94;--line:#33322f;--card:#1e1e1c;--fail:#ff8a80;--failbg:#3a1d1b;--unm:#f2cc60;--unmbg:#352d12;--pass:#7fd49b;--passbg:#163222;--pend:#9fb8e8;--pendbg:#1c2638}}
-:root[data-theme="dark"]{--bg:#161615;--fg:#e8e7e3;--mut:#9b9a94;--line:#33322f;--card:#1e1e1c;--fail:#ff8a80;--failbg:#3a1d1b;--unm:#f2cc60;--unmbg:#352d12;--pass:#7fd49b;--passbg:#163222;--pend:#9fb8e8;--pendbg:#1c2638}
-body{margin:0;background:var(--bg);color:var(--fg);font:14px/1.45 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+:root{--bg:#fff;--fg:#000;--mut:#5c5c5c;--line:#dcdcdc;--card:#fff;--fail:#c4271d;--failbg:#fff;--unm:#3a3a3a;--unmbg:#efefef;--pass:#000;--passbg:#e6e6e6;--pend:#3a3a3a;--pendbg:#efefef}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#000;--fg:#fff;--mut:#9a9a9a;--line:#262626;--card:#0d0d0d;--fail:#ff3b30;--failbg:#0d0d0d;--unm:#cfcfcf;--unmbg:#1c1c1c;--pass:#fff;--passbg:#262626;--pend:#cfcfcf;--pendbg:#1c1c1c}}
+:root[data-theme="dark"]{--bg:#000;--fg:#fff;--mut:#9a9a9a;--line:#262626;--card:#0d0d0d;--fail:#ff3b30;--failbg:#0d0d0d;--unm:#cfcfcf;--unmbg:#1c1c1c;--pass:#fff;--passbg:#262626;--pend:#cfcfcf;--pendbg:#1c1c1c}
+body{margin:0;background:var(--bg);color:var(--fg);font:14px/1.5 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
 main{max-width:1400px;margin:0 auto;padding:24px 16px}
 h1{font-size:22px;margin:0 0 4px} h2{font-size:17px;margin:28px 0 8px}
 p,li{max-width:900px} .m{color:var(--mut)} .s{font-size:12.5px}
@@ -19,8 +20,10 @@ th{position:sticky;top:0;background:var(--card);font-weight:600;font-size:12.5px
 input{font:inherit;padding:6px 10px;border:1px solid var(--line);border-radius:6px;background:var(--card);color:var(--fg);width:min(420px,100%)}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px}
 a{color:inherit}
+.hd{display:flex;align-items:center;gap:10px}.hd img{border-radius:6px}.nav a{text-decoration-color:var(--line)}
 </style></head><body><main>
-<h1>MeshLive benchmark baseline</h1>
+<header class="hd"><a href="https://meshlive.github.io"><img src="assets/favicon.png" width="28" height="28" alt="MeshLive"></a><h1>MeshLive benchmark baseline</h1></header>
+<p class="m s nav"><a href="https://github.com/MeshLive/meshlive-benchmarks#readme">README</a> &middot; <a href="https://github.com/MeshLive/meshlive-android">Android</a> &middot; <a href="https://github.com/MeshLive/meshlive-windows">Windows</a> &middot; <a href="https://github.com/MeshLive/meshlive-ios">iPhone and Mac</a> &middot; <a href="https://meshlive.github.io">Website</a> &middot; <a href="https://github.com/MeshLive">Organisation</a></p>
 <p class="m">1554 executions of 393 distinct requests, 2026-10-05 to 2026-10-11 UTC, on pre-release debug builds.
 Only runs whose inputs are regenerable (video-stress-generator raw video, its generated reference audio, speech-v1) are included. Latest status per request: FAIL 315 &middot; PENDING_ANALYSIS 64 &middot; UNMEASURED 14.</p>
 <p>No request has passed the full acceptance gates yet, and FAIL does not mean &ldquo;the app does not work&rdquo;. The gates are deliberately strict
@@ -29,7 +32,7 @@ Of the 315 latest FAIL results, 229 (73%) reached every endpoint (picture delive
 59 (19%) show no connection or media recorded at any endpoint (a few of these are ambiguous), and the rest reached some but not all endpoints. The &ldquo;Media reached&rdquo; column shows which; the split of the latest FAILs is:</p>
 <ul class="s"><li>202 &ndash; media delivered; missed quality/timing thresholds</li><li>50 &ndash; never connected / no media (timeout or call never started)</li><li>27 &ndash; partial: some endpoints got no media</li><li>10 &ndash; media delivered, but not over the requested route</li><li>10 &ndash; connected; media not measured at some endpoint</li><li>9 &ndash; no media evidence recorded (ambiguous)</li><li>7 &ndash; media delivered; a control step was not confirmed</li></ul>
 <p>UNMEASURED means a required family has no adapter (camera, acoustic, physical latency, endurance are never measured here).
-These results depend on the phone models, their firmware and the radio environment. See <a href="README.md">README</a>.</p>
+These results depend on the phone models, their firmware and the radio environment. See <a href="https://github.com/MeshLive/meshlive-benchmarks#readme">README</a>.</p>
 <p><a href="summary/baseline.csv">baseline.csv</a> &middot; <a href="summary/history.csv">history.csv</a> &middot; <a href="summary/builds.csv">builds.csv</a> &middot;
 <a href="inputs/manifest.json">inputs/manifest.json</a> &middot; <a href="results/attempts-without-execution.json">attempts without execution</a></p>
 <h2>Latest result per request</h2>
