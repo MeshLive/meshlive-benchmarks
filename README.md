@@ -22,7 +22,7 @@ with inputs anyone can regenerate: a baseline to compare your own phones against
 <sub>
   <a href="https://github.com/MeshLive/meshlive-android">Android</a> ·
   <a href="https://github.com/MeshLive/meshlive-windows">Windows</a> ·
-  <a href="https://github.com/MeshLive/meshlive-ios">iPhone and Mac</a> ·
+  <a href="https://github.com/MeshLive/meshlive-apple">iPhone and Mac</a> ·
   <a href="https://meshlive.github.io">Website</a> ·
   <a href="https://github.com/MeshLive">Organisation</a> ·
   <a href="https://github.com/MeshLive/meshlive-benchmarks/issues/new/choose">Ask about a result</a>
@@ -37,10 +37,10 @@ request.
 | Platform | Results here |
 | --- | --- |
 | Android ([meshlive-android](https://github.com/MeshLive/meshlive-android), beta) | Yes: everything in this repository |
-| Windows ([meshlive-windows](https://github.com/MeshLive/meshlive-windows), beta-quality source) | None yet. Its calls, Watch and Go live passed hands-on checks against Android phones, which is not a benchmark |
-| iPhone and Mac ([meshlive-ios](https://github.com/MeshLive/meshlive-ios), source builds) | None yet |
+| Windows ([meshlive-windows](https://github.com/MeshLive/meshlive-windows), beta) | None yet. Its calls, Watch and Go live passed hands-on checks against Android phones, which is not a benchmark |
+| iPhone and Mac ([meshlive-apple](https://github.com/MeshLive/meshlive-apple), source builds) | None yet |
 
-The data comes from October 2026 development builds leading up to 0.1.0-beta; the Android app has moved on since (0.3.1-beta is the latest release). A result belongs to the build it ran on, so treat it as a baseline for the method and the phones, not as a result for today's release.
+The data comes from October 2026 development builds leading up to 0.1.0-beta; the Android app has moved on since (0.4.0-beta is the latest release). A result belongs to the build it ran on, so treat it as a baseline for the method and the phones, not as a result for today's release.
 
 > **Read this first: FAIL here does not mean "the app does not work".** Every execution is scored against
 > deliberately strict engineering gates, and one missed gate makes the whole run FAIL. For example: first picture within
